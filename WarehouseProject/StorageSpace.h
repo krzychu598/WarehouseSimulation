@@ -3,7 +3,8 @@ class StorageSpace
 {
 public:
 	int GetSize() const;
-private:
+protected:
+	StorageSpace(int size);
 	int size;
 };
 
