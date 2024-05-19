@@ -11,6 +11,6 @@ int main() {
 	//experimental code sample
 	Warehouse warehouse(2);
 	warehouse.Put("Cock");
-	std::cout << warehouse.GetSize();
+	std::cout << warehouse.getSize();
 	return 0;
 }
