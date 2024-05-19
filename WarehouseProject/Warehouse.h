@@ -1,5 +1,6 @@
 #pragma once
 #include "StorageSpace.h"
+#include "Area.h"
 #include <iostream>
 #include <vector>
 #include <string>
