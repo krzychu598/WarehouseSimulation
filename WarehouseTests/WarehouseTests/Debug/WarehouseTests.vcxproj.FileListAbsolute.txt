@@ -1,3 +1,0 @@
-C:\Users\bytar\Source\Repos\209.5-magazyn\WarehouseTests\Debug\gtest.pdb
-C:\Users\bytar\Source\Repos\209.5-magazyn\WarehouseTests\Debug\gtest_main.pdb
-C:\Users\bytar\Source\Repos\209.5-magazyn\WarehouseTests\WarehouseTests\Debug\Warehous.1855C104.Up2Date
