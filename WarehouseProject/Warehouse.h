@@ -4,13 +4,17 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <stdexcept>
+#include "nlohmann/json.hpp"
 
 class Warehouse :
     public StorageSpace
 {
 public:
-    Warehouse(int s);
-    void Put(std::string name);
+    Warehouse(const std::string& file_path);
+    void put(std::string name);
     std::vector<std::string> products;
+private:
+    std::vector<std::unique_ptr<Area>> areas;
 };
 

@@ -11,6 +11,6 @@
 //before running tests please install required package specified in packages.config
 
 TEST(TestCaseName, TestName) {
-  EXPECT_EQ(1, 1);
+  EXPECT_EQ(2, 2);
   EXPECT_TRUE(true);
 }

@@ -1,6 +1,7 @@
 .vs/
 x64/
 WarehouseProject/WarehouseProject/
+WarehouseProject/WarehouseTests/
 WarehouseProject/Debug/
 packages/
 Debug

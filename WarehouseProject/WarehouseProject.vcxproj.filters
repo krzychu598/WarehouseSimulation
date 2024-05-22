@@ -66,5 +66,6 @@
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include=".gitignore" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
