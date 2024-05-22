@@ -9,7 +9,7 @@
 int main() {
 
 	//experimental code sample
-	Warehouse warehouse("WarehoseProject/warehouse.json");
+	Warehouse warehouse("warehouse.json");
 	warehouse.put("Cock");
 	std::cout << warehouse.getSize();
 	return 0;
