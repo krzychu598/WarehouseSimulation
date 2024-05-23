@@ -36,6 +36,9 @@
     <ClInclude Include="Product.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="packages\nlohmann.json.3.11.2\build\native\include\nlohmann\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StorageSpace.cpp">
@@ -67,5 +70,8 @@
     <None Include="ClassDiagram.cd" />
     <None Include=".gitignore" />
     <None Include="packages.config" />
+    <None Include="packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets" />
+    <None Include="packages\nlohmann.json.3.11.2\.signature.p7s" />
+    <None Include="packages\nlohmann.json.3.11.2\nlohmann.json.3.11.2.nupkg" />
   </ItemGroup>
 </Project>
