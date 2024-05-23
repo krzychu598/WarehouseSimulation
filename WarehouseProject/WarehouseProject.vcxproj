@@ -132,7 +132,6 @@
     <ClInclude Include="Area.h" />
     <ClInclude Include="Box.h" />
     <ClInclude Include="Employee.h" />
-    <ClInclude Include="packages\nlohmann.json.3.11.2\build\native\include\nlohmann\json.hpp" />
     <ClInclude Include="Product.h" />
     <ClInclude Include="Shelving.h" />
     <ClInclude Include="StorageSpace.h" />
@@ -152,7 +151,6 @@
     <None Include=".gitignore" />
     <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
-    <None Include="packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

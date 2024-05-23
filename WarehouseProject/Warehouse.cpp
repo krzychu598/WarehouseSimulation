@@ -1,22 +1,10 @@
 #include "Warehouse.h"
 
-void Warehouse::put(std::string name, std::string type) {
-	for (auto& area: areas) {
-		if ((area)->getType() == type) {
-			(area)->put(name);
-			break;
-		}
-	}
-	
-}
+using json = nlohmann::json;
 
-bool Warehouse::find(std::string name, std::string type) const{
-	for (auto& area: areas) {
-		if ((area)->getType() == type) {
-			return (area)->find(name);
-		}
-	}
-	return false;
+void Warehouse::put(std::string name) {
+	products.push_back(name);
+	StorageSpace::size--;
 }
 Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
 	//load data from file
@@ -26,27 +14,14 @@ Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
 		throw std::exception("Couldn't open the file");
 	}
 	
-	nlohmann::json jsonData;
-	try {
-		f >> jsonData;
-	}
-	catch (...) {
-		throw std::exception("cannot transfer stream to json member");
-	}
-
+	json data = json::parse(f);
 	f.close();
 
-	name = jsonData["name"].get<std::string>();
-	for (const auto& area_json : jsonData["areas"]) {
-		std::string type = area_json["type"].get<std::string>();
+	name = data["name"].get<std::string>();
+	for (const auto& area_json : data["areas"]) {
 		areas.push_back(std::make_unique<Area>(
-			type,
+			area_json["type"].get<std::string>(),
 			area_json["shelvings"]
 		));
 	}
-	std::cout << "Warehouse " << name << " created!\n";
-}
-
-Warehouse::~Warehouse() {
-	std::cout << "Warehouse "<< name << " destroyed!\n";
 }
