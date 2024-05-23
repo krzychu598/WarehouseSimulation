@@ -155,6 +155,5 @@
     <None Include="packages\nlohmann.json.3.11.2\.signature.p7s" />
     <None Include="packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets" />
     <None Include="packages\nlohmann.json.3.11.2\nlohmann.json.3.11.2.nupkg" />
-    <None Include="warehouse.json" />
   </ItemGroup>
 </Project>
