@@ -9,8 +9,14 @@
 int main() {
 
 	//experimental code sample
-	Warehouse warehouse("warehouse.json");
-	warehouse.put("Cock");
-	std::cout << warehouse.getSize();
+	Warehouse warehouse("../warehouse.json");
+	warehouse.put("Foo", "Electronics");
+	if (warehouse.find("Foo", "Electronics") == true) {
+		std::cout << "object found\n";
+	}
+	else {
+		std::cout << "object not found\n";
+	};
 	return 0;
+
 }
