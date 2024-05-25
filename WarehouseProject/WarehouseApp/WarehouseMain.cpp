@@ -9,7 +9,7 @@
 int main() {
 
 	//experimental code sample
-	Warehouse warehouse("../WarehouseApp/warehouse.json");
+	Warehouse warehouse("../warehouse.json");
 	warehouse.put("Foo", "Electronics");
 	if (warehouse.find("Foo", "Electronics") == true) {
 		std::cout << "object found\n";

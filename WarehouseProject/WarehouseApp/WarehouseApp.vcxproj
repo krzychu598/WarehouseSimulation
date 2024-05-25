@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Area.cpp" />
+    <ClCompile Include="Product.cpp" />
     <ClCompile Include="Shelving.cpp" />
     <ClCompile Include="StorageSpace.cpp" />
     <ClCompile Include="Warehouse.cpp" />
@@ -135,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Area.h" />
+    <ClInclude Include="Product.h" />
     <ClInclude Include="Shelving.h" />
     <ClInclude Include="StorageSpace.h" />
     <ClInclude Include="Warehouse.h" />
