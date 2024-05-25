@@ -22,15 +22,15 @@ Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
 	//load data from file
 	std::ifstream f(file_path);
 
-	if (!f) {
-		throw std::exception("Couldn't open the file");
+	if (!f.is_open()) {
+		throw std::runtime_error("Couldn't open the file");
 	}
 
 	try {
 		f >> Warehouse::json_data;
 	}
 	catch (...) {
-		throw std::exception("cannot transfer stream to json member");
+		throw std::runtime_error("cannot transfer stream to json member");
 	}
 
 	f.close();

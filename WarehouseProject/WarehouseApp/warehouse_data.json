@@ -1,0 +1,72 @@
+{
+  "name": "Amaze_On",
+  "areas": [
+
+    {
+      "type": "Electronics",
+      "shelvings": [
+        {
+          "priority": "A",
+          "size": 200
+
+        },
+
+        {
+          "priority": "B",
+          "size": 400
+        },
+
+        {
+          "priority": "C",
+          "size": 800
+        }
+      ]
+
+    },
+
+    {
+      "type": "FoodAndDrinks",
+      "shelvings": [
+        {
+          "priority": "A",
+          "size": 200
+
+        },
+
+        {
+          "priority": "B",
+          "size": 400
+        },
+
+        {
+          "priority": "C",
+          "size": 800
+        }
+      ]
+
+    },
+
+    {
+      "type": "Industrial",
+      "shelvings": [
+        {
+          "priority": "A",
+          "size": 200
+
+        },
+
+        {
+          "priority": "B",
+          "size": 400
+        },
+
+        {
+          "priority": "C",
+          "size": 800
+        }
+      ]
+
+    }
+  ]
+
+}
