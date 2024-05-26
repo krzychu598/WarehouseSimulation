@@ -7,6 +7,7 @@
 #include <stdexcept>
 #include <fstream>
 #include "nlohmann/json.hpp"
+#include "DebugMacros.h"
 
 class Warehouse :
     public StorageSpace

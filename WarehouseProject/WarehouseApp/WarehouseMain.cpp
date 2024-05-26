@@ -20,3 +20,14 @@ int main() {
 	return 0;
 
 }
+
+
+
+/*
+Example Log:
+Warehouse Amaze-On created				(appropiate json file given to a warehouse constructor)
+Initial state of the warehouse restored (All products from json file initiated)
+New delivery accepted / Delivery not accepted
+
+
+*/

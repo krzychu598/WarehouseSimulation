@@ -43,9 +43,9 @@ Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
 			area_json["shelvings"]
 		));
 	}
-	std::cout << "Warehouse " << name << " created!\n";
+	PRINT_MSG("Warehouse created");
 }
 
 Warehouse::~Warehouse() {
-	std::cout << "Warehouse " << name << " destroyed!\n";
+	PRINT_MSG("Warehouse destroyed");
 }
