@@ -17,6 +17,7 @@ public:
     ~Warehouse();
     void put(std::string name, std::string type);
     bool find(std::string name, std::string type) const;
+
 private:
 
     std::vector<std::unique_ptr<Area>> areas;

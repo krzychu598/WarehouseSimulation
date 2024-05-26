@@ -147,6 +147,7 @@
     <ClInclude Include="Warehouse.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="deliveries.json" />
     <None Include="packages.config" />
     <None Include="warehouse_data.json" />
   </ItemGroup>

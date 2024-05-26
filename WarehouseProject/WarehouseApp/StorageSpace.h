@@ -7,13 +7,14 @@ class StorageSpace
 {
 public:
 	int getSize() const;
-	//virtual Product Take(Product& product);
-	//virtual void Put(Product& product);
-	//bool Find(std::string name, int amount=1) const;
-	//bool Find(int id, int amount = 1) const;
-	//bool Find(Product product, int amount = 1) const;
-	//unsigned int GetEmptySpace() const;
-	//unsigned int GetFullSpace() const;
+	virtual Product take(Product& product);
+	virtual void put(Product& product);
+
+	bool find(std::string name, int amount=1) const;
+	bool find(int id, int amount = 1) const;
+	bool find(Product product, int amount = 1) const;
+	unsigned int getEmptySpace() const;
+	unsigned int getFullSpace() const;
 
 
 protected:

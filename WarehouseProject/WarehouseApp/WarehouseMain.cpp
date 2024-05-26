@@ -27,7 +27,10 @@ int main() {
 Example Log:
 Warehouse Amaze-On created				(appropiate json file given to a warehouse constructor)
 Initial state of the warehouse restored (All products from json file initiated)
-New delivery accepted / Delivery not accepted
+New delivery accepted / Delivery not accepted (size of every tyope of product caculated and compared with the size of the area, if delicery is accepted boxes objects are created)
+Unloading delivery:
+Employee A transports 3 Boxes to Area Electronics
+Employee B transports 2 Boxes to Area Food&Drink
 
 
 */

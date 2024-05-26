@@ -69,5 +69,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="warehouse_data.json" />
+    <None Include="deliveries.json" />
   </ItemGroup>
 </Project>
