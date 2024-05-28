@@ -1,6 +1,7 @@
 #include "StorageSpace.h"
 
-StorageSpace::StorageSpace() {}
+StorageSpace::StorageSpace() : size(0), occupied_space_size(0){};
+StorageSpace::~StorageSpace() {};
 Product StorageSpace::take(Product& product) { return Product("none"); };
 void StorageSpace::put(Product& product) {};
 bool StorageSpace::find(std::string name, int amount) const { return false; };

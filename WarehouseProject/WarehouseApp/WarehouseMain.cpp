@@ -10,12 +10,12 @@ int main() {
 
 	//experimental code sample
 	Warehouse warehouse("warehouse_data.json");
-	warehouse.put("Foo", "Electronics");
-	warehouse.find("Foo", "Electronics");
+	warehouse.put("Foo", "electronics");
+	warehouse.find("Foo", "electronics");
 
-	warehouse.find("Laptop", "Electronics");
 	warehouse.acceptDelivery("InitialDelivery.json");
-	warehouse.find("Earbuds", "Electronics");
+	warehouse.acceptDelivery("InitialDelivery.json");
+
 	return 0;
 
 }
@@ -26,10 +26,11 @@ int main() {
 Example Log:
 Warehouse Amaze-On created				(appropiate json file given to a warehouse constructor)
 Initial state of the warehouse restored (All products from json file initiated)
-New delivery accepted / Delivery not accepted (size of every tyope of product caculated and compared with the size of the area, if delicery is accepted boxes objects are created)
+New incoming delivery accepted / Delivery not accepted (size of every type of product caculated and compared with the size of the area, if delivery is accepted boxes objects are created)
 Unloading delivery:
 Employee A transports 3 Boxes to Area Electronics
 Employee B transports 2 Boxes to Area Food&Drink
-
+...
+New outgoing delivery
 
 */

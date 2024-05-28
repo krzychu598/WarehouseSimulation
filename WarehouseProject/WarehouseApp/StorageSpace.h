@@ -19,10 +19,8 @@ public:
 
 protected:
 	StorageSpace();
+	virtual ~StorageSpace();
 	unsigned int size;
 	unsigned int occupied_space_size;
 };
 
-//Log: A Delivery phase 1.New delivery request, 2. Employees take products, 3. Employees place products, 4. Delivery is completed B relocation 1 checking if Boxes are in the right places 2 Relocating Boxes
-
-//TODO dodac destruktory wirtualne

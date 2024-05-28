@@ -18,7 +18,7 @@ public:
     void put(std::string name, std::string type);
     bool find(std::string name, std::string type) const;
     void acceptDelivery(const std::string& file_path);
-
+    void reserveSpace(unsigned int reserved_size);
 private:
     nlohmann::json getJsonData(const std::string& file_path) {
         std::ifstream f(file_path);

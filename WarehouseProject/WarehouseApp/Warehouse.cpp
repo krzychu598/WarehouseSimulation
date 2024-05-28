@@ -7,7 +7,8 @@ void Warehouse::put(std::string name, std::string type) {
 			return;
 		}
 	}
-	PRINT_MSG("Couldn't put ", name, "");
+	PRINT_MSG("Couldn't put: ", name, "");
+	PRINT_MSG("No appropiate area: ", type, "");
 }
 
 bool Warehouse::find(std::string name, std::string type) const {
@@ -21,19 +22,36 @@ bool Warehouse::find(std::string name, std::string type) const {
 }
 
 void Warehouse::acceptDelivery(const std::string& file_path) {
-	nlohmann::json delivery_json;
-	delivery_json = getJsonData(file_path);
-
-	if (delivery_json["size"].get<int>() > size - occupied_space_size) {
+	 
+	nlohmann::json delivery_json = getJsonData(file_path);
+	unsigned int delivery_size = delivery_json["size"]["size"].get<int>();
+	if ( delivery_size > size - occupied_space_size) {
 		std::cout << "Delivery doesn't fit in the Warehouse\n";
 		return;
 	}
+	for (const auto& item : delivery_json["size"].items()) {
+		
+		for (const auto& area : areas) {
+
+			if ((area)->getType() == item.key()) {
+				if ((area)->getEmptySpace() < item.value()) {
+					std::cout << "Delivery doesn't fit in the Warehouse\n";
+					return;
+				}
+			};
+		};
+	};
+	occupied_space_size += delivery_size;
+	//TODO Now Box objects should be created and put in according places
 	for (const auto& box : delivery_json.at("boxes")) {
 		this->put(box.at("product_name"), box.at("type"));
-	}
-
-
+	};
 };
+
+void Warehouse::reserveSpace(unsigned int reserved_size) {
+	
+};
+
 Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
 	json_data = getJsonData(file_path);
 

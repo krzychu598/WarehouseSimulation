@@ -1,72 +1,73 @@
+//size of electronics area changed for test purposes
 {
   "name": "Amaze_On",
-  "size": 42,
+  "size": 60,
   "areas": [
 
     {
-      "type": "Electronics",
-      "size": 14,
+      "type": "electronics",
+      "size": 5,
       "shelvings": [
         {
           "priority": "A",
-          "size": 2
+          "size": 4
 
         },
 
         {
           "priority": "B",
-          "size": 4
+          "size": 6
         },
 
         {
           "priority": "C",
-          "size": 8
+          "size": 10
         }
       ]
 
     },
 
     {
-      "type": "FoodAndDrinks",
-      "size": 14,
+      "type": "food_and_drinks",
+      "size": 20,
       "shelvings": [
         {
           "priority": "A",
-          "size": 2
+          "size": 4
 
         },
 
         {
           "priority": "B",
-          "size": 4
+          "size": 6
         },
 
         {
           "priority": "C",
-          "size": 8
+          "size": 10
         }
       ]
 
     },
 
     {
-      "type": "Industrial",
-      "size": 14,
+      "type": "industrial",
+      "size": 20,
       "shelvings": [
         {
           "priority": "A",
-          "size": 2
+          "size": 4
 
         },
 
         {
           "priority": "B",
-          "size": 4
+          "size": 6
         },
 
         {
           "priority": "C",
-          "size": 8
+          "size": 10
         }
       ]
 

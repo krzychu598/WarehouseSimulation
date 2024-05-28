@@ -14,6 +14,8 @@ std::string Area::getType() const {	return type; };
 
 
 void Area::put(std::string name) {
+	occupied_space_size++;
+	PRINT_MSG("object ", name, " put");
 	products.push_back(name);
 }
 
