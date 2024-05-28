@@ -17,6 +17,9 @@ int main() {
 	else {
 		std::cout << "object not found\n";
 	};
+
+
+	warehouse.acceptDelivery("InitialDelivery.json");
 	return 0;
 
 }

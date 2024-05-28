@@ -1,7 +1,8 @@
 #pragma once
 #ifdef _DEBUG
 #include <iostream>
-#define PRINT_MSG(msg) std::cout << msg << "\n"
+#define PRINT_MSG(msg1, var, msg2) std::cout << msg1 << var << msg2 << "\n"
 #else
-#define PRINT_MSG(msg)
+#define PRINT_MSG(msg1, var, msg2)
 #endif
+

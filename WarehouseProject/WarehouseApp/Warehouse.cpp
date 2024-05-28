@@ -4,9 +4,10 @@ void Warehouse::put(std::string name, std::string type) {
 	for (auto& area : areas) {
 		if ((area)->getType() == type) {
 			(area)->put(name);
-			break;
+			return;
 		}
 	}
+	std::cout << "No appriopiate area type!";
 
 }
 
@@ -18,22 +19,15 @@ bool Warehouse::find(std::string name, std::string type) const {
 	}
 	return false;
 }
+
+void Warehouse::acceptDelivery(const std::string& file_path) {
+	nlohmann::json delivery_json;
+	delivery_json = getJsonData(file_path);
+
+};
 Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
 	//load data from file
-	std::ifstream f(file_path);
-
-	if (!f.is_open()) {
-		throw std::runtime_error("Couldn't open the file");
-	}
-
-	try {
-		f >> Warehouse::json_data;
-	}
-	catch (...) {
-		throw std::runtime_error("cannot transfer stream to json member");
-	}
-
-	f.close();
+	json_data = getJsonData(file_path);
 
 	name = json_data["name"].get<std::string>();
 	for (const auto& area_json : json_data["areas"]) {
@@ -43,9 +37,9 @@ Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
 			area_json["shelvings"]
 		));
 	}
-	PRINT_MSG("Warehouse created");
+	PRINT_MSG("Warehouse ", name, " created");
 }
 
 Warehouse::~Warehouse() {
-	PRINT_MSG("Warehouse destroyed");
+	PRINT_MSG("Warehouse ", name, " destroyed");
 }

@@ -6,12 +6,14 @@
 
 #include "StorageSpace.h"
 #include "Shelving.h"
+#include "DebugMacros.h"
 
 class Area :
     public StorageSpace
 {
 public:
     Area(std::string& type, nlohmann::json shelvings);
+    ~Area();
     std::string getType() const;
     void put(std::string name);
     bool find(std::string name) const;
