@@ -6,5 +6,6 @@ Shelving::Shelving(const nlohmann::json& shelving){
 	Now take first character from this string("A"[0] = 'A' - conversion from string to char)
 	Then using unordered map get corresponding enum class instance
 	*/
-
 };
+
+void Shelving::put(std::string name) {};
