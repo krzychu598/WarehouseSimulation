@@ -11,15 +11,11 @@ int main() {
 	//experimental code sample
 	Warehouse warehouse("warehouse_data.json");
 	warehouse.put("Foo", "Electronics");
-	if (warehouse.find("Foo", "Electronics") == true) {
-		std::cout << "object found\n";
-	}
-	else {
-		std::cout << "object not found\n";
-	};
+	warehouse.find("Foo", "Electronics");
 
-
+	warehouse.find("Laptop", "Electronics");
 	warehouse.acceptDelivery("InitialDelivery.json");
+	warehouse.find("Earbuds", "Electronics");
 	return 0;
 
 }

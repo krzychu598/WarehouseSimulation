@@ -12,7 +12,7 @@ class Area :
     public StorageSpace
 {
 public:
-    Area(std::string& type, nlohmann::json shelvings);
+    Area(const nlohmann::json& area);
     ~Area();
     std::string getType() const;
     void put(std::string name);

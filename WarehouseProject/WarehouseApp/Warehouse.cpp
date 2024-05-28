@@ -7,8 +7,7 @@ void Warehouse::put(std::string name, std::string type) {
 			return;
 		}
 	}
-	std::cout << "No appriopiate area type!";
-
+	PRINT_MSG("Couldn't put ", name, "");
 }
 
 bool Warehouse::find(std::string name, std::string type) const {
@@ -17,6 +16,7 @@ bool Warehouse::find(std::string name, std::string type) const {
 			return (area)->find(name);
 		}
 	}
+	PRINT_MSG("object ", name, " not found");
 	return false;
 }
 
@@ -24,17 +24,25 @@ void Warehouse::acceptDelivery(const std::string& file_path) {
 	nlohmann::json delivery_json;
 	delivery_json = getJsonData(file_path);
 
+	if (delivery_json["size"].get<int>() > size - occupied_space_size) {
+		std::cout << "Delivery doesn't fit in the Warehouse\n";
+		return;
+	}
+	for (const auto& box : delivery_json.at("boxes")) {
+		this->put(box.at("product_name"), box.at("type"));
+	}
+
+
 };
 Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
-	//load data from file
 	json_data = getJsonData(file_path);
 
-	name = json_data["name"].get<std::string>();
+	name = json_data.at("name");
+	size = json_data.at("size").get<unsigned int>();
+
 	for (const auto& area_json : json_data["areas"]) {
-		std::string type = area_json["type"].get<std::string>();
 		areas.push_back(std::make_unique<Area>(
-			type,
-			area_json["shelvings"]
+			area_json
 		));
 	}
 	PRINT_MSG("Warehouse ", name, " created");

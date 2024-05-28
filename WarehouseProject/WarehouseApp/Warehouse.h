@@ -17,7 +17,7 @@ public:
     ~Warehouse();
     void put(std::string name, std::string type);
     bool find(std::string name, std::string type) const;
-    void acceptDelivery(const std::string& file_name);
+    void acceptDelivery(const std::string& file_path);
 
 private:
     nlohmann::json getJsonData(const std::string& file_path) {
