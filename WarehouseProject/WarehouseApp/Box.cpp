@@ -4,7 +4,7 @@ Box::Box(const nlohmann::json& box) : product_name(box.at("product_name")) {
 	size = 360;
 	occupied_space_size = 360; //TODO calculate total size of products in box here, change json file so it includes product size
 	for (unsigned int i = 0; i < box["product_count"].get<unsigned int>(); ++i) {
-		products.push_back(std::make_unique<Product>(box["full_product_name"]));
+		products.push_back(std::make_unique<Product>(const nlohmann::json& box));
 	};
 	PRINT_MSG("put ", box.at("product_name"), " box");
 };
