@@ -15,7 +15,7 @@ public:
     Area(const nlohmann::json& area);
     ~Area();
     std::string getType() const;
-    void put(std::string name);
+    void put(const nlohmann::json& box);
     bool find(std::string name) const;
 
     //to delete later

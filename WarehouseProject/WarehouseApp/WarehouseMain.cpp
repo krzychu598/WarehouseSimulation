@@ -10,11 +10,11 @@ int main() {
 
 	//experimental code sample
 	Warehouse warehouse("warehouse_data.json");
-	warehouse.put("Foo", "electronics");
 	warehouse.find("Foo", "electronics");
 
 	warehouse.acceptDelivery("InitialDelivery.json");
-	warehouse.acceptDelivery("InitialDelivery.json");
+	warehouse.acceptDelivery("delivery1.json");
+
 
 	return 0;
 

@@ -7,7 +7,6 @@ class StorageSpace
 {
 public:
 	virtual Product take(Product& product);
-	virtual void put(Product& product);
 
 	bool find(std::string name, int amount=1) const;
 	bool find(int id, int amount = 1) const;

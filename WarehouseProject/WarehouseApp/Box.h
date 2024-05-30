@@ -2,6 +2,8 @@
 #include "StorageSpace.h"
 #include "nlohmann/json.hpp"
 #include "Product.h"
+#include <iostream>
+#include "DebugMacros.h"
 
 class Box :
     public StorageSpace
@@ -13,11 +15,9 @@ public:
     unsigned int getEmptySpace() const;
     unsigned int getOccupiedSpace() const;
     void updateOccupiedSpace();
+    std::string getType() const;
 private:
     std::vector<std::unique_ptr<Product>> products;
-    std::string product;
-    unsigned int size = 360;
-    unsigned int occupied_space_size;
-    std::string type;
+    std::string product_name;
 };
 

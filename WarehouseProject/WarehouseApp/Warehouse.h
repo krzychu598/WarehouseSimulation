@@ -1,6 +1,7 @@
 #pragma once
 #include "StorageSpace.h"
 #include "Area.h"
+#include "Box.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -15,7 +16,7 @@ class Warehouse :
 public:
     Warehouse(const std::string& file_path);
     ~Warehouse();
-    void put(std::string name, std::string type);
+    void put(const nlohmann::json& box);
     bool find(std::string name, std::string type) const;
     void acceptDelivery(const std::string& file_path);
     void reserveSpace(unsigned int reserved_size);
@@ -41,3 +42,5 @@ private:
     std::string name;
     nlohmann::json json_data;
 };
+
+//TODO Update json file, product should contain size, Box has const size 360

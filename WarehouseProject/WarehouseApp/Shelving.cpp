@@ -8,4 +8,16 @@ Shelving::Shelving(const nlohmann::json& shelving){
 	*/
 };
 
-void Shelving::put(std::string name) {};
+void Shelving::put(const nlohmann::json& box) {
+	boxes.push_back(std::make_unique<Box>(box));
+	
+};
+//TODO change this function
+bool Shelving::find(std::string& name) const{
+	for (const auto& box : boxes) {
+		if (box->getType() == name) {
+			return true;
+		}
+	}
+	return false;
+}

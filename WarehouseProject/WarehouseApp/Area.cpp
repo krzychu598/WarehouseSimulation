@@ -13,13 +13,22 @@ Area::~Area() { PRINT_MSG("Area ", type, " destroyed"); };
 std::string Area::getType() const {	return type; };
 
 
-void Area::put(std::string name) {
+void Area::put(const nlohmann::json& box) {
 	occupied_space_size++;
-	PRINT_MSG("object ", name, " put");
-	products.push_back(name);
+	//TODO calculate priority, check shelving empty size, change this code later
+	shelvings[0]->put(box);
 }
 
 bool Area::find(std::string name) const {
+	for (auto& shelving : shelvings) {
+		if(shelving->find(name) == true){
+			return true;
+		}
+		return false;
+	}
+
+
+	/*
 	auto it = std::find(products.begin(), products.end(), name);
 	if (it != products.end()) {
 		PRINT_MSG("object ", name, " found");
@@ -29,4 +38,5 @@ bool Area::find(std::string name) const {
 		PRINT_MSG("object ", name, " not found");
 		return false;
 	}
+	*/
 }

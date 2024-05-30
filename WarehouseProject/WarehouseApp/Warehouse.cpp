@@ -1,20 +1,22 @@
 #include "Warehouse.h"
 
-void Warehouse::put(std::string name, std::string type) {
+void Warehouse::put(const nlohmann::json& box) {
 	for (auto& area : areas) {
-		if ((area)->getType() == type) {
-			(area)->put(name);
+		if ((area)->getType() == box["type"]) {
+			(area)->put(box);
 			return;
 		}
 	}
-	PRINT_MSG("Couldn't put: ", name, "");
-	PRINT_MSG("No appropiate area: ", type, "");
+	PRINT_MSG("Couldn't put: ", box["product_name"], "");
+	PRINT_MSG("No appropiate area: ", box["type"], "");
 }
 
 bool Warehouse::find(std::string name, std::string type) const {
 	for (auto& area : areas) {
 		if ((area)->getType() == type) {
-			return (area)->find(name);
+			bool result = area->find(name);
+			PRINT_MSG_N("object ", name, result, " found");
+			return result;
 		}
 	}
 	PRINT_MSG("object ", name, " not found");
@@ -42,9 +44,8 @@ void Warehouse::acceptDelivery(const std::string& file_path) {
 		};
 	};
 	occupied_space_size += delivery_size;
-	//TODO Now Box objects should be created and put in according places
 	for (const auto& box : delivery_json.at("boxes")) {
-		this->put(box.at("product_name"), box.at("type"));
+		this->put(box);
 	};
 };
 
