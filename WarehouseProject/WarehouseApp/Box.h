@@ -12,12 +12,14 @@ public:
     Box(const nlohmann::json& box);
     void put(Product& product);
     unsigned int getProductAmount() const;
-    unsigned int getEmptySpace() const;
-    unsigned int getOccupiedSpace() const;
     void updateOccupiedSpace();
+    unsigned int getFullPrice() const;
     std::string getType() const;
+    std::string getProductName() const;
+
 private:
     std::vector<std::unique_ptr<Product>> products;
     std::string product_name;
+    std::string type;
 };
 

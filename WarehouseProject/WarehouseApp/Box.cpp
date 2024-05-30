@@ -11,7 +11,7 @@ Box::Box(const nlohmann::json& box) : product_name(box.at("product_name")) {
 void Box::put(Product& product) {};
 //TODO for now returns zero
 unsigned int Box::getProductAmount() const { return 0; };
-unsigned int Box::getEmptySpace() const { return 0; };
-unsigned int Box::getOccupiedSpace() const { return 0; };
 void Box::updateOccupiedSpace() {};
-std::string Box::getType() const { return product_name; };
+unsigned int Box::getFullPrice() const {};
+std::string Box::getType() const { return type; };
+std::string Box::getProductName() const { return product_name; };
