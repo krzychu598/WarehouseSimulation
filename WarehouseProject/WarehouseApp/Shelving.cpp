@@ -1,4 +1,5 @@
 #include "Shelving.h"
+#include <variant>
 
 Shelving::Shelving(const nlohmann::json& shelving){
 	size = shelving["size"].get<int>();
@@ -12,11 +13,11 @@ void Shelving::put(const nlohmann::json& box) {
 	boxes.push_back(std::make_unique<Box>(box));
 	
 };
-//TODO change this function
-bool Shelving::find(std::string& name) const{
+//TODO change this function (I changed it, I don't know if this should return bool or not, but my version doesn't work anyways)
+std::variant<Product, bool> Shelving::find(std::string& name, std::string& type) const{ //not working because I'm on c++14 not 17
 	for (const auto& box : boxes) {
-		if (box->getType() == name) {
-			return true;
+		if (box->getType() == type) {
+			if (box->find(name)) { return box->getProduct(name); }
 		}
 	}
 	return false;

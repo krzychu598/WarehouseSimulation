@@ -18,7 +18,21 @@ void Box::put(Product& product) {
 		this->updateOccupiedSpace();
 	}
 	else {}
-
+};
+bool Box::find(std::string name) const 
+{
+	for (const auto& product : products) 
+	{
+		if (product->getName() == name) { return true; };
+	}
+	return false;
+};
+std::unique_ptr<Product> Box::getProduct(std::string name) const //Weird error, not sure what to do, little help would be appreciated
+{
+	for (const auto& product : products)
+	{
+		if (product->getName() == name) { return product; };
+	}
 };
 unsigned int Box::getProductAmount() const { return products.size(); };
 unsigned int Box::getOccupiedSpace() const { return occupied_space; };
