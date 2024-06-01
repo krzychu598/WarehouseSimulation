@@ -21,5 +21,6 @@ private:
     std::vector<std::unique_ptr<Product>> products;
     std::string product_name;
     std::string type;
+    unsigned int occupied_space;
 };
 
