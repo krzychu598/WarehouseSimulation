@@ -1,11 +1,13 @@
 #include "Product.h"
-Product::Product(std::string name, unsigned int p_priority, int p_size) :name(name), priority(p_priority), size(p_size)
-{}
+Product::Product(std::string name, unsigned int priority, unsigned int size, unsigned int price, std::string type)
+	: name(name), priority(priority), size(size), price(price), type(type) {};
 Product::Product()
 {
 	name = "Undefined";
 	priority = 0;
 	size = 0;
+	price = 0;
+	type = "Undefined";
 }
 void Product::setName(std::string new_name)
 {
@@ -19,16 +21,17 @@ void Product::setSize(unsigned int new_size)
 {
 	size = new_size;
 }
-std::string Product::getName()
+std::string Product::getName() const
 {
 	return name;
 }
-unsigned int Product::getSize()
+unsigned int Product::getSize() const
 {
 	return size;
 }
-unsigned int Product::getPriority()
+unsigned int Product::getPriority() const
 {
 	return priority;
 }
-
+unsigned int Product::getPrice() const { return price; };
+std::string Product::getType() const { return type; };
