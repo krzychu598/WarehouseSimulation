@@ -1,6 +1,6 @@
 ﻿#include <iostream>
-//#include "Warehouse.h"
-//#include "Product.h"
+#include "Warehouse.h"
+#include "Product.h"
 // Zmienne z _ np. storage_space
 // Funkcje camelCase
 // Push to dev
@@ -9,14 +9,11 @@
 int main() {
 
 	//experimental code sample
-	/*
+	
 	Warehouse warehouse("warehouse_data.json");
-	warehouse.find("Foo", "electronics");
-
-	warehouse.acceptDelivery("InitialDelivery.json");
+	
+	
 	warehouse.acceptDelivery("delivery1.json");
-	*/
-	std::cout << "Hellow";
 	return 0;
 
 }

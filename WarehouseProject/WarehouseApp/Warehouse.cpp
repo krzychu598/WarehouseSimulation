@@ -65,22 +65,12 @@ void Warehouse::acceptDelivery(const std::string& file_path) {
 		};
 	};
 	occupied_space_size += delivery_size;
-	for (const auto& box : delivery_json.at("boxes")) {
+	for (const auto& box : delivery_json["boxes"]) {
 		this->put(box);
 	};
 };
 
 void Warehouse::sendDelivery(const std::string& file_path) {
-	/*possible file structure :
-	{
-	products: [
-		{name: Laptop,
-		type: electronics,
-		amount: 1
-		}
-			]
-	}
-	*/
 	nlohmann::json delivery_data = getJsonData(file_path);
 	nlohmann::json products = delivery_data["products"];
 	for (auto& product : products) {
@@ -89,9 +79,10 @@ void Warehouse::sendDelivery(const std::string& file_path) {
 			return;
 			};
 	};
-	Box box();
+	Box box;
 	for (const auto& product : products) {
-		//box.put(std::move(this->get(product["product_name"])));
+		std::string product_name = product["product_name"];
+		box.put(std::move(this->get(product_name, product["type"])));
 	}
 };
 

@@ -16,11 +16,13 @@ public:
 	unsigned int getPrice() const;
 	std::string getType() const;
 private:
+	std::string type;
+	std::string type_name;
 	std::string name;
+	std::string manufacturer_name;
 	unsigned int priority;
 	unsigned int size;
 	unsigned int price;
-	std::string type;
 };
 
 

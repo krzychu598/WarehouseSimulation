@@ -25,20 +25,20 @@ public:
 private:
     nlohmann::json getJsonData(const std::string& file_path) {
         std::ifstream f(file_path);
-
+        nlohmann::json data;
         if (!f.is_open()) {
             throw std::runtime_error("Couldn't open the file");
         }
 
         try {
-            f >> Warehouse::json_data;
+            f >> data;
         }
         catch (...) {
             throw std::runtime_error("cannot transfer stream to json member");
         }
 
         f.close();
-        return json_data;
+        return data;
     }
     std::vector<std::unique_ptr<Area>> areas;
     std::string name;
