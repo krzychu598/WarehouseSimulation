@@ -17,6 +17,9 @@ public:
     Warehouse(const std::string& file_path);
     ~Warehouse();
     void put(const nlohmann::json& box);
+    void put(Product& product);
+    //to delete later
+    void put(std::string name, std::string type);
     bool find(std::string name, std::string type) const;
     void acceptDelivery(const std::string& file_path);
     void reserveSpace(unsigned int reserved_size);
