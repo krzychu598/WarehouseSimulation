@@ -13,12 +13,17 @@ void Shelving::put(const nlohmann::json& box) {
 	boxes.push_back(std::make_unique<Box>(box));
 	
 };
-//TODO change this function (I changed it, I don't know if this should return bool or not, but my version doesn't work anyways)
-std::variant<Product, bool> Shelving::find(std::string& name, std::string& type) const{ //not working because I'm on c++14 not 17
+
+bool Shelving::find(std::string& name, int amount) const{
 	for (const auto& box : boxes) {
-		if (box->getType() == type) {
-			if (box->find(name)) { return box->getProduct(name); }
+		curr_amount = 0;
+		if (box.find(name) == true) {
+			curr_amount += box.getProductAmount(name);
+			if (curr_amount > amount) {
+				return true;
+			}
 		}
+
 	}
 	return false;
 }

@@ -10,7 +10,7 @@ class Shelving :
 public:
     Shelving(const nlohmann::json& shelving);
     void put(const nlohmann::json& box);
-    bool find(std::string& name, std::string& type) const;
+    bool find(std::string& name, int amount) const;
 private:
     std::vector<std::unique_ptr<Box>> boxes;
     enum class Priority { A, B, C };

@@ -21,22 +21,23 @@ void Area::put(const nlohmann::json& box) {
 //TODO najpierw sprawdza priority A -> B -> C
 bool Area::find(std::string name, int amount) const {
 	for (auto& shelving : shelvings) {
-		if(shelving->find(name) == true){
+		if(shelving->find(name, amount) == true){
 			return true;
 		}
-		return false;
 	}
-
-
-	/*
-	auto it = std::find(products.begin(), products.end(), name);
-	if (it != products.end()) {
-		PRINT_MSG("object ", name, " found");
-		return true;
-	}
-	else {
-		PRINT_MSG("object ", name, " not found");
-		return false;
-	}
-	*/
+	return false;
 }
+
+
+
+/*
+auto it = std::find(products.begin(), products.end(), name);
+if (it != products.end()) {
+	PRINT_MSG("object ", name, " found");
+	return true;
+}
+else {
+	PRINT_MSG("object ", name, " not found");
+	return false;
+}
+*/

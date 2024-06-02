@@ -9,6 +9,15 @@ Product::Product()
 	price = 0;
 	type = "Undefined";
 }
+
+Product::Product(const nlohmann::json& info) {
+	name = info["product_full_name"];
+	priority = 0;
+	size = info["size"];
+	price = info["price"];
+
+
+}
 void Product::setName(std::string new_name)
 {
 	name = new_name;

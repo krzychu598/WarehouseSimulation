@@ -1,5 +1,5 @@
 #include "Box.h"
-
+//TODO consider creating another class, subclass of box. StorageBox has items of only one type, DeliveryBox can have items of several types
 Box::Box(const nlohmann::json& box) : product_name(box.at("product_name")) {
 	size = 360;
 	occupied_space_size = 0;
@@ -16,7 +16,7 @@ Box::Box(){
 };
 void Box::put(std::unique_ptr<Product> product) {
 
-	products.push_back(product);
+	products.push_back(std::move(product));
 	this->updateOccupiedSpace();
 	
 };
@@ -28,7 +28,7 @@ bool Box::find(std::string name) const
 	}
 	return false;
 };
-std::unique_ptr<Product> Box::getProduct(std::string name) const //Weird error, not sure what to do, little help would be appreciated
+std::unique_ptr<Product> Box::getProduct(std::string name) const //Weird error, not sure what to do, little help would be appreciated.-> Fixed. Remember to use std::move when transfering unique_ptr
 {
 	for (const auto& product : products)
 	{
@@ -36,6 +36,16 @@ std::unique_ptr<Product> Box::getProduct(std::string name) const //Weird error, 
 	}
 };
 unsigned int Box::getProductAmount() const { return products.size(); };
+unsigned int Box::getProductAmount(std::string& name) const {
+	unsigned int amount = 0;
+	for (auto& product : products) {
+		if (product->getName() == name) {
+			amount++;
+		}
+	}
+	return amount;
+};
+
 void Box::updateOccupiedSpace() 
 {
 	unsigned int new_space = 0;

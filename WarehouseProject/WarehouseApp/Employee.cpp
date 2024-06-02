@@ -4,7 +4,7 @@ Employee::Employee(unsigned int p_id, bool p_is_forklift_certified):id(p_id), is
 Employee::Employee()
 {
 	id = 0;
-	is_forklift_certified = False;
+	is_forklift_certified = false;
 }
 bool Employee::is_certified()
 {

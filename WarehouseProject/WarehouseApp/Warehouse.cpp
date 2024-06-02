@@ -13,8 +13,18 @@ void Warehouse::put(const nlohmann::json& box) {
 
 bool Warehouse::find(std::string name, int amount, std::string type) const {
 	for (auto& area : areas) {
-		if ((area)->getType() == type) {
-			bool result = area->find(name);
+
+		if (type == "undefined") {
+			if (!area->find(name,amount)) {
+				continue;
+			};
+			PRINT_MSG("object ", name, " found");
+			return true;
+
+		}
+
+		if (area->getType() == type) {
+			bool result = area->find(name, amount);
 			PRINT_MSG_N("object ", name, result, " found");
 			return result;
 		}

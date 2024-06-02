@@ -17,9 +17,6 @@ public:
     std::string getType() const;
     void put(const nlohmann::json& box);
     bool find(std::string name, int amount = 1) const;
-
-    //to delete later
-    std::vector<std::string> products;
 private:
     std::string type;
     std::vector<std::unique_ptr<Shelving>> shelvings;
