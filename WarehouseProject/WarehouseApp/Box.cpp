@@ -14,13 +14,11 @@ Box::Box(const nlohmann::json& box) : product_name(box.at("product_name")) {
 Box::Box(){
 	size = 360;
 };
-void Box::put(Product& product) {
-	if (product.getType() == this->getType())
-	{
-		products.push_back(std::make_unique<Product>(product));
-		this->updateOccupiedSpace();
-	}
-	else {}
+void Box::put(std::unique_ptr<Product> product) {
+
+	products.push_back(product);
+	this->updateOccupiedSpace();
+	
 };
 bool Box::find(std::string name) const 
 {

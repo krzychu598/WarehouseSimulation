@@ -19,7 +19,6 @@ public:
     ~Warehouse();
     void put(const nlohmann::json& box);
     bool find(std::string name, int amount = 1, std::string type = "undefined") const;
-    std::unique_ptr<Product> get(std::string name, std::string type = "undefined");
     void acceptDelivery(const std::string& file_path);
     void sendDelivery(const std::string file_path);
 private:

@@ -69,13 +69,13 @@ void Warehouse::sendDelivery(const std::string& file_path) {
 	products = delivery_data["products"];
 	for (auto& product : products) {
 		if (!this->find(product["name"], product["amount"], product["type"])) {
-			std::cout << "delivery cannot be sent. Not enough " << product["name"];
+			std::cout << "delivery cannot be sent. Not enough " << product["name"] << '\n';
 			return;
 			};
 	};
 	Box box();
 	for (auto& product : products) {
-		box.put
+		box.put(this->get(product["name"]));
 	}
 };
 
