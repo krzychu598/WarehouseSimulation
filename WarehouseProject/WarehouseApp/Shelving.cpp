@@ -16,10 +16,10 @@ void Shelving::put(const nlohmann::json& box) {
 
 bool Shelving::find(std::string& name, int amount) const{
 	for (const auto& box : boxes) {
-		curr_amount = 0;
-		if (box.find(name) == true) {
-			curr_amount += box.getProductAmount(name);
-			if (curr_amount > amount) {
+		unsigned int curr_amount = 0;
+		if (box->find(name) == true) {
+			curr_amount += box->getProductAmount(name);
+			if (curr_amount >= amount) {
 				return true;
 			}
 		}
@@ -27,3 +27,11 @@ bool Shelving::find(std::string& name, int amount) const{
 	}
 	return false;
 }
+
+std::unique_ptr<Product> Shelving::get(std::string& name) {
+	for (auto& box : boxes) {
+		if (box->find(name) == true) {
+			return std::move(box->get(name));
+		}
+	}
+};

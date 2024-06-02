@@ -16,7 +16,7 @@ int main() {
 	warehouse.acceptDelivery("InitialDelivery.json");
 	warehouse.acceptDelivery("delivery1.json");
 	*/
-	std::cout << "Hellow" << endl;
+	std::cout << "Hellow";
 	return 0;
 
 }

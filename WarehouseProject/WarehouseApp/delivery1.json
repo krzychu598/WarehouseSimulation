@@ -1,144 +1,208 @@
 {
   "size": {
+    "size": 20,
+    "electronics": 20
+  },
+  "boxes": [
+    {
+      "type": "electronics",
+      "id": 67247,
+      "product_type_name": "Graphics Card",
+      "product_name": "NVIDIA GeForce GTX 1660 Super",
+      "manufacturer_name": "NVIDIA",
+      "price": 36339,
       "size": 15,
-      "electronics": 14,
-      "industrial": 1
+      "product_count": 24
     },
-    "boxes": [
-      {
-        "type": "electronics",
-        "id": 79477,
-        "product_name": "Processor",
-        "full_product_name": "Intel Core i3-10100F",
-        "manufacturer_name": "Intel",
-        "price": 37961,
-        "product_count": 2
-      },
-      {
-        "type": "electronics",
-        "id": 80930,
-        "product_name": "Tablet",
-        "full_product_name": "Samsung Galaxy Tab S7",
-        "manufacturer_name": "Microsoft",
-        "price": 90798,
-        "product_count": 10
-      },
-      {
-        "type": "electronics",
-        "id": 76813,
-        "product_name": "Keyboard",
-        "full_product_name": "Razer BlackWidow Elite",
-        "manufacturer_name": "Logitech",
-        "price": 3784,
-        "product_count": 3
-      },
-      {
-        "type": "electronics",
-        "id": 62774,
-        "product_name": "Laptop",
-        "full_product_name": "Microsoft Surface Laptop 4",
-        "manufacturer_name": "Dell",
-        "price": 180059,
-        "product_count": 6
-      },
-      {
-        "type": "electronics",
-        "id": 26405,
-        "product_name": "Processor",
-        "full_product_name": "AMD Ryzen 7 5800X",
-        "manufacturer_name": "AMD",
-        "price": 20180,
-        "product_count": 14
-      },
-      {
-        "type": "electronics",
-        "id": 38135,
-        "product_name": "Earphones",
-        "full_product_name": "Jabra Elite 75t",
-        "manufacturer_name": "Jabra",
-        "price": 5939,
-        "product_count": 19
-      },
-      {
-        "type": "electronics",
-        "id": 99498,
-        "product_name": "Smartphone",
-        "full_product_name": "Xiaomi Mi 11 Ultra",
-        "manufacturer_name": "Apple",
-        "price": 73796,
-        "product_count": 9
-      },
-      {
-        "type": "electronics",
-        "id": 97272,
-        "product_name": "Graphics Card",
-        "full_product_name": "NVIDIA GeForce RTX 3060 Ti",
-        "manufacturer_name": "AMD",
-        "price": 146688,
-        "product_count": 8
-      },
-      {
-        "type": "electronics",
-        "id": 18841,
-        "product_name": "Earphones",
-        "full_product_name": "Apple AirPods Pro",
-        "manufacturer_name": "Sony",
-        "price": 15242,
-        "product_count": 12
-      },
-      {
-        "type": "electronics",
-        "id": 33837,
-        "product_name": "Smartphone",
-        "full_product_name": "Huawei P50 Pro",
-        "manufacturer_name": "Google",
-        "price": 112542,
-        "product_count": 10
-      },
-      {
-        "type": "electronics",
-        "id": 12923,
-        "product_name": "Charger",
-        "full_product_name": "RAVPower 65W PD Charger",
-        "manufacturer_name": "Apple",
-        "price": 5278,
-        "product_count": 19
-      },
-      {
-        "type": "electronics",
-        "id": 32421,
-        "product_name": "Mouse",
-        "full_product_name": "Microsoft Arc Mouse",
-        "manufacturer_name": "Logitech",
-        "price": 6117,
-        "product_count": 6
-      },
-      {
-        "type": "electronics",
-        "id": 41982,
-        "product_name": "Graphics Card",
-        "full_product_name": "NVIDIA GeForce GTX 1660 Super",
-        "manufacturer_name": "ASUS",
-        "price": 163323,
-        "product_count": 12
-      },
-      {
-        "type": "electronics",
-        "id": 45510,
-        "product_name": "Graphics Card",
-        "full_product_name": "NVIDIA GeForce RTX 3070",
-        "manufacturer_name": "ASUS",
-        "price": 92407,
-        "product_count": 16
-      },
-      {
-        "type": "industrial",
-        "id": 93060,
-        "product_name": "Safety Gloves",
-        "full_product_name": "Kimberly-Clark Kleenguard G10 Gloves",
-        "manufacturer_name": "3M",
-        "price": 1672,
-        "product_count": 10
-      }
-    ]
-  }
+    {
+      "type": "electronics",
+      "id": 56898,
+      "product_type_name": "Graphics Card",
+      "product_name": "NVIDIA GeForce RTX 3070",
+      "manufacturer_name": "NVIDIA",
+      "price": 172404,
+      "size": 15,
+      "product_count": 24
+    },
+    {
+      "type": "electronics",
+      "id": 15683,
+      "product_type_name": "Powerbank",
+      "product_name": "Belkin Boost Charge Power Bank",
+      "manufacturer_name": "Belkin",
+      "price": 3189,
+      "size": 10,
+      "product_count": 36
+    },
+    {
+      "type": "electronics",
+      "id": 22777,
+      "product_type_name": "Processor",
+      "product_name": "AMD Ryzen 3 3300X",
+      "manufacturer_name": "AMD",
+      "price": 53224,
+      "size": 15,
+      "product_count": 24
+    },
+    {
+      "type": "electronics",
+      "id": 19205,
+      "product_type_name": "Mouse",
+      "product_name": "Logitech G Pro X Superlight",
+      "manufacturer_name": "Logitech",
+      "price": 7262,
+      "size": 10,
+      "product_count": 36
+    },
+    {
+      "type": "electronics",
+      "id": 63627,
+      "product_type_name": "Charger",
+      "product_name": "Belkin Boost Charge 18W",
+      "manufacturer_name": "Belkin",
+      "price": 6070,
+      "size": 6,
+      "product_count": 60
+    },
+    {
+      "type": "electronics",
+      "id": 85894,
+      "product_type_name": "Laptop",
+      "product_name": "LG Gram 17",
+      "manufacturer_name": "LG",
+      "price": 181944,
+      "size": 36,
+      "product_count": 10
+    },
+    {
+      "type": "electronics",
+      "id": 8443,
+      "product_type_name": "Mouse",
+      "product_name": "Apple Magic Mouse 2",
+      "manufacturer_name": "Apple",
+      "price": 10422,
+      "size": 10,
+      "product_count": 36
+    },
+    {
+      "type": "electronics",
+      "id": 55934,
+      "product_type_name": "Laptop",
+      "product_name": "Microsoft Surface Laptop 4",
+      "manufacturer_name": "Microsoft",
+      "price": 151625,
+      "size": 36,
+      "product_count": 10
+    },
+    {
+      "type": "electronics",
+      "id": 49474,
+      "product_type_name": "Graphics Card",
+      "product_name": "NVIDIA GeForce RTX 3080",
+      "manufacturer_name": "NVIDIA",
+      "price": 126124,
+      "size": 15,
+      "product_count": 24
+    },
+    {
+      "type": "electronics",
+      "id": 91486,
+      "product_type_name": "Earphones",
+      "product_name": "Samsung Galaxy Buds Pro",
+      "manufacturer_name": "Samsung",
+      "price": 19375,
+      "size": 8,
+      "product_count": 45
+    },
+    {
+      "type": "electronics",
+      "id": 37397,
+      "product_type_name": "Tablet",
+      "product_name": "Huawei MatePad Pro",
+      "manufacturer_name": "Huawei",
+      "price": 33797,
+      "size": 18,
+      "product_count": 20
+    },
+    {
+      "type": "electronics",
+      "id": 74899,
+      "product_type_name": "Earphones",
+      "product_name": "Jabra Elite 75t",
+      "manufacturer_name": "Jabra",
+      "price": 8556,
+      "size": 8,
+      "product_count": 45
+    },
+    {
+      "type": "electronics",
+      "id": 36489,
+      "product_type_name": "Powerbank",
+      "product_name": "Anker PowerCore 10000",
+      "manufacturer_name": "Anker",
+      "price": 1724,
+      "size": 10,
+      "product_count": 36
+    },
+    {
+      "type": "electronics",
+      "id": 44753,
+      "product_type_name": "Mouse",
+      "product_name": "Razer Naga Trinity",
+      "manufacturer_name": "Razer",
+      "price": 7412,
+      "size": 10,
+      "product_count": 36
+    },
+    {
+      "type": "electronics",
+      "id": 41401,
+      "product_type_name": "Laptop",
+      "product_name": "Lenovo ThinkPad X1 Carbon",
+      "manufacturer_name": "Lenovo",
+      "price": 62520,
+      "size": 36,
+      "product_count": 10
+    },
+    {
+      "type": "electronics",
+      "id": 99754,
+      "product_type_name": "Processor",
+      "product_name": "AMD Ryzen 7 5800X",
+      "manufacturer_name": "AMD",
+      "price": 18487,
+      "size": 15,
+      "product_count": 24
+    },
+    {
+      "type": "electronics",
+      "id": 43550,
+      "product_type_name": "Tablet",
+      "product_name": "Microsoft Surface Pro 7",
+      "manufacturer_name": "Microsoft",
+      "price": 27024,
+      "size": 18,
+      "product_count": 20
+    },
+    {
+      "type": "electronics",
+      "id": 54595,
+      "product_type_name": "Charger",
+      "product_name": "Samsung 25W USB-C Fast Charging Wall Charger",
+      "manufacturer_name": "Samsung",
+      "price": 1637,
+      "size": 6,
+      "product_count": 60
+    },
+    {
+      "type": "electronics",
+      "id": 7706,
+      "product_type_name": "Processor",
+      "product_name": "AMD Ryzen 5 5600X",
+      "manufacturer_name": "AMD",
+      "price": 56184,
+      "size": 15,
+      "product_count": 24
+    }
+  ]
+}

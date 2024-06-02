@@ -28,6 +28,13 @@ bool Area::find(std::string name, int amount) const {
 	return false;
 }
 
+std::unique_ptr<Product> Area::get(std::string& name) {
+	for (auto& shelving : shelvings) {
+		if (shelving->find(name) == true) {
+			return std::move(shelving->get(name));
+		}
+	}
+};
 
 
 /*

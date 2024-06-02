@@ -28,9 +28,9 @@ bool Box::find(std::string name) const
 	}
 	return false;
 };
-std::unique_ptr<Product> Box::getProduct(std::string name) const //Weird error, not sure what to do, little help would be appreciated.-> Fixed. Remember to use std::move when transfering unique_ptr
+std::unique_ptr<Product> Box::get(std::string& name) //Weird error, not sure what to do, little help would be appreciated.-> Fixed. Remember to use std::move when transfering unique_ptr
 {
-	for (const auto& product : products)
+	for (auto& product : products)
 	{
 		if (product->getName() == name) { return std::move(product); };
 	}
@@ -58,7 +58,7 @@ void Box::updateOccupiedSpace()
 unsigned int Box::getFullPrice() const { return full_price; };
 void Box::updateFullPrice()
 {
-	unsigned int new_price;
+	unsigned int new_price = 0;
 	for (const auto& product : products)
 	{
 		new_price += product->getPrice();

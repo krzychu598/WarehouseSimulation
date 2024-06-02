@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "type": "electronics",
+      "product_type_name": "Tablet",
+      "product_name": "Xiaomi Mi Pad 5",
+      "manufacturer_name": "Xiaomi",
+      "quantity": 1
+    },
+    {
+      "type": "electronics",
+      "product_type_name": "Earphones",
+      "product_name": "Jaybird Vista 2",
+      "manufacturer_name": "Jaybird",
+      "quantity": 1
+    },
+    {
+      "type": "electronics",
+      "product_type_name": "Tablet",
+      "product_name": "Google Pixel Slate",
+      "manufacturer_name": "Google",
+      "quantity": 1
+    }
+  ]
+}

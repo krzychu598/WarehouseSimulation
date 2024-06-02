@@ -6,6 +6,7 @@
 
 #include "StorageSpace.h"
 #include "Shelving.h"
+#include "Product.h"
 #include "DebugMacros.h"
 
 class Area :
@@ -17,6 +18,7 @@ public:
     std::string getType() const;
     void put(const nlohmann::json& box);
     bool find(std::string name, int amount = 1) const;
+    std::unique_ptr<Product> get(std::string& name);
 private:
     std::string type;
     std::vector<std::unique_ptr<Shelving>> shelvings;

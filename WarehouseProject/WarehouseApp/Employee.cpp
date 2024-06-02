@@ -21,3 +21,4 @@ void Employee::setId(unsigned int new_id)
 void Employee::setCertified(bool new_state)
 {
 	is_forklift_certified = new_state;
+}

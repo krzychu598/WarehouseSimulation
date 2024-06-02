@@ -71,13 +71,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="InitialDelivery.json">
-      <Filter>Json Files</Filter>
-    </None>
     <None Include="warehouse_data.json">
       <Filter>Json Files</Filter>
     </None>
     <None Include="delivery1.json">
+      <Filter>Json Files</Filter>
+    </None>
+    <None Include="delivery2.json">
+      <Filter>Json Files</Filter>
+    </None>
+    <None Include="request1.json">
+      <Filter>Json Files</Filter>
+    </None>
+    <None Include="request2.json">
       <Filter>Json Files</Filter>
     </None>
   </ItemGroup>

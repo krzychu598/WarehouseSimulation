@@ -33,8 +33,14 @@ bool Warehouse::find(std::string name, int amount, std::string type) const {
 	return false;
 }
 
-std::unique_ptr<Product> get(std::string name, std::string type = "undefined") {
+std::unique_ptr<Product> Warehouse::get(std::string& name, std::string type) {
+	for (auto& area : areas) {
 
+		if (area->getType() == type) {
+			return std::move(area->get(name));
+		}
+	}
+	PRINT_MSG("Couldn't get ", name, "");
 };
 
 
@@ -75,17 +81,17 @@ void Warehouse::sendDelivery(const std::string& file_path) {
 			]
 	}
 	*/
-	nlohmann::json delivery_data = getJsonData();
-	products = delivery_data["products"];
+	nlohmann::json delivery_data = getJsonData(file_path);
+	nlohmann::json products = delivery_data["products"];
 	for (auto& product : products) {
-		if (!this->find(product["name"], product["amount"], product["type"])) {
+		if (!this->find(product["product_name"], product["quantity"], product["type"])) {
 			std::cout << "delivery cannot be sent. Not enough " << product["name"] << '\n';
 			return;
 			};
 	};
 	Box box();
-	for (auto& product : products) {
-		box.put(this->get(product["name"]));
+	for (const auto& product : products) {
+		//box.put(std::move(this->get(product["product_name"])));
 	}
 };
 
