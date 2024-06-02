@@ -11,7 +11,7 @@ void Warehouse::put(const nlohmann::json& box) {
 	PRINT_MSG("No appropiate area: ", box["type"], "");
 }
 
-bool Warehouse::find(std::string name, std::string type) const {
+bool Warehouse::find(std::string name, int amount, std::string type) const {
 	for (auto& area : areas) {
 		if ((area)->getType() == type) {
 			bool result = area->find(name);
@@ -22,6 +22,11 @@ bool Warehouse::find(std::string name, std::string type) const {
 	PRINT_MSG("object ", name, " not found");
 	return false;
 }
+
+std::unique_ptr<Product> get(std::string name, std::string type = "undefined") {
+
+};
+
 
 void Warehouse::acceptDelivery(const std::string& file_path) {
 	 
@@ -49,8 +54,29 @@ void Warehouse::acceptDelivery(const std::string& file_path) {
 	};
 };
 
-void Warehouse::reserveSpace(unsigned int reserved_size) {
-	
+void Warehouse::sendDelivery(const std::string& file_path) {
+	/*possible file structure :
+	{
+	products: [
+		{name: Laptop,
+		type: electronics,
+		amount: 1
+		}
+			]
+	}
+	*/
+	nlohmann::json delivery_data = getJsonData();
+	products = delivery_data["products"];
+	for (auto& product : products) {
+		if (!this->find(product["name"], product["amount"], product["type"])) {
+			std::cout << "delivery cannot be sent. Not enough " << product["name"];
+			return;
+			};
+	};
+	Box box();
+	for (auto& product : products) {
+		box.put
+	}
 };
 
 Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {

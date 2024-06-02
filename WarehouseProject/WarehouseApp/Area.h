@@ -16,7 +16,7 @@ public:
     ~Area();
     std::string getType() const;
     void put(const nlohmann::json& box);
-    bool find(std::string name) const;
+    bool find(std::string name, int amount = 1) const;
 
     //to delete later
     std::vector<std::string> products;

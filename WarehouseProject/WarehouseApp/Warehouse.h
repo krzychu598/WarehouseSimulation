@@ -2,6 +2,7 @@
 #include "StorageSpace.h"
 #include "Area.h"
 #include "Box.h"
+#include "Product.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -17,12 +18,10 @@ public:
     Warehouse(const std::string& file_path);
     ~Warehouse();
     void put(const nlohmann::json& box);
-    void put(Product& product);
-    //to delete later
-    bool find(std::string name, std::string type) const;
-
+    bool find(std::string name, int amount = 1, std::string type = "undefined") const;
+    std::unique_ptr<Product> get(std::string name, std::string type = "undefined");
     void acceptDelivery(const std::string& file_path);
-    void reserveSpace(unsigned int reserved_size);
+    void sendDelivery(const std::string file_path);
 private:
     nlohmann::json getJsonData(const std::string& file_path) {
         std::ifstream f(file_path);

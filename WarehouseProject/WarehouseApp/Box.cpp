@@ -34,7 +34,7 @@ std::unique_ptr<Product> Box::getProduct(std::string name) const //Weird error, 
 {
 	for (const auto& product : products)
 	{
-		if (product->getName() == name) { return product; };
+		if (product->getName() == name) { return std::move(product); };
 	}
 };
 unsigned int Box::getProductAmount() const { return products.size(); };
