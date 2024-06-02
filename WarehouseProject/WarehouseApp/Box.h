@@ -10,6 +10,7 @@ class Box :
 {
 public:
     Box(const nlohmann::json& box);
+    Box();  //default constructor
     void put(Product& product);
     bool find(std::string name) const;
     std::unique_ptr<Product> getProduct(std::string name) const; //this method does essantialy the same thing as find but returns the product instead of bool. Don't know if this is right.
