@@ -27,9 +27,9 @@
     {
       "type": "electronics",
       "id": 15683,
-      "product_type_name": "Powerbank",
-      "product_name": "Belkin Boost Charge Power Bank",
-      "manufacturer_name": "Belkin",
+      "product_type_name": "Earphones",
+      "product_name": "Jaybird Vista 2",
+      "manufacturer_name": "Jaybird",
       "price": 3189,
       "size": 10,
       "product_count": 36
@@ -37,9 +37,9 @@
     {
       "type": "electronics",
       "id": 22777,
-      "product_type_name": "Processor",
-      "product_name": "AMD Ryzen 3 3300X",
-      "manufacturer_name": "AMD",
+      "product_type_name": "Tablet",
+      "product_name": "Google Pixel Slate",
+      "manufacturer_name": "Google",
       "price": 53224,
       "size": 15,
       "product_count": 24

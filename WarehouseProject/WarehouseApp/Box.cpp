@@ -20,19 +20,26 @@ void Box::put(std::unique_ptr<Product> product) {
 	this->updateOccupiedSpace();
 	
 };
-bool Box::find(std::string name) const 
+bool Box::find(std::string& name) const 
 {
 	for (const auto& product : products) 
 	{
-		if (product->getName() == name) { return true; };
+		if (product->getName() == name) {
+			return true;
+		};
 	}
 	return false;
 };
 std::unique_ptr<Product> Box::get(std::string& name) //Weird error, not sure what to do, little help would be appreciated.-> Fixed. Remember to use std::move when transfering unique_ptr
 {
 	for (auto& product : products)
-	{
-		if (product->getName() == name) { return std::move(product); };
+	{	
+
+		if (product->getName() == name) {
+			auto ptr = std::move(products.back());
+			products.pop_back();
+			return ptr;
+		};
 	}
 };
 unsigned int Box::getProductAmount() const { return products.size(); };

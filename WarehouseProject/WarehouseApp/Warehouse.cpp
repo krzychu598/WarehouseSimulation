@@ -45,7 +45,7 @@ std::unique_ptr<Product> Warehouse::get(std::string& name, std::string type) {
 
 
 void Warehouse::acceptDelivery(const std::string& file_path) {
-	 
+	PRINT_MSG("\nInitializing delivery ", file_path, "");
 	nlohmann::json delivery_json = getJsonData(file_path);
 	unsigned int delivery_size = delivery_json["size"]["size"].get<int>();
 	if ( delivery_size > size - occupied_space_size) {
@@ -71,6 +71,7 @@ void Warehouse::acceptDelivery(const std::string& file_path) {
 };
 
 void Warehouse::sendDelivery(const std::string& file_path) {
+	PRINT_MSG("\nInitializing outgoing delivery ", file_path, "");
 	nlohmann::json delivery_data = getJsonData(file_path);
 	nlohmann::json products = delivery_data["products"];
 	for (auto& product : products) {
@@ -83,6 +84,7 @@ void Warehouse::sendDelivery(const std::string& file_path) {
 	for (const auto& product : products) {
 		std::string product_name = product["product_name"];
 		box.put(std::move(this->get(product_name, product["type"])));
+		PRINT_MSG("", product_name, " put in a delivery box");
 	}
 };
 
@@ -101,5 +103,5 @@ Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
 }
 
 Warehouse::~Warehouse() {
-	PRINT_MSG("Warehouse ", name, " destroyed");
+	PRINT_MSG("\nWarehouse ", name, " destroyed");
 }
