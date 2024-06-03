@@ -3,11 +3,13 @@
 #include "Area.h"
 #include "Box.h"
 #include "Product.h"
+#include "Employee.h"
 #include <iostream>
 #include <vector>
 #include <string>
 #include <stdexcept>
 #include <fstream>
+#include <unordered_map>
 #include "nlohmann/json.hpp"
 #include "DebugMacros.h"
 
@@ -40,9 +42,8 @@ private:
         f.close();
         return data;
     }
+    std::unordered_map<std::string, std::vector<std::unique_ptr<Employee>>> teams;
     std::vector<std::unique_ptr<Area>> areas;
     std::string name;
     nlohmann::json json_data;
 };
-
-//TODO Update json file, product should contain size, Box has const size 360

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5d427614-d17f-491a-9fd6-c1487bec2e8a}</ProjectGuid>
-    <RootNamespace>WarehouseApp</RootNamespace>
+    <ProjectGuid>{95866c23-5dc7-4a16-8d46-256559481d24}</ProjectGuid>
+    <RootNamespace>BoxGenerator</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,7 +104,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,28 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Area.cpp" />
-    <ClCompile Include="Box.cpp" />
-    <ClCompile Include="Employee.cpp" />
-    <ClCompile Include="Product.cpp" />
-    <ClCompile Include="Shelving.cpp" />
-    <ClCompile Include="StorageSpace.cpp" />
-    <ClCompile Include="Warehouse.cpp" />
-    <ClCompile Include="WarehouseMain.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Area.h" />
-    <ClInclude Include="Box.h" />
-    <ClInclude Include="Employee.h" />
-    <ClInclude Include="DebugMacros.h" />
-    <ClInclude Include="Product.h" />
-    <ClInclude Include="Shelving.h" />
-    <ClInclude Include="StorageSpace.h" />
-    <ClInclude Include="Warehouse.h" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="electronics.json" />
+    <None Include="food_and_drinks.json" />
+    <None Include="industrial.json" />
     <None Include="packages.config" />
-    <None Include="warehouse_data.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Delivery.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Delivery.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WarehouseApp\WarehouseApp.vcxproj">
+      <Project>{5d427614-d17f-491a-9fd6-c1487bec2e8a}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

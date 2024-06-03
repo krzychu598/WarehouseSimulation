@@ -1,5 +1,4 @@
 #include "Box.h"
-//TODO consider creating another class, subclass of box. StorageBox has items of only one type, DeliveryBox can have items of several types
 Box::Box(const nlohmann::json& box) : product_name(box.at("product_name")) {
 	size = 360;
 	occupied_space_size = 0;
@@ -30,8 +29,8 @@ bool Box::find(std::string& name) const
 	}
 	return false;
 };
-std::unique_ptr<Product> Box::get(std::string& name) //Weird error, not sure what to do, little help would be appreciated.-> Fixed. Remember to use std::move when transfering unique_ptr
-{
+std::unique_ptr<Product> Box::get(std::string& name)
+{	//works only for boxes sitting in storage.(doesn't work for outgoing delivery boxes)
 	for (auto& product : products)
 	{	
 

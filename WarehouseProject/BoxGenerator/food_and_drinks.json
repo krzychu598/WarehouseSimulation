@@ -1,0 +1,184 @@
+
+{
+  "products": [
+    {
+      "product_name": "Cola",
+      "products_manufacturers": [
+        { "product_name": "Coca-Cola Classic", "manufacturer_name": "Coca-Cola" },
+        { "product_name": "Pepsi", "manufacturer_name": "Pepsi" },
+        { "product_name": "RC Cola", "manufacturer_name": "RC" },
+        { "product_name": "Dr Pepper", "manufacturer_name": "Dr Pepper" },
+        { "product_name": "Coca-Cola Zero Sugar", "manufacturer_name": "Coca-Cola" },
+        { "product_name": "Pepsi Zero Sugar", "manufacturer_name": "Pepsi" },
+        { "product_name": "Fanta", "manufacturer_name": "Coca-Cola" },
+        { "product_name": "Sprite", "manufacturer_name": "Coca-Cola" }
+      ],
+      "min_price": 100,
+      "max_price": 1000,
+      "size": 5
+    },
+    {
+      "product_name": "Canned Meat",
+      "products_manufacturers": [
+        { "product_name": "Hormel Spam", "manufacturer_name": "Hormel" },
+        { "product_name": "Libby's Corned Beef", "manufacturer_name": "Libby's" },
+        { "product_name": "Underwood Deviled Ham", "manufacturer_name": "Underwood" },
+        { "product_name": "Swanson Premium White Chunk Chicken Breast", "manufacturer_name": "Swanson" },
+        { "product_name": "Dinty Moore Beef Stew", "manufacturer_name": "Dinty Moore" },
+        { "product_name": "Armour Vienna Sausage", "manufacturer_name": "Armour" },
+        { "product_name": "Wild Planet Organic Roasted Chicken", "manufacturer_name": "Wild Planet" },
+        { "product_name": "Keystone Meats All Natural Beef", "manufacturer_name": "Keystone Meats" }
+      ],
+      "min_price": 200,
+      "max_price": 1500,
+      "size": 8
+    },
+    {
+      "product_name": "Pickles",
+      "products_manufacturers": [
+        { "product_name": "Vlasic Kosher Dill Pickles", "manufacturer_name": "Vlasic" },
+        { "product_name": "Claussen Kosher Dill Pickle Spears", "manufacturer_name": "Claussen" },
+        { "product_name": "Mt. Olive Bread & Butter Pickles", "manufacturer_name": "Mt. Olive" },
+        { "product_name": "Heinz Genuine Whole Dill Pickles", "manufacturer_name": "Heinz" },
+        { "product_name": "Bubbies Bread & Butter Chips", "manufacturer_name": "Bubbies" },
+        { "product_name": "Grillo's Pickles Italian Dill Spears", "manufacturer_name": "Grillo's" },
+        { "product_name": "Gundelsheim Barrel Pickles", "manufacturer_name": "Gundelsheim" },
+        { "product_name": "Kosher Dill Pickle Chips", "manufacturer_name": "Kosher" }
+      ],
+      "min_price": 300,
+      "max_price": 1000,
+      "size": 6
+    },
+    {
+      "product_name": "Instant Noodles",
+      "products_manufacturers": [
+        { "product_name": "Nissin Cup Noodles", "manufacturer_name": "Nissin" },
+        { "product_name": "Maruchan Ramen Noodle Soup", "manufacturer_name": "Maruchan" },
+        { "product_name": "Top Ramen", "manufacturer_name": "Top" },
+        { "product_name": "Indomie Mi Goreng", "manufacturer_name": "Indomie" },
+        { "product_name": "Samyang Spicy Chicken Ramen", "manufacturer_name": "Samyang" },
+        { "product_name": "Sapporo Ichiban Ramen", "manufacturer_name": "Sapporo" },
+        { "product_name": "Koyo Ramen", "manufacturer_name": "Koyo" },
+        { "product_name": "Nongshim Shin Ramyun", "manufacturer_name": "Nongshim" }
+      ],
+      "min_price": 50,
+      "max_price": 300,
+      "size": 5
+    },
+    {
+      "product_name": "Canned Vegetables",
+      "products_manufacturers": [
+        { "product_name": "Del Monte Sweet Peas", "manufacturer_name": "Del Monte" },
+        { "product_name": "Green Giant Cut Green Beans", "manufacturer_name": "Green Giant" },
+        { "product_name": "Libby's Whole Kernel Sweet Corn", "manufacturer_name": "Libby's" },
+        { "product_name": "Bush's Best Original Baked Beans", "manufacturer_name": "Bush's" },
+        { "product_name": "S&W Premium Black Beans", "manufacturer_name": "S&W" },
+        { "product_name": "Goya Pinto Beans", "manufacturer_name": "Goya" },
+        { "product_name": "Hunt's Diced Tomatoes", "manufacturer_name": "Hunt's" },
+        { "product_name": "Progresso Chickpeas", "manufacturer_name": "Progresso" }
+      ],
+      "min_price": 100,
+      "max_price": 500,
+      "size": 8
+    },
+    {
+      "product_name": "Pasta",
+      "products_manufacturers": [
+        { "product_name": "Barilla Spaghetti", "manufacturer_name": "Barilla" },
+        { "product_name": "De Cecco Penne Rigate", "manufacturer_name": "De Cecco" },
+        { "product_name": "Ronzoni Elbows", "manufacturer_name": "Ronzoni" },
+        { "product_name": "San Giorgio Lasagna", "manufacturer_name": "San Giorgio" },
+        { "product_name": "Buitoni Fettuccine", "manufacturer_name": "Buitoni" },
+        { "product_name": "Mueller's Rotini", "manufacturer_name": "Mueller's" },
+        { "product_name": "Rao's Homemade Rigatoni", "manufacturer_name": "Rao's" },
+        { "product_name": "Ancient Harvest Quinoa Pasta", "manufacturer_name": "Ancient Harvest" }
+      ],
+      "min_price": 100,
+      "max_price": 700,
+      "size": 9
+    },
+    {
+      "product_name": "Cereal",
+      "products_manufacturers": [
+        { "product_name": "Kellogg's Corn Flakes", "manufacturer_name": "Kellogg's" },
+        { "product_name": "General Mills Cheerios", "manufacturer_name": "General Mills" },
+        { "product_name": "Post Honey Bunches of Oats", "manufacturer_name": "Post" },
+        { "product_name": "Quaker Life Cereal", "manufacturer_name": "Quaker" },
+        { "product_name": "Kashi GOLEAN Crunch", "manufacturer_name": "Kashi" },
+        { "product_name": "Nature's Path Organic Heritage Flakes", "manufacturer_name": "Nature's Path" },
+        { "product_name": "Special K Red Berries", "manufacturer_name": "Kellogg's" },
+        { "product_name": "Cascadian Farm Organic Purely O's", "manufacturer_name": "Cascadian Farm" }
+      ],
+      "min_price": 300,
+      "max_price": 1500,
+      "size": 10
+    },
+    {
+      "product_name": "Canned Soup",
+      "products_manufacturers": [
+        { "product_name": "Campbell's Chicken Noodle Soup", "manufacturer_name": "Campbell's" },
+        { "product_name": "Progresso Traditional Italian-Style Wedding Soup", "manufacturer_name": "Progresso" },
+        { "product_name": "Amy's Organic Chunky Tomato Bisque", "manufacturer_name": "Amy's" },
+        { "product_name": "Pacific Foods Organic Roasted Red Pepper & Tomato Soup", "manufacturer_name": "Pacific Foods" },
+        { "product_name": "Wolf Brand Chili", "manufacturer_name": "Wolf" },
+        { "product_name": "Healthy Choice Chicken & Dumplings", "manufacturer_name": "Healthy Choice" },
+        { "product_name": "Swanson Chicken Broth", "manufacturer_name": "Swanson" },
+        { "product_name": "Heinz Cream of Tomato Soup", "manufacturer_name": "Heinz" }
+      ],
+      "min_price": 200,
+      "max_price": 1200,
+      "size": 8
+    },
+    {
+      "product_name": "Coffee",
+      "products_manufacturers": [
+        { "product_name": "Folgers Classic Roast", "manufacturer_name": "Folgers" },
+        { "product_name": "Maxwell House Original Blend", "manufacturer_name": "Maxwell House" },
+        { "product_name": "Starbucks Pike Place Roast", "manufacturer_name": "Starbucks" },
+        { "product_name": "Dunkin' Donuts Original Blend", "manufacturer_name": "Dunkin' Donuts" },
+        { "product_name": "Peet's Coffee Major Dickason's Blend", "manufacturer_name": "Peet's Coffee" },
+        { "product_name": "McCafe Premium Roast", "manufacturer_name": "McCafe" },
+        {
+          "manufacturer_name": "Eight O'Clock",
+          "product_name": "Eight O'Clock Coffee The Original"
+        },
+        { "product_name": "Lavazza Super Crema Espresso", "manufacturer_name": "Lavazza" }
+      ],
+      "min_price": 500,
+      "max_price": 3000,
+      "size": 8
+    },
+    {
+      "product_name": "Tea",
+      "products_manufacturers": [
+        { "product_name": "Lipton Black Tea", "manufacturer_name": "Lipton" },
+        { "product_name": "Twinings English Breakfast Tea", "manufacturer_name": "Twinings" },
+        { "product_name": "Bigelow Earl Grey Tea", "manufacturer_name": "Bigelow" },
+        { "product_name": "Tazo Zen Green Tea", "manufacturer_name": "Tazo" },
+        { "product_name": "Celestial Seasonings Sleepytime Tea", "manufacturer_name": "Celestial Seasonings" },
+        { "product_name": "Harney & Sons Hot Cinnamon Spice Tea", "manufacturer_name": "Harney & Sons" },
+        { "product_name": "Yogi Ginger Tea", "manufacturer_name": "Yogi" },
+        { "product_name": "Stash Peppermint Herbal Tea", "manufacturer_name": "Stash" }
+      ],
+      "min_price": 300,
+      "max_price": 2000,
+      "size": 6
+    },
+    {
+      "product_name": "Snack Bars",
+      "products_manufacturers": [
+        { "product_name": "Nature Valley Crunchy Granola Bars", "manufacturer_name": "Nature Valley" },
+        { "product_name": "Clif Bar Chocolate Chip Energy Bar", "manufacturer_name": "Clif Bar" },
+        { "product_name": "KIND Bars", "manufacturer_name": "KIND" },
+        { "product_name": "LUNA Bar Lemon Zest", "manufacturer_name": "LUNA" },
+        { "product_name": "RXBAR Chocolate Sea Salt", "manufacturer_name": "RXBAR" },
+        { "product_name": "Larabar Peanut Butter Chocolate Chip", "manufacturer_name": "Larabar" },
+        { "product_name": "Quaker Chewy Granola Bars", "manufacturer_name": "Quaker" },
+        { "product_name": "Fiber One Oats & Chocolate Bar", "manufacturer_name": "Fiber One" }
+      ],
+      "min_price": 200,
+      "max_price": 1500,
+      "size": 3
+    }
+  ]
+}

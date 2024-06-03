@@ -1,9 +1,28 @@
 #include "Warehouse.h"
 
+Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
+	json_data = getJsonData(file_path);
+
+	name = json_data.at("name");
+	size = json_data.at("size").get<unsigned int>();
+
+	for (const auto& area_json : json_data["areas"]) {
+		areas.push_back(std::make_unique<Area>(
+			area_json
+		));
+	}
+	PRINT_MSG("Warehouse ", name, " created");
+}
+
+Warehouse::~Warehouse() {
+	PRINT_MSG("\nWarehouse ", name, " destroyed");
+}
+
 void Warehouse::put(const nlohmann::json& box) {
 	for (auto& area : areas) {
 		if ((area)->getType() == box["type"]) {
 			(area)->put(box);
+			occupied_space_size++;
 			return;
 		}
 	}
@@ -44,8 +63,9 @@ std::unique_ptr<Product> Warehouse::get(std::string& name, std::string type) {
 };
 
 
-void Warehouse::acceptDelivery(const std::string& file_path) {
-	PRINT_MSG("\nInitializing delivery ", file_path, "");
+void Warehouse::acceptDelivery(const std::string& file_name) {
+	PRINT_MSG("\nInitializing delivery ", file_name, "");
+	std::string file_path = "../SharedJsons/" + file_name;
 	nlohmann::json delivery_json = getJsonData(file_path);
 	unsigned int delivery_size = delivery_json["size"]["size"].get<int>();
 	if ( delivery_size > size - occupied_space_size) {
@@ -70,13 +90,14 @@ void Warehouse::acceptDelivery(const std::string& file_path) {
 	};
 };
 
-void Warehouse::sendDelivery(const std::string& file_path) {
-	PRINT_MSG("\nInitializing outgoing delivery ", file_path, "");
+void Warehouse::sendDelivery(const std::string& file_name) {
+	PRINT_MSG("\nInitializing outgoing delivery ", file_name, "");
+	std::string file_path = "../SharedJsons/" + file_name;
 	nlohmann::json delivery_data = getJsonData(file_path);
 	nlohmann::json products = delivery_data["products"];
 	for (auto& product : products) {
 		if (!this->find(product["product_name"], product["quantity"], product["type"])) {
-			std::cout << "delivery cannot be sent. Not enough " << product["name"] << '\n';
+			std::cout << "delivery cannot be sent. Not enough " << product["product_name"] << '\n';
 			return;
 			};
 	};
@@ -86,22 +107,8 @@ void Warehouse::sendDelivery(const std::string& file_path) {
 		box.put(std::move(this->get(product_name, product["type"])));
 		PRINT_MSG("", product_name, " put in a delivery box");
 	}
+	PRINT_MSG("Successfully sent ", file_name, " delivery");
+
 };
 
-Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
-	json_data = getJsonData(file_path);
-
-	name = json_data.at("name");
-	size = json_data.at("size").get<unsigned int>();
-
-	for (const auto& area_json : json_data["areas"]) {
-		areas.push_back(std::make_unique<Area>(
-			area_json
-		));
-	}
-	PRINT_MSG("Warehouse ", name, " created");
-}
-
-Warehouse::~Warehouse() {
-	PRINT_MSG("\nWarehouse ", name, " destroyed");
-}
+//TODO log, employees, multithreading

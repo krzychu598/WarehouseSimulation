@@ -1,11 +1,13 @@
 ﻿#include <iostream>
 #include "Warehouse.h"
 #include "Product.h"
+#include "Employee.h"
 // Zmienne z _ np. storage_space
 // Funkcje camelCase
 // Push to dev
 // Podział StorageSpace po konsultacji ze wszystkimi
 // Warehouse, Area - Krzychu; Shelving, Box - Maks; Product, Employee - Paweł
+
 int main() {
 
 	//experimental code sample
@@ -13,8 +15,10 @@ int main() {
 	Warehouse warehouse("warehouse_data.json");
 	
 	warehouse.acceptDelivery("delivery1.json");
+	warehouse.acceptDelivery("delivery2.json");
+	warehouse.acceptDelivery("delivery3.json");
 
-	warehouse.sendDelivery("request2.json");
+	warehouse.sendDelivery("request1.json");
 
 	return 0;
 

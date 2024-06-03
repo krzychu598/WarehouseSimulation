@@ -13,7 +13,7 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Json Files">
+    <Filter Include="Warehouse Json">
       <UniqueIdentifier>{5d78872e-430d-4f51-8a35-dc5e7c0709f2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -72,19 +72,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="warehouse_data.json">
-      <Filter>Json Files</Filter>
-    </None>
-    <None Include="delivery1.json">
-      <Filter>Json Files</Filter>
-    </None>
-    <None Include="delivery2.json">
-      <Filter>Json Files</Filter>
-    </None>
-    <None Include="request1.json">
-      <Filter>Json Files</Filter>
-    </None>
-    <None Include="request2.json">
-      <Filter>Json Files</Filter>
+      <Filter>Warehouse Json</Filter>
     </None>
   </ItemGroup>
 </Project>
