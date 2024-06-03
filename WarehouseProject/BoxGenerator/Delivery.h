@@ -56,9 +56,13 @@ private:
         dict["type"] = type;
         dict["product_type_name"] = product_dict["product_name"];
         //TODO choose product based on trend. For now just take first element
-        for (auto& el : product_dict["names_manufacturers"][0].items()) {
-            dict["product_name"] = el.key();
-            dict["manufacturer_name"] = el.value();
+        for (auto& sub : product_dict["names_manufacturers"]) {
+            for (auto el : sub.items()) {
+                dict["product_name"] = el.key();
+                dict["manufacturer_name"] = el.value();
+                break;
+            }
+            break;
         }
         //for now fixed values. Implement rand or baseed on trend setting later
         dict["id"] = 0;
@@ -76,8 +80,13 @@ private:
         }
         std::string input = type + ".json";
         nlohmann::json products = getFromJson(input)["products"];
+        nlohmann::json product;
+        for (auto& sub : products) {
+            product = sub;
+            break;
+        }
         while (num > 0) {
-            boxes.push_back(createBox(products[num], type));
+            boxes.push_back(createBox(product, type));
             num--;
         }
         return boxes;
@@ -88,8 +97,12 @@ private:
         nlohmann::json dict;
         dict["type"] = type;
         dict["product_type_name"] = in_data["product_name"];
-        for (auto& el : in_data["names_manufacturers"][0].items()) {
-            dict["product_name"] = el.key();
+        for (auto& sub : in_data["names_manufacturers"]) {
+            for (auto el : sub.items()) {
+                dict["product_name"] = el.key();
+                break;
+            }
+            break;
         }
         dict["quantity"] = 1;
         return dict;

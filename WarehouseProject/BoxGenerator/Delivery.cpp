@@ -15,7 +15,6 @@ void Delivery::createDelivery(int size, std::string type1, std::string type2, co
 
 	data["size"] = { {"size", type1_num}, { type1, type1_num } };
 	if (type2_num != 0) { data["size"][type2] = type2_num; }
-	std::cout << data.dump(4) << '\n';
 	std::vector<json> type1_data = getBoxes(type1, type1_num);
 	std::vector<json> type2_data = getBoxes(type2, type2_num);
 	type1_data.insert(type1_data.end(), type2_data.begin(), type2_data.end());
@@ -30,7 +29,13 @@ void Delivery::createRequest(int num, std::string type, const std::string& outpu
 	std::vector<json> products;
 
 	std::string input = type + ".json";
-	json in_data = getFromJson(input)["products"][0];
+	//TODO implement Trends
+	json in_data;
+	json json_products = getFromJson(input)["products"];
+	for (auto& product : json_products) {
+		in_data = product;
+		break;
+	}
 	while (num != 0) {
 		products.push_back(createProduct(in_data, type));
 		num--;

@@ -12,7 +12,7 @@ int main() {
 		delivery.createRequest(10, "food_and_drinks", "request1.json");
 		delivery.createRequest(10, "electronics", "request2.json");
 		delivery.createRequest(10, "industrial", "request3.json");
-		std::this_thread::sleep_for(std::chrono::milliseconds(200));
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 	}
 
 	return 0;
