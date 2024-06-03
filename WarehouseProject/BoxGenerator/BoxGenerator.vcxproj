@@ -127,7 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="electronics.json" />
+    <None Include="food_and_drinks.json" />
+    <None Include="industrial.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Delivery.h" />
+    <ClInclude Include="Trend.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Delivery.cpp" />
+    <ClCompile Include="Trend.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

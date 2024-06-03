@@ -1,0 +1,184 @@
+{
+  "products": [
+    {
+      "product_name": "Laptop",
+      "names_manufacturers": [
+        { "Dell XPS 13": "Dell" },
+        { "MacBook Air M2": "Apple" },
+        { "HP Spectre x360": "HP" },
+        { "Asus ROG Zephyrus G14": "Asus" },
+        { "Lenovo ThinkPad X1 Carbon": "Lenovo" },
+        { "Microsoft Surface Laptop 4": "Microsoft" },
+        { "Acer Swift 3": "Acer" },
+        { "Razer Blade 15": "Razer" }
+      ],
+      "min_price": 60000,
+      "max_price": 200000,
+      "size": 36
+    },
+    {
+      "product_name": "Mouse",
+      "names_manufacturers": [
+        { "Logitech MX Master 3": "Logitech" },
+        { "Razer DeathAdder V2": "Razer" },
+        { "Microsoft Arc Mouse": "Microsoft" },
+        { "Corsair Dark Core RGB Pro": "Corsair" },
+        { "SteelSeries Rival 600": "SteelSeries" },
+        { "Apple Magic Mouse 2": "Apple" },
+        { "Logitech G Pro X Superlight": "Logitech" },
+        { "HP Omen Vector Wireless Mouse": "HP" }
+      ],
+      "min_price": 2000,
+      "max_price": 15000,
+      "size": 10
+    },
+    {
+      "product_name": "Headphones",
+      "names_manufacturers": [
+        { "Sony WH-1000XM4": "Sony" },
+        { "Bose QuietComfort 35 II": "Bose" },
+        { "Sennheiser HD 660 S": "Sennheiser" },
+        { "Apple AirPods Max": "Apple" },
+        { "Jabra Elite 85h": "Jabra" },
+        { "Beats Studio3 Wireless": "Beats" },
+        { "AKG N700NC M2": "AKG" },
+        { "Microsoft Surface Headphones 2": "Microsoft" }
+      ],
+      "min_price": 10000,
+      "max_price": 70000,
+      "size": 15
+    },
+    {
+      "product_name": "Earphones",
+      "names_manufacturers": [
+        { "Sony WF-1000XM4": "Sony" },
+        { "Apple AirPods Pro": "Apple" },
+        { "Samsung Galaxy Buds Pro": "Samsung" },
+        { "Jabra Elite 75t": "Jabra" },
+        { "Bose Sport Earbuds": "Bose" },
+        { "Sennheiser Momentum True Wireless 2": "Sennheiser" },
+        { "Anker Soundcore Liberty Air 2 Pro": "Anker" },
+        { "Google Pixel Buds A-Series": "Google" }
+      ],
+      "min_price": 5000,
+      "max_price": 30000,
+      "size": 8
+    },
+    {
+      "product_name": "Powerbank",
+      "names_manufacturers": [
+        { "Anker PowerCore 10000": "Anker" },
+        { "RAVPower Portable Charger 20000mAh": "RAVPower" },
+        { "Aukey 10000mAh Power Bank": "Aukey" },
+        { "Xiaomi Mi Power Bank 3": "Xiaomi" },
+        { "Zendure A6PD Portable Charger": "Zendure" },
+        { "Mophie PowerStation PD": "Mophie" },
+        { "Samsung Wireless Power Bank": "Samsung" },
+        { "Belkin Boost Charge Power Bank": "Belkin" }
+      ],
+      "min_price": 1500,
+      "max_price": 10000,
+      "size": 10
+    },
+    {
+      "product_name": "Smartphone",
+      "names_manufacturers": [
+        { "iPhone 13 Pro": "Apple" },
+        { "Samsung Galaxy S21 Ultra": "Samsung" },
+        { "Google Pixel 6 Pro": "Google" },
+        { "OnePlus 9 Pro": "OnePlus" },
+        { "Xiaomi Mi 11 Ultra": "Xiaomi" },
+        { "Sony Xperia 1 III": "Sony" },
+        { "Oppo Find X3 Pro": "Oppo" },
+        { "Huawei P50 Pro": "Huawei" }
+      ],
+      "min_price": 60000,
+      "max_price": 150000,
+      "size": 12
+    },
+    {
+      "product_name": "Charger",
+      "names_manufacturers": [
+        { "Anker PowerPort III Nano": "Anker" },
+        { "RAVPower 65W PD Charger": "RAVPower" },
+        { "Apple 20W USB-C Power Adapter": "Apple" },
+        { "Samsung 25W USB-C Fast Charging Wall Charger": "Samsung" },
+        { "Belkin Boost Charge 18W": "Belkin" },
+        { "AUKEY Omnia 100W PD Charger": "AUKEY" },
+        { "Spigen 30W USB-C Power Delivery Charger": "Spigen" },
+        { "Baseus 65W GaN Charger": "Baseus" }
+      ],
+      "min_price": 1000,
+      "max_price": 8000,
+      "size": 6
+    },
+    {
+      "product_name": "Graphics Card",
+      "names_manufacturers": [
+        { "NVIDIA GeForce RTX 3080": "NVIDIA" },
+        { "AMD Radeon RX 6800 XT": "AMD" },
+        { "NVIDIA GeForce RTX 3060 Ti": "NVIDIA" },
+        { "AMD Radeon RX 6700 XT": "AMD" },
+        { "NVIDIA GeForce RTX 3090": "NVIDIA" },
+        { "AMD Radeon RX 6900 XT": "AMD" },
+        { "NVIDIA GeForce GTX 1660 Super": "NVIDIA" },
+        { "NVIDIA GeForce RTX 3070": "NVIDIA" },
+        { "AMD Radeon RX 6600 XT": "AMD" },
+        { "NVIDIA GeForce RTX 2080 Ti": "NVIDIA" }
+      ],
+      "min_price": 30000,
+      "max_price": 200000,
+      "size": 15
+    },
+    {
+      "product_name": "Keyboard",
+      "names_manufacturers": [
+        { "Logitech MX Keys": "Logitech" },
+        { "Corsair K95 RGB Platinum XT": "Corsair" },
+        { "Razer BlackWidow Elite": "Razer" },
+        { "SteelSeries Apex Pro": "SteelSeries" },
+        { "Das Keyboard 4 Professional": "Das Keyboard" },
+        { "Apple Magic Keyboard": "Apple" },
+        { "Microsoft Surface Keyboard": "Microsoft" },
+        { "HyperX Alloy FPS Pro": "HyperX" },
+        { "Keychron K2 Wireless": "Keychron" },
+        { "Cooler Master MK730": "Cooler Master" }
+      ],
+      "min_price": 3000,
+      "max_price": 15000,
+      "size": 30
+    },
+    {
+      "product_name": "Tablet",
+      "names_manufacturers": [
+        { "Apple iPad Pro": "Apple" },
+        { "Samsung Galaxy Tab S7": "Samsung" },
+        { "Microsoft Surface Pro 7": "Microsoft" },
+        { "Amazon Fire HD 10": "Amazon" },
+        { "Lenovo Tab P11 Pro": "Lenovo" },
+        { "Huawei MatePad Pro": "Huawei" },
+        { "Asus ZenPad 3S 10": "Asus" },
+        { "Sony Xperia Z4 Tablet": "Sony" }
+      ],
+      "min_price": 15000,
+      "max_price": 100000,
+      "size": 18
+    },
+    {
+      "product_name": "Processor",
+      "names_manufacturers": [
+        { "Intel Core i9-11900K": "Intel" },
+        { "AMD Ryzen 9 5900X": "AMD" },
+        { "Intel Core i7-11700K": "Intel" },
+        { "AMD Ryzen 7 5800X": "AMD" },
+        { "Intel Core i5-11600K": "Intel" },
+        { "AMD Ryzen 5 5600X": "AMD" },
+        { "Intel Core i3-10100F": "Intel" },
+        { "AMD Ryzen 3 3300X": "AMD" }
+      ],
+      "min_price": 10000,
+      "max_price": 60000,
+      "size": 15
+    }
+  ]
+}

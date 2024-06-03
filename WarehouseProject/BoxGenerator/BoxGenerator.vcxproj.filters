@@ -13,8 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Product Templates">
+      <UniqueIdentifier>{f90a1ada-5fec-4bed-b33f-4e265353443d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="electronics.json">
+      <Filter>Product Templates</Filter>
+    </None>
+    <None Include="food_and_drinks.json">
+      <Filter>Product Templates</Filter>
+    </None>
+    <None Include="industrial.json">
+      <Filter>Product Templates</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Delivery.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Delivery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Trend.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
