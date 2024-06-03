@@ -127,6 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\SharedJsons\delivery1.json" />
+    <None Include="..\SharedJsons\delivery2.json" />
     <None Include="electronics.json" />
     <None Include="food_and_drinks.json" />
     <None Include="industrial.json" />

@@ -1,0 +1,202 @@
+{
+  "products": [
+    {
+      "product_name": "Cola",
+      "names_manufacturers": [
+        { "Coca-Cola Classic": "Coca-Cola" },
+        { "Pepsi": "Pepsi" },
+        { "RC Cola": "RC" },
+        { "Dr Pepper": "Dr Pepper" },
+        { "Coca-Cola Zero Sugar": "Coca-Cola" },
+        { "Pepsi Zero Sugar": "Pepsi" },
+        { "Fanta": "Coca-Cola" },
+        { "Sprite": "Coca-Cola" },
+        { "Mountain Dew": "Pepsi" },
+        { "Diet Coke": "Coca-Cola" }
+      ],
+      "min_price": 100,
+      "max_price": 1000,
+      "size": 5
+    },
+    {
+      "product_name": "Canned Meat",
+      "names_manufacturers": [
+        { "Hormel Spam": "Hormel" },
+        { "Libby's Corned Beef": "Libby's" },
+        { "Underwood Deviled Ham": "Underwood" },
+        { "Swanson Premium White Chunk Chicken Breast": "Swanson" },
+        { "Dinty Moore Beef Stew": "Dinty Moore" },
+        { "Armour Vienna Sausage": "Armour" },
+        { "Wild Planet Organic Roasted Chicken": "Wild Planet" },
+        { "Keystone Meats All Natural Beef": "Keystone Meats" },
+        { "Tyson Premium Chunk White Chicken": "Tyson" },
+        { "Sweet Sue Chicken and Dumplings": "Sweet Sue" }
+      ],
+      "min_price": 200,
+      "max_price": 1500,
+      "size": 8
+    },
+    {
+      "product_name": "Pickles",
+      "names_manufacturers": [
+        { "Vlasic Kosher Dill Pickles": "Vlasic" },
+        { "Claussen Kosher Dill Pickle Spears": "Claussen" },
+        { "Mt. Olive Bread & Butter Pickles": "Mt. Olive" },
+        { "Heinz Genuine Whole Dill Pickles": "Heinz" },
+        { "Bubbies Bread & Butter Chips": "Bubbies" },
+        { "Grillo's Pickles Italian Dill Spears": "Grillo's" },
+        { "Gundelsheim Barrel Pickles": "Gundelsheim" },
+        { "Kosher Dill Pickle Chips": "Kosher" },
+        { "Wickles Pickles Original Slices": "Wickles" },
+        { "SuckerPunch Gourmet Spicy Garlic Original Pickles": "SuckerPunch" }
+      ],
+      "min_price": 300,
+      "max_price": 1000,
+      "size": 6
+    },
+    {
+      "product_name": "Instant Noodles",
+      "names_manufacturers": [
+        { "Nissin Cup Noodles": "Nissin" },
+        { "Maruchan Ramen Noodle Soup": "Maruchan" },
+        { "Top Ramen": "Top" },
+        { "Indomie Mi Goreng": "Indomie" },
+        { "Samyang Spicy Chicken Ramen": "Samyang" },
+        { "Sapporo Ichiban Ramen": "Sapporo" },
+        { "Koyo Ramen": "Koyo" },
+        { "Nongshim Shin Ramyun": "Nongshim" },
+        { "Mama Instant Noodles": "Mama" },
+        { "Ottogi Jin Ramen": "Ottogi" }
+      ],
+      "min_price": 50,
+      "max_price": 300,
+      "size": 5
+    },
+    {
+      "product_name": "Canned Vegetables",
+      "names_manufacturers": [
+        { "Del Monte Sweet Peas": "Del Monte" },
+        { "Green Giant Cut Green Beans": "Green Giant" },
+        { "Libby's Whole Kernel Sweet Corn": "Libby's" },
+        { "Bush's Best Original Baked Beans": "Bush's" },
+        { "S&W Premium Black Beans": "S&W" },
+        { "Goya Pinto Beans": "Goya" },
+        { "Hunt's Diced Tomatoes": "Hunt's" },
+        { "Progresso Chickpeas": "Progresso" },
+        { "365 by Whole Foods Market Organic Sweet Corn": "365 by Whole Foods Market" },
+        { "La Costeña Whole Jalapeños": "La Costeña" }
+      ],
+      "min_price": 100,
+      "max_price": 500,
+      "size": 8
+    },
+    {
+      "product_name": "Pasta",
+      "names_manufacturers": [
+        { "Barilla Spaghetti": "Barilla" },
+        { "De Cecco Penne Rigate": "De Cecco" },
+        { "Ronzoni Elbows": "Ronzoni" },
+        { "San Giorgio Lasagna": "San Giorgio" },
+        { "Buitoni Fettuccine": "Buitoni" },
+        { "Mueller's Rotini": "Mueller's" },
+        { "Rao's Homemade Rigatoni": "Rao's" },
+        { "Ancient Harvest Quinoa Pasta": "Ancient Harvest" },
+        { "Tinkyada Brown Rice Pasta": "Tinkyada" },
+        { "Explore Cuisine Organic Edamame Spaghetti": "Explore Cuisine" }
+      ],
+      "min_price": 100,
+      "max_price": 700,
+      "size": 9
+    },
+    {
+      "product_name": "Cereal",
+      "names_manufacturers": [
+        { "Kellogg's Corn Flakes": "Kellogg's" },
+        { "General Mills Cheerios": "General Mills" },
+        { "Post Honey Bunches of Oats": "Post" },
+        { "Quaker Life Cereal": "Quaker" },
+        { "Kashi GOLEAN Crunch": "Kashi" },
+        { "Nature's Path Organic Heritage Flakes": "Nature's Path" },
+        { "Special K Red Berries": "Kellogg's" },
+        { "Cascadian Farm Organic Purely O's": "Cascadian Farm" },
+        { "Barbara's Puffins": "Barbara's" },
+        { "Malt-O-Meal Frosted Mini Spooners": "Malt-O-Meal" }
+      ],
+      "min_price": 300,
+      "max_price": 1500,
+      "size": 10
+    },
+    {
+      "product_name": "Canned Soup",
+      "names_manufacturers": [
+        { "Campbell's Chicken Noodle Soup": "Campbell's" },
+        { "Progresso Traditional Italian-Style Wedding Soup": "Progresso" },
+        { "Amy's Organic Chunky Tomato Bisque": "Amy's" },
+        { "Pacific Foods Organic Roasted Red Pepper & Tomato Soup": "Pacific Foods" },
+        { "Wolf Brand Chili": "Wolf" },
+        { "Healthy Choice Chicken & Dumplings": "Healthy Choice" },
+        { "Swanson Chicken Broth": "Swanson" },
+        { "Heinz Cream of Tomato Soup": "Heinz" },
+        { "Bear Creek Country Kitchens Cheddar Broccoli Soup Mix": "Bear Creek" },
+        { "Hormel Compleats Roast Beef & Mashed Potatoes": "Hormel" }
+      ],
+      "min_price": 200,
+      "max_price": 1200,
+      "size": 8
+    },
+    {
+      "product_name": "Coffee",
+      "names_manufacturers": [
+        { "Folgers Classic Roast": "Folgers" },
+        { "Maxwell House Original Blend": "Maxwell House" },
+        { "Starbucks Pike Place Roast": "Starbucks" },
+        { "Dunkin' Donuts Original Blend": "Dunkin' Donuts" },
+        { "Peet's Coffee Major Dickason's Blend": "Peet's Coffee" },
+        { "McCafe Premium Roast": "McCafe" },
+        { "Eight O'Clock Coffee The Original": "Eight O'Clock" },
+        { "Lavazza Super Crema Espresso": "Lavazza" },
+        { "Death Wish Coffee Co. Dark Roast": "Death Wish Coffee Co." },
+        { "Caribou Coffee Caribou Blend": "Caribou Coffee" }
+      ],
+      "min_price": 500,
+      "max_price": 3000,
+      "size": 8
+    },
+    {
+      "product_name": "Tea",
+      "names_manufacturers": [
+        { "Lipton Black Tea": "Lipton" },
+        { "Twinings English Breakfast Tea": "Twinings" },
+        { "Bigelow Earl Grey Tea": "Bigelow" },
+        { "Tazo Zen Green Tea": "Tazo" },
+        { "Celestial Seasonings Sleepytime Tea": "Celestial Seasonings" },
+        { "Harney & Sons Hot Cinnamon Spice Tea": "Harney & Sons" },
+        { "Yogi Ginger Tea": "Yogi" },
+        { "Stash Peppermint Herbal Tea": "Stash" },
+        { "Numi Organic Jasmine Green Tea": "Numi" },
+        { "Teavana Jade Citrus Mint": "Teavana" }
+      ],
+      "min_price": 300,
+      "max_price": 2000,
+      "size": 6
+    },
+    {
+      "product_name": "Snack Bars",
+      "names_manufacturers": [
+        { "Nature Valley Crunchy Granola Bars": "Nature Valley" },
+        { "Clif Bar Chocolate Chip Energy Bar": "Clif Bar" },
+        { "KIND Bars": "KIND" },
+        { "LUNA Bar Lemon Zest": "LUNA" },
+        { "RXBAR Chocolate Sea Salt": "RXBAR" },
+        { "Larabar Peanut Butter Chocolate Chip": "Larabar" },
+        { "Quaker Chewy Granola Bars": "Quaker" },
+        { "Fiber One Oats & Chocolate Bar": "Fiber One" },
+        { "Quest Nutrition Protein Bar": "Quest Nutrition" },
+        { "PowerBar ProteinPlus Bar": "PowerBar" }
+      ],
+      "min_price": 200,
+      "max_price": 1500,
+      "size": 3
+    }
+  ]
+}

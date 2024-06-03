@@ -28,6 +28,8 @@
     <None Include="industrial.json">
       <Filter>Product Templates</Filter>
     </None>
+    <None Include="..\SharedJsons\delivery1.json" />
+    <None Include="..\SharedJsons\delivery2.json" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Delivery.h">

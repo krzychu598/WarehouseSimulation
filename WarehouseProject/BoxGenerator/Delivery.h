@@ -5,16 +5,16 @@
 #include <unordered_map>
 #include "nlohmann/json.hpp"
 //#include "Trend.h"
+
+constexpr auto BOX_SIZE = 360;
+
 class Delivery {
 public:
     Delivery();
     
-    nlohmann::json createBox(const nlohmann::json& product_dict, std::string& type);
-    std::vector<nlohmann::json> getBoxes(std::string& type, int num);
     void createDelivery(int size, std::string type1, std::string type2, const std::string& output_path="delivery.json");
-
-    nlohmann::json createProduct(const nlohmann::json& data, std::string& type);
     void createRequest(int num, std::string type, const std::string& output_path = "request.json");
+
 private:
     nlohmann::json getFromJson(const std::string& file_name) {
         std::ifstream f(file_name);
@@ -34,20 +34,65 @@ private:
         return data;
     };
 
-    void dumpToFile(const nlohmann::json& data, const std::string& output_path) {
+    void dumpToFile(const nlohmann::json& data, const std::string& file_name) {
+        std::string output_path = "../SharedJsons/" + file_name;
         std::ofstream f(output_path);
         if (!f.is_open()) {
             throw std::runtime_error("Couldn't open the file");
         }
 
         try {
-            f << data;
+            f << std::setw(4) <<  data;
         }
         catch (...) {
             throw std::runtime_error("cannot transfer data to file");
         }
 
         f.close();
+    };
+
+    nlohmann::json createBox(const nlohmann::json& product_dict, std::string& type) {
+        nlohmann::json dict;
+        dict["type"] = type;
+        dict["product_type_name"] = product_dict["product_name"];
+        //TODO choose product based on trend. For now just take first element
+        for (auto& el : product_dict["names_manufacturers"][0].items()) {
+            dict["product_name"] = el.key();
+            dict["manufacturer_name"] = el.value();
+        }
+        //for now fixed values. Implement rand or baseed on trend setting later
+        dict["id"] = 0;
+        dict["price"] = product_dict["min_price"];
+        dict["size"] = product_dict["size"];
+        dict["product_count"] = BOX_SIZE / product_dict["size"];
+        if (BOX_SIZE % product_dict["size"] != 0) { throw std::runtime_error("Invalid size"); }
+        return dict;
+    };
+
+    std::vector<nlohmann::json> getBoxes(std::string& type, int num) {
+        std::vector<nlohmann::json> boxes;
+        if (num == 0) {
+            return boxes;
+        }
+        std::string input = type + ".json";
+        nlohmann::json products = getFromJson(input)["products"];
+        while (num > 0) {
+            boxes.push_back(createBox(products[num], type));
+            num--;
+        }
+        return boxes;
+
+    };
+
+    nlohmann::json createProduct(const nlohmann::json& in_data, std::string& type) {
+        nlohmann::json dict;
+        dict["type"] = type;
+        dict["product_type_name"] = in_data["product_name"];
+        for (auto& el : in_data["names_manufacturers"][0].items()) {
+            dict["product_name"] = el.key();
+        }
+        dict["quantity"] = 1;
+        return dict;
     };
 };
 

@@ -45,8 +45,9 @@ std::unique_ptr<Product> Warehouse::get(std::string& name, std::string type) {
 };
 
 
-void Warehouse::acceptDelivery(const std::string& file_path) {
-	PRINT_MSG("\nInitializing delivery ", file_path, "");
+void Warehouse::acceptDelivery(const std::string& file_name) {
+	PRINT_MSG("\nInitializing delivery ", file_name, "");
+	std::string file_path = "../SharedJsons/" + file_name;
 	nlohmann::json delivery_json = getJsonData(file_path);
 	unsigned int delivery_size = delivery_json["size"]["size"].get<int>();
 	if ( delivery_size > size - occupied_space_size) {
@@ -71,13 +72,14 @@ void Warehouse::acceptDelivery(const std::string& file_path) {
 	};
 };
 
-void Warehouse::sendDelivery(const std::string& file_path) {
-	PRINT_MSG("\nInitializing outgoing delivery ", file_path, "");
+void Warehouse::sendDelivery(const std::string& file_name) {
+	PRINT_MSG("\nInitializing outgoing delivery ", file_name, "");
+	std::string file_path = "../SharedJsons/" + file_name;
 	nlohmann::json delivery_data = getJsonData(file_path);
 	nlohmann::json products = delivery_data["products"];
 	for (auto& product : products) {
 		if (!this->find(product["product_name"], product["quantity"], product["type"])) {
-			std::cout << "delivery cannot be sent. Not enough " << product["name"] << '\n';
+			std::cout << "delivery cannot be sent. Not enough " << product["product_name"] << '\n';
 			return;
 			};
 	};

@@ -1,0 +1,184 @@
+{
+  "products": [
+    {
+      "product_name": "Lubricant",
+      "names_manufacturers": [
+        { "Mobil SHC 630 Synthetic Gear Oil": "Mobil" },
+        { "Shell Omala S2 G 220 Gear Oil": "Shell" },
+        { "Castrol Alpha SP 220 Industrial Gear Oil": "Castrol" },
+        { "Chevron Meropa 220 Gear Oil": "Chevron" },
+        { "Total Carter EP 220 Gear Oil": "Total" },
+        { "ExxonMobil DTE 10 Excel 68 Hydraulic Oil": "ExxonMobil" },
+        { "Royal Purple Synfilm GT 220": "Royal Purple" },
+        { "BP Energol GR-XP 220": "BP" },
+        { "Fuchs Renolin CLP 220": "Fuchs" },
+        { "Phillips 66 Megaflow AW Hydraulic Oil": "Phillips 66" }
+      ],
+      "min_price": 50000,
+      "max_price": 200000,
+      "size": 10
+    },
+    {
+      "product_name": "Battery",
+      "names_manufacturers": [
+        { "Duracell Procell Industrial AA Battery": "Duracell" },
+        { "Energizer Industrial AA Alkaline Battery": "Energizer" },
+        { "Panasonic Industrial AA Battery": "Panasonic" },
+        { "Rayovac Ultra Pro Industrial AA Battery": "Rayovac" },
+        { "Exell Battery EB-AA Industrial Alkaline": "Exell" },
+        { "Power-Sonic PS-1270F2 SLA Battery": "Power-Sonic" },
+        { "Yuasa NP7-12 SLA Battery": "Yuasa" },
+        { "Trojan T-105 Deep Cycle Battery": "Trojan" },
+        { "Deka 8G27 Gel Battery": "Deka" },
+        { "Odyssey PC680 AGM Battery": "Odyssey" }
+      ],
+      "min_price": 1000,
+      "max_price": 50000,
+      "size": 10
+    },
+    {
+      "product_name": "Hydraulic Fluid",
+      "names_manufacturers": [
+        { "Shell Tellus S2 M 46": "Shell" },
+        { "Mobil DTE 25": "Mobil" },
+        { "Chevron Rando HDZ 46": "Chevron" },
+        { "Castrol Hyspin AWS 46": "Castrol" },
+        { "Total Azolla ZS 46": "Total" },
+        { "BP Bartran HV 46": "BP" },
+        { "ExxonMobil Nuto H 46": "ExxonMobil" },
+        { "Fuchs Renolin MR 46": "Fuchs" },
+        { "Phillips 66 Megaflow AW 46": "Phillips 66" },
+        { "Valvoline Ultramax Hydraulic Fluid": "Valvoline" }
+      ],
+      "min_price": 30000,
+      "max_price": 150000,
+      "size": 10
+    },
+    {
+      "product_name": "Welding Rod",
+      "names_manufacturers": [
+        { "Lincoln Electric Excalibur 7018": "Lincoln Electric" },
+        { "Hobart 7018 Stick Electrode": "Hobart" },
+        { "ESAB OK 55.00 7018": "ESAB" },
+        { "Forney 7018 AC Welding Rod": "Forney" },
+        { "Blue Demon 7018 Welding Electrode": "Blue Demon" },
+        { "Harris E7018 Stick Welding Electrode": "Harris" },
+        { "Radnor 7018 Welding Rod": "Radnor" },
+        { "Hyundai Welding 7018": "Hyundai" },
+        { "US Forge 7018 Rod": "US Forge" },
+        { "King Welding 7018 Electrode": "King Welding" }
+      ],
+      "min_price": 2000,
+      "max_price": 10000,
+      "size": 10
+    },
+    {
+      "product_name": "Cutting Oil",
+      "names_manufacturers": [
+        { "Blaser Swisslube Vascomill CSF 35": "Blaser Swisslube" },
+        { "Hangsterfer’s S-500 CF": "Hangsterfer’s" },
+        { "Castrol Hysol MB 50": "Castrol" },
+        { "Mobilmet 766": "Mobil" },
+        { "TRIM MicroSol 585XT": "TRIM" },
+        { "ValCool VP950": "ValCool" },
+        { "Rocol Ultracut 370 Plus": "Rocol" },
+        { "Master Chemical TRIM E206": "Master Chemical" },
+        { "Quaker Chemical QUAKERCOOL 3510": "Quaker Chemical" },
+        { "Chevron Soluble Oil B": "Chevron" }
+      ],
+      "min_price": 10000,
+      "max_price": 50000,
+      "size": 10
+    },
+    {
+      "product_name": "Coolant",
+      "names_manufacturers": [
+        { "Prestone Command Heavy Duty Coolant": "Prestone" },
+        { "Shell Rotella ELC Extended Life Coolant": "Shell" },
+        { "Chevron Delo Extended Life Coolant": "Chevron" },
+        { "Fleetguard Compleat EG": "Fleetguard" },
+        { "CAT ELC (Extended Life Coolant)": "CAT" },
+        { "Peak Final Charge Global Extended Life Coolant": "Peak" },
+        { "Zerex G-05 Antifreeze/Coolant": "Zerex" },
+        { "Old World Industries BlueDEF Platinum Coolant": "Old World Industries" },
+        { "Cummins Filtration Fleetguard ES Compleat OAT": "Cummins Filtration" },
+        { "Valvoline Zerex Original Green Antifreeze": "Valvoline" }
+      ],
+      "min_price": 3000,
+      "max_price": 20000,
+      "size": 10
+    },
+    {
+      "product_name": "Adhesive",
+      "names_manufacturers": [
+        { "3M Super 77 Multipurpose Adhesive": "3M" },
+        { "Loctite PL Premium Construction Adhesive": "Loctite" },
+        { "Gorilla Heavy Duty Construction Adhesive": "Gorilla" },
+        { "Elmer's E7010 Carpenter's Wood Glue": "Elmer's" },
+        { "DAP Weldwood Contact Cement": "DAP" },
+        { "Bostik Blu Tack Adhesive": "Bostik" },
+        { "Henkel Teroson MS 939": "Henkel" },
+        { "Permatex Ultra Bond Super Glue": "Permatex" },
+        { "Devcon 5 Minute Epoxy": "Devcon" },
+        { "J-B Weld Original Cold-Weld Steel Reinforced Epoxy": "J-B Weld" }
+      ],
+      "min_price": 500,
+      "max_price": 15000,
+      "size": 10
+    },
+    {
+      "product_name": "Paint",
+      "names_manufacturers": [
+        { "Sherwin-Williams Industrial Enamel": "Sherwin-Williams" },
+        { "Rust-Oleum High Performance Protective Enamel": "Rust-Oleum" },
+        { "PPG Protective & Marine Coatings Amercoat 450H": "PPG" },
+        { "Krylon Industrial Tough Coat": "Krylon" },
+        { "Axalta Imron Industrial Strength": "Axalta" },
+        { "Behr Pro Pre-Catalyzed Waterborne Epoxy": "Behr" },
+        { "Benjamin Moore Super Spec HP D.T.M. Alkyd Low Lustre P23": "Benjamin Moore" },
+        { "Tnemec Series 90-97 Tneme-Zinc": "Tnemec" },
+        { "Carboline Rustbond Penetrating Sealer": "Carboline" },
+        { "Devoe Coatings Bar-Rust 233H": "Devoe Coatings" }
+      ],
+      "min_price": 1000,
+      "max_price": 5000,
+      "size": 10
+    },
+    {
+      "product_name": "Safety Gloves",
+      "names_manufacturers": [
+        { "Ansell HyFlex 11-840": "Ansell" },
+        { "Mechanix Wear M-Pact Gloves": "Mechanix Wear" },
+        { "Showa Atlas 370 Nitrile Gloves": "Showa" },
+        { "3M Comfort Grip Gloves": "3M" },
+        { "Kimberly-Clark Kleenguard G10 Gloves": "Kimberly-Clark" },
+        { "Honeywell NorthFlex Cold Grip Gloves": "Honeywell" },
+        { "Superior Glove Dexterity Knit Gloves": "Superior Glove" },
+        { "Magid ROC GP150 Gloves": "Magid" },
+        { "PIP MaxiFlex Ultimate 34-874": "PIP" },
+        { "Radians RWG604 Cut Protection Gloves": "Radians" }
+      ],
+      "min_price": 500,
+      "max_price": 5000,
+      "size": 10
+    },
+    {
+      "product_name": "Cleaner",
+      "names_manufacturers": [
+        { "Simple Green Industrial Cleaner & Degreaser": "Simple Green" },
+        { "ZEP Heavy-Duty Citrus Degreaser": "ZEP" },
+        { "Purple Power Industrial Strength Cleaner/Degreaser": "Purple Power" },
+        { "Oil Eater Original Cleaner & Degreaser": "Oil Eater" },
+        { "WD-40 Specialist Industrial-Strength Cleaner & Degreaser": "WD-40" },
+        { "3M Heavy Duty Degreaser Concentrate": "3M" },
+        { "Clorox Professional Multi-Purpose Cleaner": "Clorox" },
+        { "Citrus Magic Heavy Duty Cleaner & Degreaser": "Citrus Magic" },
+        { "Krud Kutter Original Concentrated Cleaner": "Krud Kutter" },
+        { "Spray Nine Heavy Duty Cleaner/Degreaser": "Spray Nine" }
+      ],
+      "min_price": 1000,
+      "max_price": 15000,
+      "size": 10
+    }
+  ]
+}

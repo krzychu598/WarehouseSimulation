@@ -148,11 +148,11 @@
     <ClInclude Include="Warehouse.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="delivery1.json" />
-    <None Include="delivery2.json" />
+    <None Include="..\SharedJsons\delivery1.json" />
+    <None Include="..\SharedJsons\delivery2.json" />
+    <None Include="..\SharedJsons\request1.json" />
+    <None Include="..\SharedJsons\request2.json" />
     <None Include="packages.config" />
-    <None Include="request1.json" />
-    <None Include="request2.json" />
     <None Include="warehouse_data.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
