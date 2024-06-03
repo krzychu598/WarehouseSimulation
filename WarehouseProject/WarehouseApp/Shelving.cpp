@@ -11,6 +11,7 @@ Shelving::Shelving(const nlohmann::json& shelving){
 
 void Shelving::put(const nlohmann::json& box) {
 	boxes.push_back(std::make_unique<Box>(box));
+	occupied_space_size++;
 	
 };
 

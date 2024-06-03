@@ -44,5 +44,3 @@ private:
     std::string name;
     nlohmann::json json_data;
 };
-
-//TODO Update json file, product should contain size, Box has const size 360

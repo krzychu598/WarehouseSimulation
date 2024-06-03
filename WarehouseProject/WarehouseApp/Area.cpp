@@ -16,7 +16,13 @@ std::string Area::getType() const {	return type; };
 void Area::put(const nlohmann::json& box) {
 	occupied_space_size++;
 	//TODO calculate priority, check shelving empty size, change this code later
-	shelvings[0]->put(box);
+	for (auto& shelving : shelvings) {
+		if (shelving->getEmptySpace()) {
+			shelving->put(box);
+			break;
+		}
+	}
+
 }
 //TODO najpierw sprawdza priority A -> B -> C
 bool Area::find(std::string name, int amount) const {

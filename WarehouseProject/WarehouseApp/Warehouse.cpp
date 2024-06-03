@@ -4,6 +4,7 @@ void Warehouse::put(const nlohmann::json& box) {
 	for (auto& area : areas) {
 		if ((area)->getType() == box["type"]) {
 			(area)->put(box);
+			occupied_space_size++;
 			return;
 		}
 	}
