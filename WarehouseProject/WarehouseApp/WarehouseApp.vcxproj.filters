@@ -74,9 +74,5 @@
     <None Include="warehouse_data.json">
       <Filter>Warehouse Json</Filter>
     </None>
-    <None Include="..\SharedJsons\delivery1.json" />
-    <None Include="..\SharedJsons\delivery2.json" />
-    <None Include="..\SharedJsons\request1.json" />
-    <None Include="..\SharedJsons\request2.json" />
   </ItemGroup>
 </Project>

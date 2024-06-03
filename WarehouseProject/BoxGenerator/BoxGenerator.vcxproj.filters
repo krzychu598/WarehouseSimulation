@@ -28,22 +28,14 @@
     <None Include="industrial.json">
       <Filter>Product Templates</Filter>
     </None>
-    <None Include="..\SharedJsons\delivery1.json" />
-    <None Include="..\SharedJsons\delivery2.json" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Delivery.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Trend.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Delivery.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Trend.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">

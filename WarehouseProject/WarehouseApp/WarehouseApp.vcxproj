@@ -148,10 +148,6 @@
     <ClInclude Include="Warehouse.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\SharedJsons\delivery1.json" />
-    <None Include="..\SharedJsons\delivery2.json" />
-    <None Include="..\SharedJsons\request1.json" />
-    <None Include="..\SharedJsons\request2.json" />
     <None Include="packages.config" />
     <None Include="warehouse_data.json" />
   </ItemGroup>

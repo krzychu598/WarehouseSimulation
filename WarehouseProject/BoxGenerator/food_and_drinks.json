@@ -10,9 +10,7 @@
         { "Coca-Cola Zero Sugar": "Coca-Cola" },
         { "Pepsi Zero Sugar": "Pepsi" },
         { "Fanta": "Coca-Cola" },
-        { "Sprite": "Coca-Cola" },
-        { "Mountain Dew": "Pepsi" },
-        { "Diet Coke": "Coca-Cola" }
+        { "Sprite": "Coca-Cola" }
       ],
       "min_price": 100,
       "max_price": 1000,
@@ -28,9 +26,7 @@
         { "Dinty Moore Beef Stew": "Dinty Moore" },
         { "Armour Vienna Sausage": "Armour" },
         { "Wild Planet Organic Roasted Chicken": "Wild Planet" },
-        { "Keystone Meats All Natural Beef": "Keystone Meats" },
-        { "Tyson Premium Chunk White Chicken": "Tyson" },
-        { "Sweet Sue Chicken and Dumplings": "Sweet Sue" }
+        { "Keystone Meats All Natural Beef": "Keystone Meats" }
       ],
       "min_price": 200,
       "max_price": 1500,
@@ -46,9 +42,7 @@
         { "Bubbies Bread & Butter Chips": "Bubbies" },
         { "Grillo's Pickles Italian Dill Spears": "Grillo's" },
         { "Gundelsheim Barrel Pickles": "Gundelsheim" },
-        { "Kosher Dill Pickle Chips": "Kosher" },
-        { "Wickles Pickles Original Slices": "Wickles" },
-        { "SuckerPunch Gourmet Spicy Garlic Original Pickles": "SuckerPunch" }
+        { "Kosher Dill Pickle Chips": "Kosher" }
       ],
       "min_price": 300,
       "max_price": 1000,
@@ -64,9 +58,7 @@
         { "Samyang Spicy Chicken Ramen": "Samyang" },
         { "Sapporo Ichiban Ramen": "Sapporo" },
         { "Koyo Ramen": "Koyo" },
-        { "Nongshim Shin Ramyun": "Nongshim" },
-        { "Mama Instant Noodles": "Mama" },
-        { "Ottogi Jin Ramen": "Ottogi" }
+        { "Nongshim Shin Ramyun": "Nongshim" }
       ],
       "min_price": 50,
       "max_price": 300,
@@ -82,9 +74,7 @@
         { "S&W Premium Black Beans": "S&W" },
         { "Goya Pinto Beans": "Goya" },
         { "Hunt's Diced Tomatoes": "Hunt's" },
-        { "Progresso Chickpeas": "Progresso" },
-        { "365 by Whole Foods Market Organic Sweet Corn": "365 by Whole Foods Market" },
-        { "La Coste�a Whole Jalape�os": "La Coste�a" }
+        { "Progresso Chickpeas": "Progresso" }
       ],
       "min_price": 100,
       "max_price": 500,
@@ -100,9 +90,7 @@
         { "Buitoni Fettuccine": "Buitoni" },
         { "Mueller's Rotini": "Mueller's" },
         { "Rao's Homemade Rigatoni": "Rao's" },
-        { "Ancient Harvest Quinoa Pasta": "Ancient Harvest" },
-        { "Tinkyada Brown Rice Pasta": "Tinkyada" },
-        { "Explore Cuisine Organic Edamame Spaghetti": "Explore Cuisine" }
+        { "Ancient Harvest Quinoa Pasta": "Ancient Harvest" }
       ],
       "min_price": 100,
       "max_price": 700,
@@ -118,9 +106,7 @@
         { "Kashi GOLEAN Crunch": "Kashi" },
         { "Nature's Path Organic Heritage Flakes": "Nature's Path" },
         { "Special K Red Berries": "Kellogg's" },
-        { "Cascadian Farm Organic Purely O's": "Cascadian Farm" },
-        { "Barbara's Puffins": "Barbara's" },
-        { "Malt-O-Meal Frosted Mini Spooners": "Malt-O-Meal" }
+        { "Cascadian Farm Organic Purely O's": "Cascadian Farm" }
       ],
       "min_price": 300,
       "max_price": 1500,
@@ -136,9 +122,7 @@
         { "Wolf Brand Chili": "Wolf" },
         { "Healthy Choice Chicken & Dumplings": "Healthy Choice" },
         { "Swanson Chicken Broth": "Swanson" },
-        { "Heinz Cream of Tomato Soup": "Heinz" },
-        { "Bear Creek Country Kitchens Cheddar Broccoli Soup Mix": "Bear Creek" },
-        { "Hormel Compleats Roast Beef & Mashed Potatoes": "Hormel" }
+        { "Heinz Cream of Tomato Soup": "Heinz" }
       ],
       "min_price": 200,
       "max_price": 1200,
@@ -154,9 +138,7 @@
         { "Peet's Coffee Major Dickason's Blend": "Peet's Coffee" },
         { "McCafe Premium Roast": "McCafe" },
         { "Eight O'Clock Coffee The Original": "Eight O'Clock" },
-        { "Lavazza Super Crema Espresso": "Lavazza" },
-        { "Death Wish Coffee Co. Dark Roast": "Death Wish Coffee Co." },
-        { "Caribou Coffee Caribou Blend": "Caribou Coffee" }
+        { "Lavazza Super Crema Espresso": "Lavazza" }
       ],
       "min_price": 500,
       "max_price": 3000,
@@ -172,9 +154,7 @@
         { "Celestial Seasonings Sleepytime Tea": "Celestial Seasonings" },
         { "Harney & Sons Hot Cinnamon Spice Tea": "Harney & Sons" },
         { "Yogi Ginger Tea": "Yogi" },
-        { "Stash Peppermint Herbal Tea": "Stash" },
-        { "Numi Organic Jasmine Green Tea": "Numi" },
-        { "Teavana Jade Citrus Mint": "Teavana" }
+        { "Stash Peppermint Herbal Tea": "Stash" }
       ],
       "min_price": 300,
       "max_price": 2000,
@@ -190,9 +170,7 @@
         { "RXBAR Chocolate Sea Salt": "RXBAR" },
         { "Larabar Peanut Butter Chocolate Chip": "Larabar" },
         { "Quaker Chewy Granola Bars": "Quaker" },
-        { "Fiber One Oats & Chocolate Bar": "Fiber One" },
-        { "Quest Nutrition Protein Bar": "Quest Nutrition" },
-        { "PowerBar ProteinPlus Bar": "PowerBar" }
+        { "Fiber One Oats & Chocolate Bar": "Fiber One" }
       ],
       "min_price": 200,
       "max_price": 1500,

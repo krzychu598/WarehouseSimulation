@@ -10,12 +10,15 @@ constexpr auto BOX_SIZE = 360;
 
 class Delivery {
 public:
-    Delivery();
+    Delivery(std::vector<std::string> types);
     
     void createDelivery(int size, std::string type1, std::string type2, const std::string& output_path="delivery.json");
     void createRequest(int num, std::string type, const std::string& output_path = "request.json");
 
 private:
+    std::unordered_map<std::string, int> trends;
+    std::vector<nlohmann::json> products; 
+    
     nlohmann::json getFromJson(const std::string& file_name) {
         std::ifstream f(file_name);
         nlohmann::json data;
@@ -80,11 +83,7 @@ private:
         }
         std::string input = type + ".json";
         nlohmann::json products = getFromJson(input)["products"];
-        nlohmann::json product;
-        for (auto& sub : products) {
-            product = sub;
-            break;
-        }
+        nlohmann::json product = products[0];
         while (num > 0) {
             boxes.push_back(createBox(product, type));
             num--;

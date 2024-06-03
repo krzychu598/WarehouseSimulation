@@ -89,6 +89,8 @@ void Warehouse::sendDelivery(const std::string& file_name) {
 		box.put(std::move(this->get(product_name, product["type"])));
 		PRINT_MSG("", product_name, " put in a delivery box");
 	}
+	PRINT_MSG("Successfully sent ", file_name, " delivery");
+
 };
 
 Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {

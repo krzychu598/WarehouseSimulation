@@ -127,8 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\SharedJsons\delivery1.json" />
-    <None Include="..\SharedJsons\delivery2.json" />
     <None Include="electronics.json" />
     <None Include="food_and_drinks.json" />
     <None Include="industrial.json" />
@@ -136,12 +134,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Delivery.h" />
-    <ClInclude Include="Trend.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Delivery.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Trend.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WarehouseApp\WarehouseApp.vcxproj">

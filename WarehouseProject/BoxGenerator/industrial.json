@@ -10,9 +10,7 @@
         { "Total Carter EP 220 Gear Oil": "Total" },
         { "ExxonMobil DTE 10 Excel 68 Hydraulic Oil": "ExxonMobil" },
         { "Royal Purple Synfilm GT 220": "Royal Purple" },
-        { "BP Energol GR-XP 220": "BP" },
-        { "Fuchs Renolin CLP 220": "Fuchs" },
-        { "Phillips 66 Megaflow AW Hydraulic Oil": "Phillips 66" }
+        { "BP Energol GR-XP 220": "BP" }
       ],
       "min_price": 50000,
       "max_price": 200000,
@@ -28,13 +26,11 @@
         { "Exell Battery EB-AA Industrial Alkaline": "Exell" },
         { "Power-Sonic PS-1270F2 SLA Battery": "Power-Sonic" },
         { "Yuasa NP7-12 SLA Battery": "Yuasa" },
-        { "Trojan T-105 Deep Cycle Battery": "Trojan" },
-        { "Deka 8G27 Gel Battery": "Deka" },
-        { "Odyssey PC680 AGM Battery": "Odyssey" }
+        { "Trojan T-105 Deep Cycle Battery": "Trojan" }
       ],
       "min_price": 1000,
       "max_price": 50000,
-      "size": 10
+      "size": 6
     },
     {
       "product_name": "Hydraulic Fluid",
@@ -46,13 +42,11 @@
         { "Total Azolla ZS 46": "Total" },
         { "BP Bartran HV 46": "BP" },
         { "ExxonMobil Nuto H 46": "ExxonMobil" },
-        { "Fuchs Renolin MR 46": "Fuchs" },
-        { "Phillips 66 Megaflow AW 46": "Phillips 66" },
-        { "Valvoline Ultramax Hydraulic Fluid": "Valvoline" }
+        { "Fuchs Renolin MR 46": "Fuchs" }
       ],
       "min_price": 30000,
       "max_price": 150000,
-      "size": 10
+      "size": 15
     },
     {
       "product_name": "Welding Rod",
@@ -64,13 +58,11 @@
         { "Blue Demon 7018 Welding Electrode": "Blue Demon" },
         { "Harris E7018 Stick Welding Electrode": "Harris" },
         { "Radnor 7018 Welding Rod": "Radnor" },
-        { "Hyundai Welding 7018": "Hyundai" },
-        { "US Forge 7018 Rod": "US Forge" },
-        { "King Welding 7018 Electrode": "King Welding" }
+        { "Hyundai Welding 7018": "Hyundai" }
       ],
       "min_price": 2000,
       "max_price": 10000,
-      "size": 10
+      "size": 20
     },
     {
       "product_name": "Cutting Oil",
@@ -82,13 +74,11 @@
         { "TRIM MicroSol 585XT": "TRIM" },
         { "ValCool VP950": "ValCool" },
         { "Rocol Ultracut 370 Plus": "Rocol" },
-        { "Master Chemical TRIM E206": "Master Chemical" },
-        { "Quaker Chemical QUAKERCOOL 3510": "Quaker Chemical" },
-        { "Chevron Soluble Oil B": "Chevron" }
+        { "Master Chemical TRIM E206": "Master Chemical" }
       ],
       "min_price": 10000,
       "max_price": 50000,
-      "size": 10
+      "size": 12
     },
     {
       "product_name": "Coolant",
@@ -100,9 +90,7 @@
         { "CAT ELC (Extended Life Coolant)": "CAT" },
         { "Peak Final Charge Global Extended Life Coolant": "Peak" },
         { "Zerex G-05 Antifreeze/Coolant": "Zerex" },
-        { "Old World Industries BlueDEF Platinum Coolant": "Old World Industries" },
-        { "Cummins Filtration Fleetguard ES Compleat OAT": "Cummins Filtration" },
-        { "Valvoline Zerex Original Green Antifreeze": "Valvoline" }
+        { "Old World Industries BlueDEF Platinum Coolant": "Old World Industries" }
       ],
       "min_price": 3000,
       "max_price": 20000,
@@ -118,9 +106,7 @@
         { "DAP Weldwood Contact Cement": "DAP" },
         { "Bostik Blu Tack Adhesive": "Bostik" },
         { "Henkel Teroson MS 939": "Henkel" },
-        { "Permatex Ultra Bond Super Glue": "Permatex" },
-        { "Devcon 5 Minute Epoxy": "Devcon" },
-        { "J-B Weld Original Cold-Weld Steel Reinforced Epoxy": "J-B Weld" }
+        { "Permatex Ultra Bond Super Glue": "Permatex" }
       ],
       "min_price": 500,
       "max_price": 15000,
@@ -136,13 +122,11 @@
         { "Axalta Imron Industrial Strength": "Axalta" },
         { "Behr Pro Pre-Catalyzed Waterborne Epoxy": "Behr" },
         { "Benjamin Moore Super Spec HP D.T.M. Alkyd Low Lustre P23": "Benjamin Moore" },
-        { "Tnemec Series 90-97 Tneme-Zinc": "Tnemec" },
-        { "Carboline Rustbond Penetrating Sealer": "Carboline" },
-        { "Devoe Coatings Bar-Rust 233H": "Devoe Coatings" }
+        { "Tnemec Series 90-97 Tneme-Zinc": "Tnemec" }
       ],
       "min_price": 1000,
       "max_price": 5000,
-      "size": 10
+      "size": 12
     },
     {
       "product_name": "Safety Gloves",
@@ -154,13 +138,11 @@
         { "Kimberly-Clark Kleenguard G10 Gloves": "Kimberly-Clark" },
         { "Honeywell NorthFlex Cold Grip Gloves": "Honeywell" },
         { "Superior Glove Dexterity Knit Gloves": "Superior Glove" },
-        { "Magid ROC GP150 Gloves": "Magid" },
-        { "PIP MaxiFlex Ultimate 34-874": "PIP" },
-        { "Radians RWG604 Cut Protection Gloves": "Radians" }
+        { "Magid ROC GP150 Gloves": "Magid" }
       ],
       "min_price": 500,
       "max_price": 5000,
-      "size": 10
+      "size": 8
     },
     {
       "product_name": "Cleaner",
@@ -172,9 +154,7 @@
         { "WD-40 Specialist Industrial-Strength Cleaner & Degreaser": "WD-40" },
         { "3M Heavy Duty Degreaser Concentrate": "3M" },
         { "Clorox Professional Multi-Purpose Cleaner": "Clorox" },
-        { "Citrus Magic Heavy Duty Cleaner & Degreaser": "Citrus Magic" },
-        { "Krud Kutter Original Concentrated Cleaner": "Krud Kutter" },
-        { "Spray Nine Heavy Duty Cleaner/Degreaser": "Spray Nine" }
+        { "Citrus Magic Heavy Duty Cleaner & Degreaser": "Citrus Magic" }
       ],
       "min_price": 1000,
       "max_price": 15000,
