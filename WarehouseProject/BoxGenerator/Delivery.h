@@ -23,7 +23,8 @@ private:
     int id;
     std::unordered_map<std::string, int> supply;
     std::unordered_map<std::string, int> demand;
-    
+    std::unordered_map<std::string, int> type_demand;
+
     nlohmann::json getFromJson(const std::string& file_name) {
         std::ifstream f(file_name);
         nlohmann::json data;
@@ -59,7 +60,7 @@ private:
         f.close();
     };
     
-    nlohmann::json choiceWeightedTemplate(const nlohmann::json& products) {
+    nlohmann::json choiceWeighted(const nlohmann::json& products) {
         int importance_sum = 0;
         std::string key;
         for (auto& product : products) {
@@ -82,44 +83,14 @@ private:
 
     }
 
-    nlohmann::json choiceWeightedNames(const nlohmann::json& products) {
-        int importance_sum = 0;
-        std::string key;
-        for (auto& product : products) {
-            for (auto el : product.items()) {
-                key = el.key();
-            }
-            if (demand[key] == 0) {
-                demand[key] = 1;
-            }
-            importance_sum += demand[key];
-
-        }
-
-        int random = rand() % importance_sum;
-        for (auto& product : products) {
-            for (auto el : product.items()) {
-                key = el.key();
-            }
-            importance_sum -= demand[key];
-            if (importance_sum <= random) {
-                supply[key];
-                return product;
-            }
-        }
-
-    }
-
     nlohmann::json createBox(const nlohmann::json& product_dict, std::string& type) {
         nlohmann::json dict;
         dict["type"] = type;
         dict["product_type_name"] = product_dict["product_name"];
-        nlohmann::json potential_names = product_dict["names_manufacturers"];
-        nlohmann::json product = choiceWeightedNames(potential_names);
-        for (auto el : product.items()) {
-            dict["product_name"] = el.key();
-            dict["manufacturer_name"] = el.value();
-        }
+        nlohmann::json products_manufacturers = product_dict["products_manufacturers"];
+        nlohmann::json product = choiceWeighted(products_manufacturers);
+        dict["product_name"] = product["product_name"];
+        dict["manufacturer_name"] = product["manufacturer_name"];
         dict["id"] = id;
         id++;
         dict["price"] = product_dict["min_price"];
@@ -138,7 +109,7 @@ private:
         nlohmann::json products = getFromJson(input)["products"];
         nlohmann::json product; 
         while (num > 0) {
-            product = choiceWeightedTemplate(products);
+            product = choiceWeighted(products);
             boxes.push_back(createBox(product, type));
             num--;
         }
@@ -150,14 +121,8 @@ private:
         nlohmann::json dict;
         dict["type"] = type;
         dict["product_type_name"] = in_data["product_name"];
-        for (auto& sub : in_data["names_manufacturers"]) {
-            for (auto el : sub.items()) {
-                dict["product_name"] = el.key();
-                break;
-            }
-            break;
-        }
-        dict["quantity"] = 1;
+        dict["product_name"] = choiceWeighted(in_data["products_manufacturers"])["product_name"];
+        dict["quantity"] = rand() % 3 + 1;
         return dict;
     };
 };

@@ -13,8 +13,10 @@ int main() {
 	Warehouse warehouse("warehouse_data.json");
 	
 	warehouse.acceptDelivery("delivery1.json");
+	warehouse.acceptDelivery("delivery2.json");
+	warehouse.acceptDelivery("delivery3.json");
 
-	warehouse.sendDelivery("request2.json");
+	warehouse.sendDelivery("request1.json");
 
 	return 0;
 

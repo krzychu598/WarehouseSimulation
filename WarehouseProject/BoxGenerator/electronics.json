@@ -1,16 +1,17 @@
+
 {
   "products": [
     {
       "product_name": "Laptop",
-      "names_manufacturers": [
-        { "Dell XPS 13": "Dell" },
-        { "MacBook Air M2": "Apple" },
-        { "HP Spectre x360": "HP" },
-        { "Asus ROG Zephyrus G14": "Asus" },
-        { "Lenovo ThinkPad X1 Carbon": "Lenovo" },
-        { "Microsoft Surface Laptop 4": "Microsoft" },
-        { "Acer Swift 3": "Acer" },
-        { "Razer Blade 15": "Razer" }
+      "products_manufacturers": [
+        { "product_name": "Dell XPS 13", "manufacturer_name": "Dell" },
+        { "product_name": "MacBook Air M2", "manufacturer_name": "Apple" },
+        { "product_name": "HP Spectre x360", "manufacturer_name": "HP" },
+        { "product_name": "Asus ROG Zephyrus G14", "manufacturer_name": "Asus" },
+        { "product_name": "Lenovo ThinkPad X1 Carbon", "manufacturer_name": "Lenovo" },
+        { "product_name": "Microsoft Surface Laptop 4", "manufacturer_name": "Microsoft" },
+        { "product_name": "Acer Swift 3", "manufacturer_name": "Acer" },
+        { "product_name": "Razer Blade 15", "manufacturer_name": "Razer" }
       ],
       "min_price": 60000,
       "max_price": 200000,
@@ -18,15 +19,15 @@
     },
     {
       "product_name": "Mouse",
-      "names_manufacturers": [
-        { "Logitech MX Master 3": "Logitech" },
-        { "Razer DeathAdder V2": "Razer" },
-        { "Microsoft Arc Mouse": "Microsoft" },
-        { "Corsair Dark Core RGB Pro": "Corsair" },
-        { "SteelSeries Rival 600": "SteelSeries" },
-        { "Apple Magic Mouse 2": "Apple" },
-        { "Logitech G Pro X Superlight": "Logitech" },
-        { "HP Omen Vector Wireless Mouse": "HP" }
+      "products_manufacturers": [
+        { "product_name": "Logitech MX Master 3", "manufacturer_name": "Logitech" },
+        { "product_name": "Razer DeathAdder V2", "manufacturer_name": "Razer" },
+        { "product_name": "Microsoft Arc Mouse", "manufacturer_name": "Microsoft" },
+        { "product_name": "Corsair Dark Core RGB Pro", "manufacturer_name": "Corsair" },
+        { "product_name": "SteelSeries Rival 600", "manufacturer_name": "SteelSeries" },
+        { "product_name": "Apple Magic Mouse 2", "manufacturer_name": "Apple" },
+        { "product_name": "Logitech G Pro X Superlight", "manufacturer_name": "Logitech" },
+        { "product_name": "HP Omen Vector Wireless Mouse", "manufacturer_name": "HP" }
       ],
       "min_price": 2000,
       "max_price": 15000,
@@ -34,15 +35,15 @@
     },
     {
       "product_name": "Headphones",
-      "names_manufacturers": [
-        { "Sony WH-1000XM4": "Sony" },
-        { "Bose QuietComfort 35 II": "Bose" },
-        { "Sennheiser HD 660 S": "Sennheiser" },
-        { "Apple AirPods Max": "Apple" },
-        { "Jabra Elite 85h": "Jabra" },
-        { "Beats Studio3 Wireless": "Beats" },
-        { "AKG N700NC M2": "AKG" },
-        { "Microsoft Surface Headphones 2": "Microsoft" }
+      "products_manufacturers": [
+        { "product_name": "Sony WH-1000XM4", "manufacturer_name": "Sony" },
+        { "product_name": "Bose QuietComfort 35 II", "manufacturer_name": "Bose" },
+        { "product_name": "Sennheiser HD 660 S", "manufacturer_name": "Sennheiser" },
+        { "product_name": "Apple AirPods Max", "manufacturer_name": "Apple" },
+        { "product_name": "Jabra Elite 85h", "manufacturer_name": "Jabra" },
+        { "product_name": "Beats Studio3 Wireless", "manufacturer_name": "Beats" },
+        { "product_name": "AKG N700NC M2", "manufacturer_name": "AKG" },
+        { "product_name": "Microsoft Surface Headphones 2", "manufacturer_name": "Microsoft" }
       ],
       "min_price": 10000,
       "max_price": 70000,
@@ -50,15 +51,15 @@
     },
     {
       "product_name": "Earphones",
-      "names_manufacturers": [
-        { "Sony WF-1000XM4": "Sony" },
-        { "Apple AirPods Pro": "Apple" },
-        { "Samsung Galaxy Buds Pro": "Samsung" },
-        { "Jabra Elite 75t": "Jabra" },
-        { "Bose Sport Earbuds": "Bose" },
-        { "Sennheiser Momentum True Wireless 2": "Sennheiser" },
-        { "Anker Soundcore Liberty Air 2 Pro": "Anker" },
-        { "Google Pixel Buds A-Series": "Google" }
+      "products_manufacturers": [
+        { "product_name": "Sony WF-1000XM4", "manufacturer_name": "Sony" },
+        { "product_name": "Apple AirPods Pro", "manufacturer_name": "Apple" },
+        { "product_name": "Samsung Galaxy Buds Pro", "manufacturer_name": "Samsung" },
+        { "product_name": "Jabra Elite 75t", "manufacturer_name": "Jabra" },
+        { "product_name": "Bose Sport Earbuds", "manufacturer_name": "Bose" },
+        { "product_name": "Sennheiser Momentum True Wireless 2", "manufacturer_name": "Sennheiser" },
+        { "product_name": "Anker Soundcore Liberty Air 2 Pro", "manufacturer_name": "Anker" },
+        { "product_name": "Google Pixel Buds A-Series", "manufacturer_name": "Google" }
       ],
       "min_price": 5000,
       "max_price": 30000,
@@ -66,15 +67,15 @@
     },
     {
       "product_name": "Powerbank",
-      "names_manufacturers": [
-        { "Anker PowerCore 10000": "Anker" },
-        { "RAVPower Portable Charger 20000mAh": "RAVPower" },
-        { "Aukey 10000mAh Power Bank": "Aukey" },
-        { "Xiaomi Mi Power Bank 3": "Xiaomi" },
-        { "Zendure A6PD Portable Charger": "Zendure" },
-        { "Mophie PowerStation PD": "Mophie" },
-        { "Samsung Wireless Power Bank": "Samsung" },
-        { "Belkin Boost Charge Power Bank": "Belkin" }
+      "products_manufacturers": [
+        { "product_name": "Anker PowerCore 10000", "manufacturer_name": "Anker" },
+        { "product_name": "RAVPower Portable Charger 20000mAh", "manufacturer_name": "RAVPower" },
+        { "product_name": "Aukey 10000mAh Power Bank", "manufacturer_name": "Aukey" },
+        { "product_name": "Xiaomi Mi Power Bank 3", "manufacturer_name": "Xiaomi" },
+        { "product_name": "Zendure A6PD Portable Charger", "manufacturer_name": "Zendure" },
+        { "product_name": "Mophie PowerStation PD", "manufacturer_name": "Mophie" },
+        { "product_name": "Samsung Wireless Power Bank", "manufacturer_name": "Samsung" },
+        { "product_name": "Belkin Boost Charge Power Bank", "manufacturer_name": "Belkin" }
       ],
       "min_price": 1500,
       "max_price": 10000,
@@ -82,15 +83,15 @@
     },
     {
       "product_name": "Smartphone",
-      "names_manufacturers": [
-        { "iPhone 13 Pro": "Apple" },
-        { "Samsung Galaxy S21 Ultra": "Samsung" },
-        { "Google Pixel 6 Pro": "Google" },
-        { "OnePlus 9 Pro": "OnePlus" },
-        { "Xiaomi Mi 11 Ultra": "Xiaomi" },
-        { "Sony Xperia 1 III": "Sony" },
-        { "Oppo Find X3 Pro": "Oppo" },
-        { "Huawei P50 Pro": "Huawei" }
+      "products_manufacturers": [
+        { "product_name": "iPhone 13 Pro", "manufacturer_name": "Apple" },
+        { "product_name": "Samsung Galaxy S21 Ultra", "manufacturer_name": "Samsung" },
+        { "product_name": "Google Pixel 6 Pro", "manufacturer_name": "Google" },
+        { "product_name": "OnePlus 9 Pro", "manufacturer_name": "OnePlus" },
+        { "product_name": "Xiaomi Mi 11 Ultra", "manufacturer_name": "Xiaomi" },
+        { "product_name": "Sony Xperia 1 III", "manufacturer_name": "Sony" },
+        { "product_name": "Oppo Find X3 Pro", "manufacturer_name": "Oppo" },
+        { "product_name": "Huawei P50 Pro", "manufacturer_name": "Huawei" }
       ],
       "min_price": 60000,
       "max_price": 150000,
@@ -98,15 +99,15 @@
     },
     {
       "product_name": "Charger",
-      "names_manufacturers": [
-        { "Anker PowerPort III Nano": "Anker" },
-        { "RAVPower 65W PD Charger": "RAVPower" },
-        { "Apple 20W USB-C Power Adapter": "Apple" },
-        { "Samsung 25W USB-C Fast Charging Wall Charger": "Samsung" },
-        { "Belkin Boost Charge 18W": "Belkin" },
-        { "AUKEY Omnia 100W PD Charger": "AUKEY" },
-        { "Spigen 30W USB-C Power Delivery Charger": "Spigen" },
-        { "Baseus 65W GaN Charger": "Baseus" }
+      "products_manufacturers": [
+        { "product_name": "Anker PowerPort III Nano", "manufacturer_name": "Anker" },
+        { "product_name": "RAVPower 65W PD Charger", "manufacturer_name": "RAVPower" },
+        { "product_name": "Apple 20W USB-C Power Adapter", "manufacturer_name": "Apple" },
+        { "product_name": "Samsung 25W USB-C Fast Charging Wall Charger", "manufacturer_name": "Samsung" },
+        { "product_name": "Belkin Boost Charge 18W", "manufacturer_name": "Belkin" },
+        { "product_name": "AUKEY Omnia 100W PD Charger", "manufacturer_name": "AUKEY" },
+        { "product_name": "Spigen 30W USB-C Power Delivery Charger", "manufacturer_name": "Spigen" },
+        { "product_name": "Baseus 65W GaN Charger", "manufacturer_name": "Baseus" }
       ],
       "min_price": 1000,
       "max_price": 8000,
@@ -114,17 +115,17 @@
     },
     {
       "product_name": "Graphics Card",
-      "names_manufacturers": [
-        { "NVIDIA GeForce RTX 3080": "NVIDIA" },
-        { "AMD Radeon RX 6800 XT": "AMD" },
-        { "NVIDIA GeForce RTX 3060 Ti": "NVIDIA" },
-        { "AMD Radeon RX 6700 XT": "AMD" },
-        { "NVIDIA GeForce RTX 3090": "NVIDIA" },
-        { "AMD Radeon RX 6900 XT": "AMD" },
-        { "NVIDIA GeForce GTX 1660 Super": "NVIDIA" },
-        { "NVIDIA GeForce RTX 3070": "NVIDIA" },
-        { "AMD Radeon RX 6600 XT": "AMD" },
-        { "NVIDIA GeForce RTX 2080 Ti": "NVIDIA" }
+      "products_manufacturers": [
+        { "product_name": "NVIDIA GeForce RTX 3080", "manufacturer_name": "NVIDIA" },
+        { "product_name": "AMD Radeon RX 6800 XT", "manufacturer_name": "AMD" },
+        { "product_name": "NVIDIA GeForce RTX 3060 Ti", "manufacturer_name": "NVIDIA" },
+        { "product_name": "AMD Radeon RX 6700 XT", "manufacturer_name": "AMD" },
+        { "product_name": "NVIDIA GeForce RTX 3090", "manufacturer_name": "NVIDIA" },
+        { "product_name": "AMD Radeon RX 6900 XT", "manufacturer_name": "AMD" },
+        { "product_name": "NVIDIA GeForce GTX 1660 Super", "manufacturer_name": "NVIDIA" },
+        { "product_name": "NVIDIA GeForce RTX 3070", "manufacturer_name": "NVIDIA" },
+        { "product_name": "AMD Radeon RX 6600 XT", "manufacturer_name": "AMD" },
+        { "product_name": "NVIDIA GeForce RTX 2080 Ti", "manufacturer_name": "NVIDIA" }
       ],
       "min_price": 30000,
       "max_price": 200000,
@@ -132,17 +133,17 @@
     },
     {
       "product_name": "Keyboard",
-      "names_manufacturers": [
-        { "Logitech MX Keys": "Logitech" },
-        { "Corsair K95 RGB Platinum XT": "Corsair" },
-        { "Razer BlackWidow Elite": "Razer" },
-        { "SteelSeries Apex Pro": "SteelSeries" },
-        { "Das Keyboard 4 Professional": "Das Keyboard" },
-        { "Apple Magic Keyboard": "Apple" },
-        { "Microsoft Surface Keyboard": "Microsoft" },
-        { "HyperX Alloy FPS Pro": "HyperX" },
-        { "Keychron K2 Wireless": "Keychron" },
-        { "Cooler Master MK730": "Cooler Master" }
+      "products_manufacturers": [
+        { "product_name": "Logitech MX Keys", "manufacturer_name": "Logitech" },
+        { "product_name": "Corsair K95 RGB Platinum XT", "manufacturer_name": "Corsair" },
+        { "product_name": "Razer BlackWidow Elite", "manufacturer_name": "Razer" },
+        { "product_name": "SteelSeries Apex Pro", "manufacturer_name": "SteelSeries" },
+        { "product_name": "Das Keyboard 4 Professional", "manufacturer_name": "Das Keyboard" },
+        { "product_name": "Apple Magic Keyboard", "manufacturer_name": "Apple" },
+        { "product_name": "Microsoft Surface Keyboard", "manufacturer_name": "Microsoft" },
+        { "product_name": "HyperX Alloy FPS Pro", "manufacturer_name": "HyperX" },
+        { "product_name": "Keychron K2 Wireless", "manufacturer_name": "Keychron" },
+        { "product_name": "Cooler Master MK730", "manufacturer_name": "Cooler Master" }
       ],
       "min_price": 3000,
       "max_price": 15000,
@@ -150,15 +151,15 @@
     },
     {
       "product_name": "Tablet",
-      "names_manufacturers": [
-        { "Apple iPad Pro": "Apple" },
-        { "Samsung Galaxy Tab S7": "Samsung" },
-        { "Microsoft Surface Pro 7": "Microsoft" },
-        { "Amazon Fire HD 10": "Amazon" },
-        { "Lenovo Tab P11 Pro": "Lenovo" },
-        { "Huawei MatePad Pro": "Huawei" },
-        { "Asus ZenPad 3S 10": "Asus" },
-        { "Sony Xperia Z4 Tablet": "Sony" }
+      "products_manufacturers": [
+        { "product_name": "Apple iPad Pro", "manufacturer_name": "Apple" },
+        { "product_name": "Samsung Galaxy Tab S7", "manufacturer_name": "Samsung" },
+        { "product_name": "Microsoft Surface Pro 7", "manufacturer_name": "Microsoft" },
+        { "product_name": "Amazon Fire HD 10", "manufacturer_name": "Amazon" },
+        { "product_name": "Lenovo Tab P11 Pro", "manufacturer_name": "Lenovo" },
+        { "product_name": "Huawei MatePad Pro", "manufacturer_name": "Huawei" },
+        { "product_name": "Asus ZenPad 3S 10", "manufacturer_name": "Asus" },
+        { "product_name": "Sony Xperia Z4 Tablet", "manufacturer_name": "Sony" }
       ],
       "min_price": 15000,
       "max_price": 100000,
@@ -166,15 +167,15 @@
     },
     {
       "product_name": "Processor",
-      "names_manufacturers": [
-        { "Intel Core i9-11900K": "Intel" },
-        { "AMD Ryzen 9 5900X": "AMD" },
-        { "Intel Core i7-11700K": "Intel" },
-        { "AMD Ryzen 7 5800X": "AMD" },
-        { "Intel Core i5-11600K": "Intel" },
-        { "AMD Ryzen 5 5600X": "AMD" },
-        { "Intel Core i3-10100F": "Intel" },
-        { "AMD Ryzen 3 3300X": "AMD" }
+      "products_manufacturers": [
+        { "product_name": "Intel Core i9-11900K", "manufacturer_name": "Intel" },
+        { "product_name": "AMD Ryzen 9 5900X", "manufacturer_name": "AMD" },
+        { "product_name": "Intel Core i7-11700K", "manufacturer_name": "Intel" },
+        { "product_name": "AMD Ryzen 7 5800X", "manufacturer_name": "AMD" },
+        { "product_name": "Intel Core i5-11600K", "manufacturer_name": "Intel" },
+        { "product_name": "AMD Ryzen 5 5600X", "manufacturer_name": "AMD" },
+        { "product_name": "Intel Core i3-10100F", "manufacturer_name": "Intel" },
+        { "product_name": "AMD Ryzen 3 3300X", "manufacturer_name": "AMD" }
       ],
       "min_price": 10000,
       "max_price": 60000,

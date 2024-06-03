@@ -20,8 +20,7 @@ void Delivery::createDelivery(int size, std::string type1, std::string type2, co
 	type1_data.insert(type1_data.end(), type2_data.begin(), type2_data.end()); //add two vectors together
 	data["boxes"] = type1_data;
 	dumpToFile(data, output_path);
-	//TODO delete later
-	std::cout << data.dump(4) << '\n';
+	//std::cout << data.dump(4) << '\n';
 
 };
 
@@ -30,15 +29,11 @@ void Delivery::createRequest(int num, std::string type, const std::string& outpu
 	std::vector<json> products;
 
 	std::string input = type + ".json";
-	//TODO implement Trends
-	json in_data;
 	json json_products = getFromJson(input)["products"];
-	for (auto& product : json_products) {
-		in_data = product;
-		break;
-	}
+	nlohmann::json product;
 	while (num != 0) {
-		products.push_back(createProduct(in_data, type));
+		product = choiceWeighted(json_products);
+		products.push_back(createProduct(product, type));
 		num--;
 			
 	}
@@ -69,7 +64,7 @@ void Delivery::setTrend() {
 			continue;
 		}
 		it->second += 10;
-		std::cout << it->first << " is trending";
+		//std::cout << it->first << " is trending\n";
 		break;
 	}
 }
