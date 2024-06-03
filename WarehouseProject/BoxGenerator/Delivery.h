@@ -7,13 +7,15 @@
 //#include "Trend.h"
 class Delivery {
 public:
-    Delivery(std::string name="output");
+    Delivery();
     
     nlohmann::json createBox(const nlohmann::json& product_dict, std::string& type);
     std::vector<nlohmann::json> getBoxes(std::string& type, int num);
-    void createDelivery(int size, std::string type1, std::string type2="");
+    void createDelivery(int size, std::string type1, std::string type2, const std::string& output_path="delivery.json");
+
+    nlohmann::json createProduct(const nlohmann::json& data, std::string& type);
+    void createRequest(int num, std::string type, const std::string& output_path = "request.json");
 private:
-    std::string output_path;
     nlohmann::json getFromJson(const std::string& file_name) {
         std::ifstream f(file_name);
         nlohmann::json data;
@@ -32,7 +34,7 @@ private:
         return data;
     };
 
-    void dumpToFile(const nlohmann::json& data) {
+    void dumpToFile(const nlohmann::json& data, const std::string& output_path) {
         std::ofstream f(output_path);
         if (!f.is_open()) {
             throw std::runtime_error("Couldn't open the file");
