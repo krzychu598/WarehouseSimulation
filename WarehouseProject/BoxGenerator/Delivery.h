@@ -3,6 +3,8 @@
 #include <vector>
 #include <fstream>
 #include <unordered_map>
+#include <cstdlib>
+#include <ctime>
 #include "nlohmann/json.hpp"
 //#include "Trend.h"
 
@@ -10,14 +12,17 @@ constexpr auto BOX_SIZE = 360;
 
 class Delivery {
 public:
-    Delivery(std::vector<std::string> types);
+    Delivery();
     
     void createDelivery(int size, std::string type1, std::string type2, const std::string& output_path="delivery.json");
     void createRequest(int num, std::string type, const std::string& output_path = "request.json");
+    void updateDemand();
+    void setTrend();
 
 private:
-    std::unordered_map<std::string, int> trends;
-    std::vector<nlohmann::json> products; 
+    int id;
+    std::unordered_map<std::string, int> supply;
+    std::unordered_map<std::string, int> demand;
     
     nlohmann::json getFromJson(const std::string& file_name) {
         std::ifstream f(file_name);
@@ -53,22 +58,70 @@ private:
 
         f.close();
     };
+    
+    nlohmann::json choiceWeightedTemplate(const nlohmann::json& products) {
+        int importance_sum = 0;
+        std::string key;
+        for (auto& product : products) {
+            key = product["product_name"];
+            //initialize item's demand if necessary
+            if (demand[key] == 0) {
+                demand[key] = 1;
+            }
+            importance_sum += demand[key];
+        }
+
+        int random = rand() % importance_sum;
+        for (auto& product : products) {
+            importance_sum -= demand[product["product_name"]];
+            if (importance_sum <= random) {
+                supply[product["product_name"]];
+                return product;
+            }
+        }
+
+    }
+
+    nlohmann::json choiceWeightedNames(const nlohmann::json& products) {
+        int importance_sum = 0;
+        std::string key;
+        for (auto& product : products) {
+            for (auto el : product.items()) {
+                key = el.key();
+            }
+            if (demand[key] == 0) {
+                demand[key] = 1;
+            }
+            importance_sum += demand[key];
+
+        }
+
+        int random = rand() % importance_sum;
+        for (auto& product : products) {
+            for (auto el : product.items()) {
+                key = el.key();
+            }
+            importance_sum -= demand[key];
+            if (importance_sum <= random) {
+                supply[key];
+                return product;
+            }
+        }
+
+    }
 
     nlohmann::json createBox(const nlohmann::json& product_dict, std::string& type) {
         nlohmann::json dict;
         dict["type"] = type;
         dict["product_type_name"] = product_dict["product_name"];
-        //TODO choose product based on trend. For now just take first element
-        for (auto& sub : product_dict["names_manufacturers"]) {
-            for (auto el : sub.items()) {
-                dict["product_name"] = el.key();
-                dict["manufacturer_name"] = el.value();
-                break;
-            }
-            break;
+        nlohmann::json potential_names = product_dict["names_manufacturers"];
+        nlohmann::json product = choiceWeightedNames(potential_names);
+        for (auto el : product.items()) {
+            dict["product_name"] = el.key();
+            dict["manufacturer_name"] = el.value();
         }
-        //for now fixed values. Implement rand or baseed on trend setting later
-        dict["id"] = 0;
+        dict["id"] = id;
+        id++;
         dict["price"] = product_dict["min_price"];
         dict["size"] = product_dict["size"];
         dict["product_count"] = BOX_SIZE / product_dict["size"];
@@ -83,8 +136,9 @@ private:
         }
         std::string input = type + ".json";
         nlohmann::json products = getFromJson(input)["products"];
-        nlohmann::json product = products[0];
+        nlohmann::json product; 
         while (num > 0) {
+            product = choiceWeightedTemplate(products);
             boxes.push_back(createBox(product, type));
             num--;
         }

@@ -2,7 +2,7 @@
 
 
 using json = nlohmann::json;
-Delivery::Delivery(std::vector<std::string> types) {};
+Delivery::Delivery() { id = 178650; srand(time(NULL)); };
 
 void Delivery::createDelivery(int size, std::string type1, std::string type2, const std::string& output_path) {
 	json data;
@@ -46,3 +46,30 @@ void Delivery::createRequest(int num, std::string type, const std::string& outpu
 	dumpToFile(data, output_path);
 	};
 
+void Delivery::updateDemand() {
+	//supply < demand
+	for (std::unordered_map<std::string, int>::iterator it = demand.begin(); it != demand.end(); ++it) {
+		if (it->second >= supply[it->first]) {
+			it->second++;
+		}
+	}
+	//price < (max_price-min_price)/2
+
+	//product type is in demand
+}
+
+void Delivery::setTrend() {
+	if (demand.size() == 0) {
+		return;
+	}
+	int random = rand() % demand.size();
+	for (std::unordered_map<std::string, int>::iterator it = demand.begin(); it != demand.end(); ++it) {
+		random--;
+		if (random != 0) {
+			continue;
+		}
+		it->second += 10;
+		std::cout << it->first << " is trending";
+		break;
+	}
+}
