@@ -138,7 +138,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Delivery.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Trend.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WarehouseApp\WarehouseApp.vcxproj">
+      <Project>{5d427614-d17f-491a-9fd6-c1487bec2e8a}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
