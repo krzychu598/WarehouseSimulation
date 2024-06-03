@@ -3,6 +3,7 @@ class Employee
 {
 public:
 	Employee();
+	//const std::string& work_type
 	Employee(unsigned int p_id, bool p_is_forklift_certified);
 	unsigned int getId();
 	bool is_certified();

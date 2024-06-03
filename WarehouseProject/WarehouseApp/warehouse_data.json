@@ -71,6 +71,57 @@
       ]
 
     }
+  ],
+  "teams": [
+    {
+      "team_name": "A",
+      "work_type": "storage_managment",
+      "employees": [
+        {
+          "name": "K",
+          "id": "0001",
+          "forklift": true,
+          "experience": "begginner"
+        },
+        {
+          "name": "M",
+          "id": "0002",
+          "forklift": false,
+          "experience": "intermediate"
+        },
+        {
+          "name": "P",
+          "id": "0003",
+          "forklift": true,
+          "experience": "senior"
+        }
+      ]
+    },
+    {
+      "team_name": "B",
+      "work_type": "packaging",
+      "employees": [
+        {
+          "name": "K",
+          "id": "0001",
+          "forklift": false,
+          "experience": "begginner"
+        },
+        {
+          "name": "M",
+          "id": "0002",
+          "forklift": false,
+          "experience": "intermediate"
+        },
+        {
+          "name": "P",
+          "id": "0003",
+          "forklift": false,
+          "experience": "begginner"
+        }
+      ]
+    }
+
   ]
 
 }

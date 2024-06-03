@@ -15,7 +15,7 @@ std::string Area::getType() const {	return type; };
 
 void Area::put(const nlohmann::json& box) {
 	occupied_space_size++;
-	//TODO calculate priority, check shelving empty size, change this code later
+	//TODO calculate priority
 	for (auto& shelving : shelvings) {
 		if (shelving->getEmptySpace()) {
 			shelving->put(box);

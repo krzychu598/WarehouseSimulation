@@ -1,11 +1,13 @@
 ﻿#include <iostream>
 #include "Warehouse.h"
 #include "Product.h"
+#include "Employee.h"
 // Zmienne z _ np. storage_space
 // Funkcje camelCase
 // Push to dev
 // Podział StorageSpace po konsultacji ze wszystkimi
 // Warehouse, Area - Krzychu; Shelving, Box - Maks; Product, Employee - Paweł
+
 int main() {
 
 	//experimental code sample

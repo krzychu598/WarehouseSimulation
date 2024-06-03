@@ -10,14 +10,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BoxGenerator", "BoxGenerator\BoxGenerator.vcxproj", "{95866C23-5DC7-4A16-8D46-256559481D24}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JSONS", "JSONS", "{62CCFF03-8F59-46AA-A27D-F9C1C356D948}"
-	ProjectSection(SolutionItems) = preProject
-		SharedJsons\delivery1.json = SharedJsons\delivery1.json
-		SharedJsons\delivery2.json = SharedJsons\delivery2.json
-		SharedJsons\delivery3.json = SharedJsons\delivery3.json
-		SharedJsons\request1.json = SharedJsons\request1.json
-		SharedJsons\request2.json = SharedJsons\request2.json
-		SharedJsons\request3.json = SharedJsons\request3.json
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

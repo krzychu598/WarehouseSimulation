@@ -1,5 +1,23 @@
 #include "Warehouse.h"
 
+Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
+	json_data = getJsonData(file_path);
+
+	name = json_data.at("name");
+	size = json_data.at("size").get<unsigned int>();
+
+	for (const auto& area_json : json_data["areas"]) {
+		areas.push_back(std::make_unique<Area>(
+			area_json
+		));
+	}
+	PRINT_MSG("Warehouse ", name, " created");
+}
+
+Warehouse::~Warehouse() {
+	PRINT_MSG("\nWarehouse ", name, " destroyed");
+}
+
 void Warehouse::put(const nlohmann::json& box) {
 	for (auto& area : areas) {
 		if ((area)->getType() == box["type"]) {
@@ -93,20 +111,4 @@ void Warehouse::sendDelivery(const std::string& file_name) {
 
 };
 
-Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
-	json_data = getJsonData(file_path);
-
-	name = json_data.at("name");
-	size = json_data.at("size").get<unsigned int>();
-
-	for (const auto& area_json : json_data["areas"]) {
-		areas.push_back(std::make_unique<Area>(
-			area_json
-		));
-	}
-	PRINT_MSG("Warehouse ", name, " created");
-}
-
-Warehouse::~Warehouse() {
-	PRINT_MSG("\nWarehouse ", name, " destroyed");
-}
+//TODO log, employees, multithreading
