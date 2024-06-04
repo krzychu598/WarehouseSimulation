@@ -186,7 +186,7 @@ private:
         nlohmann::json product_dict;
         product_dict["kind"] = kind.name;
         Product& product = choiceWeightedProduct(kind);
-        product_dict["name"] = product.name;
+        product_dict["product_name"] = product.name;
         int quant = rand() % 3 + 1;
         product_dict["quantity"] = quant;
 

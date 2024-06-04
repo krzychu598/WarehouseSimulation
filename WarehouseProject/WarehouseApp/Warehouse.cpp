@@ -96,15 +96,15 @@ void Warehouse::sendDelivery(const std::string& file_name) {
 	nlohmann::json delivery_data = getJsonData(file_path);
 	nlohmann::json products = delivery_data["products"];
 	for (auto& product : products) {
-		if (!this->find(product["name"], product["quantity"], delivery_data["type"])) {
-			std::cout << "delivery cannot be sent. Not enough " << product["name"] << '\n';
+		if (!this->find(product["product_name"], product["quantity"], delivery_data["type"])) {
+			std::cout << "delivery cannot be sent. Not enough " << product["product_name"] << '\n';
 			return;
 			};
 	};
 	Box box;
 	for (const auto& product : products) {
 		std::string product_name = product["product_name"];
-		box.put(std::move(this->get(product_name, product["type"])));
+		box.put(std::move(this->get(product_name, delivery_data["type"])));
 		PRINT_MSG("", product_name, " put in a delivery box");
 	}
 	PRINT_MSG("Successfully sent ", file_name, " delivery");
