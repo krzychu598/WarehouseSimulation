@@ -12,7 +12,7 @@ Product::Product()
 
 Product::Product(const nlohmann::json& info) {
 	type = info["type"];
-	type_name = info["product_type_name"];
+	kind = info["kind"];
 	name = info["product_name"];
 	manufacturer_name = info["manufacturer_name"];
 	priority = 0;

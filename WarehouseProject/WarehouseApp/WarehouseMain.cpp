@@ -37,7 +37,7 @@ void initiateLoop(Warehouse& warehouse) {
 }
 int main() {
 	Warehouse warehouse("warehouse_data.json");
-	warehouse.acceptDelivery("initial_delivery.json");
+	warehouse.acceptDelivery("delivery_initial.json");
 	initiateLoop(warehouse);
 
 	return 0;

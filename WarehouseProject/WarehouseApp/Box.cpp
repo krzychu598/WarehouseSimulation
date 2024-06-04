@@ -1,7 +1,7 @@
 #include "Box.h"
 Box::Box(const nlohmann::json& box) : product_name(box.at("product_name")) {
 	size = 360;
-	occupied_space_size = 0;
+	occupied_space_size = 360;
 	for (unsigned int i = 0; i < box["product_count"].get<unsigned int>(); ++i) {
 		products.push_back(std::make_unique<Product>(box));
 	};
@@ -12,6 +12,7 @@ Box::Box(const nlohmann::json& box) : product_name(box.at("product_name")) {
 };
 Box::Box(){
 	size = 360;
+	occupied_space_size = 0;
 };
 void Box::put(std::unique_ptr<Product> product) {
 
