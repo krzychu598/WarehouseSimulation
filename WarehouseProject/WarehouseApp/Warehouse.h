@@ -24,6 +24,7 @@ public:
     std::unique_ptr<Product> get(std::string& name, std::string type);
     void acceptDelivery(const std::string& file_path);
     void sendDelivery(const std::string& file_path);
+    void assignToJob();
 private:
     nlohmann::json getJsonData(const std::string& file_path) {
         std::ifstream f(file_path);

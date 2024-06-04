@@ -1,26 +1,26 @@
 {
   "name": "Amaze_On",
-  "size": 60,
+  "size": 1200,
   "areas": [
 
     {
       "type": "electronics",
-      "size": 20,
+      "size": 400,
       "shelvings": [
         {
           "priority": "A",
-          "size": 4
+          "size": 80
 
         },
 
         {
           "priority": "B",
-          "size": 6
+          "size": 120
         },
 
         {
           "priority": "C",
-          "size": 10
+          "size": 200
         }
       ]
 
@@ -28,22 +28,22 @@
 
     {
       "type": "food_and_drinks",
-      "size": 20,
+      "size": 400,
       "shelvings": [
         {
           "priority": "A",
-          "size": 4
+          "size": 80
 
         },
 
         {
           "priority": "B",
-          "size": 6
+          "size": 120
         },
 
         {
           "priority": "C",
-          "size": 10
+          "size": 200
         }
       ]
 
@@ -51,22 +51,22 @@
 
     {
       "type": "industrial",
-      "size": 20,
+      "size": 400,
       "shelvings": [
         {
           "priority": "A",
-          "size": 4
+          "size": 80
 
         },
 
         {
           "priority": "B",
-          "size": 6
+          "size": 120
         },
 
         {
           "priority": "C",
-          "size": 10
+          "size": 200
         }
       ]
 
@@ -79,19 +79,19 @@
       "employees": [
         {
           "name": "K",
-          "id": "0001",
+          "id": "00001",
           "forklift": true,
           "experience": "begginner"
         },
         {
           "name": "M",
-          "id": "0002",
+          "id": "00002",
           "forklift": false,
           "experience": "intermediate"
         },
         {
           "name": "P",
-          "id": "0003",
+          "id": "00003",
           "forklift": true,
           "experience": "senior"
         }
@@ -103,19 +103,19 @@
       "employees": [
         {
           "name": "K",
-          "id": "0001",
+          "id": "00001",
           "forklift": false,
           "experience": "begginner"
         },
         {
           "name": "M",
-          "id": "0002",
+          "id": "00002",
           "forklift": false,
           "experience": "intermediate"
         },
         {
           "name": "P",
-          "id": "0003",
+          "id": "00003",
           "forklift": false,
           "experience": "begginner"
         }

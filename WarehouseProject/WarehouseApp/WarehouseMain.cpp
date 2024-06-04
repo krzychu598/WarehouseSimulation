@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include <thread>
+#include <chrono>
 #include "Warehouse.h"
 #include "Product.h"
 #include "Employee.h"
@@ -7,18 +9,21 @@
 // Push to dev
 // Podział StorageSpace po konsultacji ze wszystkimi
 // Warehouse, Area - Krzychu; Shelving, Box - Maks; Product, Employee - Paweł
-
+void initiateLoop(Warehouse& warehouse) {
+	while (true) {
+		warehouse.acceptDelivery("delivery1.json");
+		warehouse.acceptDelivery("delivery2.json");
+		warehouse.acceptDelivery("delivery3.json");
+		warehouse.sendDelivery("request1.json");
+		warehouse.sendDelivery("request2.json");
+		warehouse.sendDelivery("request3.json");
+		std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+	}
+}
 int main() {
-
-	//experimental code sample
-	
 	Warehouse warehouse("warehouse_data.json");
-	
-	warehouse.acceptDelivery("delivery1.json");
-	warehouse.acceptDelivery("delivery2.json");
-	warehouse.acceptDelivery("delivery3.json");
-
-	warehouse.sendDelivery("request1.json");
+	warehouse.acceptDelivery("initial_delivery.json");
+	initiateLoop(warehouse);
 
 	return 0;
 

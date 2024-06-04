@@ -1,0 +1,270 @@
+{
+    "boxes": [
+        {
+            "id": 178650,
+            "manufacturer_name": "Apple",
+            "price": 60000,
+            "product_count": 10,
+            "product_name": "MacBook Air M2",
+            "product_type_name": "Laptop",
+            "size": 36,
+            "type": "electronics"
+        },
+        {
+            "id": 178651,
+            "manufacturer_name": "Apple",
+            "price": 60000,
+            "product_count": 10,
+            "product_name": "MacBook Air M2",
+            "product_type_name": "Laptop",
+            "size": 36,
+            "type": "electronics"
+        },
+        {
+            "id": 178652,
+            "manufacturer_name": "Apple",
+            "price": 60000,
+            "product_count": 10,
+            "product_name": "MacBook Air M2",
+            "product_type_name": "Laptop",
+            "size": 36,
+            "type": "electronics"
+        },
+        {
+            "id": 178653,
+            "manufacturer_name": "Xiaomi",
+            "price": 1500,
+            "product_count": 36,
+            "product_name": "Xiaomi Mi Power Bank 3",
+            "product_type_name": "Powerbank",
+            "size": 10,
+            "type": "electronics"
+        },
+        {
+            "id": 178654,
+            "manufacturer_name": "RAVPower",
+            "price": 1000,
+            "product_count": 60,
+            "product_name": "RAVPower 65W PD Charger",
+            "product_type_name": "Charger",
+            "size": 6,
+            "type": "electronics"
+        },
+        {
+            "id": 178655,
+            "manufacturer_name": "AMD",
+            "price": 30000,
+            "product_count": 24,
+            "product_name": "AMD Radeon RX 6700 XT",
+            "product_type_name": "Graphics Card",
+            "size": 15,
+            "type": "electronics"
+        },
+        {
+            "id": 178656,
+            "manufacturer_name": "Samsung",
+            "price": 60000,
+            "product_count": 30,
+            "product_name": "Samsung Galaxy S21 Ultra",
+            "product_type_name": "Smartphone",
+            "size": 12,
+            "type": "electronics"
+        },
+        {
+            "id": 178657,
+            "manufacturer_name": "Sony",
+            "price": 15000,
+            "product_count": 20,
+            "product_name": "Sony Xperia Z4 Tablet",
+            "product_type_name": "Tablet",
+            "size": 18,
+            "type": "electronics"
+        },
+        {
+            "id": 178658,
+            "manufacturer_name": "NVIDIA",
+            "price": 30000,
+            "product_count": 24,
+            "product_name": "NVIDIA GeForce RTX 3080",
+            "product_type_name": "Graphics Card",
+            "size": 15,
+            "type": "electronics"
+        },
+        {
+            "id": 178659,
+            "manufacturer_name": "Microsoft",
+            "price": 3000,
+            "product_count": 12,
+            "product_name": "Microsoft Surface Keyboard",
+            "product_type_name": "Keyboard",
+            "size": 30,
+            "type": "electronics"
+        },
+        {
+            "id": 178660,
+            "manufacturer_name": "AMD",
+            "price": 30000,
+            "product_count": 24,
+            "product_name": "AMD Radeon RX 6600 XT",
+            "product_type_name": "Graphics Card",
+            "size": 15,
+            "type": "electronics"
+        },
+        {
+            "id": 178661,
+            "manufacturer_name": "Mt. Olive",
+            "price": 300,
+            "product_count": 60,
+            "product_name": "Mt. Olive Bread & Butter Pickles",
+            "product_type_name": "Pickles",
+            "size": 6,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178662,
+            "manufacturer_name": "Koyo",
+            "price": 50,
+            "product_count": 72,
+            "product_name": "Koyo Ramen",
+            "product_type_name": "Instant Noodles",
+            "size": 5,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178663,
+            "manufacturer_name": "Ancient Harvest",
+            "price": 100,
+            "product_count": 40,
+            "product_name": "Ancient Harvest Quinoa Pasta",
+            "product_type_name": "Pasta",
+            "size": 9,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178664,
+            "manufacturer_name": "De Cecco",
+            "price": 100,
+            "product_count": 40,
+            "product_name": "De Cecco Penne Rigate",
+            "product_type_name": "Pasta",
+            "size": 9,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178665,
+            "manufacturer_name": "Twinings",
+            "price": 300,
+            "product_count": 60,
+            "product_name": "Twinings English Breakfast Tea",
+            "product_type_name": "Tea",
+            "size": 6,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178666,
+            "manufacturer_name": "Sapporo",
+            "price": 50,
+            "product_count": 72,
+            "product_name": "Sapporo Ichiban Ramen",
+            "product_type_name": "Instant Noodles",
+            "size": 5,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178667,
+            "manufacturer_name": "Progresso",
+            "price": 200,
+            "product_count": 45,
+            "product_name": "Progresso Traditional Italian-Style Wedding Soup",
+            "product_type_name": "Canned Soup",
+            "size": 8,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178668,
+            "manufacturer_name": "Progresso",
+            "price": 200,
+            "product_count": 45,
+            "product_name": "Progresso Traditional Italian-Style Wedding Soup",
+            "product_type_name": "Canned Soup",
+            "size": 8,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178669,
+            "manufacturer_name": "San Giorgio",
+            "price": 100,
+            "product_count": 40,
+            "product_name": "San Giorgio Lasagna",
+            "product_type_name": "Pasta",
+            "size": 9,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178670,
+            "manufacturer_name": "Goya",
+            "price": 100,
+            "product_count": 45,
+            "product_name": "Goya Pinto Beans",
+            "product_type_name": "Canned Vegetables",
+            "size": 8,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178671,
+            "manufacturer_name": "Gundelsheim",
+            "price": 300,
+            "product_count": 60,
+            "product_name": "Gundelsheim Barrel Pickles",
+            "product_type_name": "Pickles",
+            "size": 6,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178672,
+            "manufacturer_name": "Yogi",
+            "price": 300,
+            "product_count": 60,
+            "product_name": "Yogi Ginger Tea",
+            "product_type_name": "Tea",
+            "size": 6,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178673,
+            "manufacturer_name": "Coca-Cola",
+            "price": 100,
+            "product_count": 72,
+            "product_name": "Fanta",
+            "product_type_name": "Cola",
+            "size": 5,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178674,
+            "manufacturer_name": "Hunt's",
+            "price": 100,
+            "product_count": 45,
+            "product_name": "Hunt's Diced Tomatoes",
+            "product_type_name": "Canned Vegetables",
+            "size": 8,
+            "type": "food_and_drinks"
+        },
+        {
+            "id": 178675,
+            "manufacturer_name": "Folgers",
+            "price": 500,
+            "product_count": 45,
+            "product_name": "Folgers Classic Roast",
+            "product_type_name": "Coffee",
+            "size": 8,
+            "type": "food_and_drinks"
+        }
+    ],
+    "size": {
+        "electronics": 11,
+        "food_and_drinks": 15,
+        "industrial": -6,
+        "size": 20
+    }
+}

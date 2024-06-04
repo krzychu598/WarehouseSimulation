@@ -14,13 +14,13 @@ class Delivery {
 public:
     Delivery();
     
-    void createDelivery(int size, std::string type1, std::string type2, const std::string& output_path="delivery.json");
+    void createDelivery(int size, const std::string& output_path, std::string type1, std::string type2="", std::string type3="");
     void createRequest(int num, std::string type, const std::string& output_path = "request.json");
     void updateDemand();
     void setTrend();
 
 private:
-    int id;
+    inline static int box_id;
     std::unordered_map<std::string, int> supply;
     std::unordered_map<std::string, int> demand;
     std::unordered_map<std::string, int> type_demand;
@@ -91,8 +91,8 @@ private:
         nlohmann::json product = choiceWeighted(products_manufacturers);
         dict["product_name"] = product["product_name"];
         dict["manufacturer_name"] = product["manufacturer_name"];
-        dict["id"] = id;
-        id++;
+        dict["id"] = box_id;
+        box_id++;
         dict["price"] = product_dict["min_price"];
         dict["size"] = product_dict["size"];
         dict["product_count"] = BOX_SIZE / product_dict["size"];
