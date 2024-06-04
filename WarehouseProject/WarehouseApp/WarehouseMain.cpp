@@ -9,15 +9,30 @@
 // Push to dev
 // Podział StorageSpace po konsultacji ze wszystkimi
 // Warehouse, Area - Krzychu; Shelving, Box - Maks; Product, Employee - Paweł
+
+//semantics - type - ("electronics", "industrial") type of product
+//			  kind - ("Laptop", "Apple", "Paint") general name for product of some type
+//			product- ("Razer Blade 15", "Sony WH-1000XM4", "Coca-Cola Zero Sugar") - specific product of some kind
 void initiateLoop(Warehouse& warehouse) {
 	while (true) {
+
 		warehouse.acceptDelivery("delivery1.json");
+		warehouse.sendDelivery("request1.json");
+		warehouse.sendDelivery("request2.json");
+		warehouse.sendDelivery("request3.json");
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+
 		warehouse.acceptDelivery("delivery2.json");
+		warehouse.sendDelivery("request1.json");
+		warehouse.sendDelivery("request2.json");
+		warehouse.sendDelivery("request3.json");
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+
 		warehouse.acceptDelivery("delivery3.json");
 		warehouse.sendDelivery("request1.json");
 		warehouse.sendDelivery("request2.json");
 		warehouse.sendDelivery("request3.json");
-		std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 	}
 }
 int main() {

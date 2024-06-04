@@ -111,4 +111,7 @@ void Warehouse::sendDelivery(const std::string& file_name) {
 
 };
 
+void Warehouse::assignToJob() {
+
+}
 //TODO log, employees, multithreading

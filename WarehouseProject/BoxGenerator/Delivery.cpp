@@ -2,7 +2,16 @@
 
 
 using json = nlohmann::json;
-Delivery::Delivery() { box_id = 178650; srand(time(NULL)); };
+Delivery::Delivery(std::vector<std::string> types) { 
+	box_id = 178650;	//initial id
+	srand(time(NULL));	//generate seed
+	json data;
+	for (auto& type : types) {
+		type += ".json";
+		data = getFromJson(type);
+		initiateProducts(data);
+	}
+};
 
 void Delivery::createDelivery(int size, const std::string& output_path, std::string type1, std::string type2, std::string type3) {
 	json data;
@@ -33,47 +42,51 @@ void Delivery::createDelivery(int size, const std::string& output_path, std::str
 
 };
 
-void Delivery::createRequest(int num, std::string type, const std::string& output_path){
+void Delivery::createRequest(int size, const std::string& output_path, std::string type){
 	json data;
+	data["type"] = type;
 	std::vector<json> products;
-
-	std::string input = type + ".json";
-	json json_products = getFromJson(input)["products"];
-	nlohmann::json product;
-	while (num != 0) {
-		product = choiceWeighted(json_products);
-		products.push_back(createProduct(product, type));
-		num--;
+	while (size != 0) {
+		Kind& kind = choiceWeightedKind(type);
+		products.push_back(createProduct(kind));
+		size--;
 			
 	}
 	data["products"] = products;
 	dumpToFile(data, output_path);
 	};
 
-void Delivery::updateDemand() {
+void Delivery::updateDemand(Product& product) {
+	
 	//supply < demand
-	for (std::unordered_map<std::string, int>::iterator it = demand.begin(); it != demand.end(); ++it) {
-		if (it->second >= supply[it->first]) {
-			it->second++;
-		}
+	if (product.supply <= product.demand) {
+		product.demand++;
 	}
-	//price < (max_price-min_price)/2
-
-	//product type is in demand
+	//price is low
+	if (product.avg_price <= ((product.max_price - product.min_price) / 2 + product.min_price)) {
+		product.demand++;
+	}
+	product.demand = std::min(MAX_DEMAND, product.demand);
 }
 
 void Delivery::setTrend() {
-	if (demand.size() == 0) {
-		return;
-	}
-	int random = rand() % demand.size();
-	for (std::unordered_map<std::string, int>::iterator it = demand.begin(); it != demand.end(); ++it) {
-		random--;
-		if (random != 0) {
-			continue;
+	//a kind of product will be more likely to be chosen
+	int random = rand() % types.size();
+	for (auto& type : types) {
+		if(random == 0){
+			random = rand() % type.second.size();
+			type.second[random].kind_demand += TREND_DIFF;
+			std::cout << type.second[random].name << " is trending. Demand: " << type.second[random].kind_demand << "\n";
+				break;
 		}
-		it->second += 10;
-		//std::cout << it->first << " is trending\n";
-		break;
+		random--;
+
 	}
 }
+
+Delivery::Product::Product(const std::string& name, const std::string& man_name, int min_price, int max_price) :
+	name(name), manufacturer_name(man_name), min_price(min_price), max_price(max_price) {
+		supply = 0;
+		demand = 100;
+		avg_price = min_price;
+	}
