@@ -46,6 +46,7 @@ std::unique_ptr<Product> Shelving::get(std::string& name) {
 			if ((*it)->getOccupiedSpace() == 0) {
 				boxes.erase(it);
 				occupied_space_size--;
+				break;
 			}
 		}
 	}
