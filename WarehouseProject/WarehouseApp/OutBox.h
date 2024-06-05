@@ -5,6 +5,6 @@ class OutBox :
 {
 public:
     OutBox();
-    unsigned int getProductAmount(std::string& name) const;
+    unsigned int getThisProductAmount(std::string& name) const;
 };
 
