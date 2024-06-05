@@ -162,7 +162,7 @@ void Warehouse::startWorking(std::vector<std::string> orders) {
 		now = mktime(&time_struct);
 		errno_t err = localtime_s(&time_struct, &now);
 		if (err != 0) throw std::runtime_error("time error");
-		std::this_thread::sleep_for(std::chrono::seconds(1));
+		std::this_thread::sleep_for(std::chrono::seconds(5));
 
 	}
 	
