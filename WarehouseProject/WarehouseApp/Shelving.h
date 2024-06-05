@@ -2,7 +2,7 @@
 #include <unordered_map>
 #include "nlohmann/json.hpp"
 #include "StorageSpace.h"
-#include "Box.h"
+#include "InBox.h"
 
 class Shelving :
     public StorageSpace
@@ -13,7 +13,7 @@ public:
     bool find(std::string& name, int amount=1) const;
     std::unique_ptr<Product> get(std::string& name);
 private:
-    std::vector<std::unique_ptr<Box>> boxes;
+    std::vector<std::unique_ptr<InBox>> boxes;
     enum class Priority { A, B, C };
     std::unordered_map<char, Priority> priority_map = {
         {'A', Priority::A},
