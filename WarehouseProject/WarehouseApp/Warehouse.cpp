@@ -37,7 +37,7 @@ bool Warehouse::find(std::string name, int amount, std::string type) const {
 			if (!area->find(name,amount)) {
 				continue;
 			};
-			PRINT_MSG("object ", name, " found");
+			//PRINT_MSG("object ", name, " found");
 			return true;
 
 		}

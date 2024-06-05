@@ -42,6 +42,12 @@
     <ClCompile Include="Box.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OutBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Area.h">
@@ -66,6 +72,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DebugMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OutBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

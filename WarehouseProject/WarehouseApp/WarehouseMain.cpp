@@ -14,28 +14,24 @@
 //			  kind - ("Laptop", "Apple", "Paint") general name for product of some type
 //			product- ("Razer Blade 15", "Sony WH-1000XM4", "Coca-Cola Zero Sugar") - specific product of some kind
 void initiateLoop(Warehouse& warehouse) {
+	int n;	
 	while (true) {
-
+		n = 5; //15 requests for 3 deliveries
+		while (n != 0) {
+			warehouse.sendDelivery("request1.json");
+			warehouse.sendDelivery("request2.json");
+			warehouse.sendDelivery("request3.json");
+			std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+			n--;
+		}
 		warehouse.acceptDelivery("delivery1.json");
-		warehouse.sendDelivery("request1.json");
-		warehouse.sendDelivery("request2.json");
-		warehouse.sendDelivery("request3.json");
-		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-
-		warehouse.acceptDelivery("delivery2.json");
-		warehouse.sendDelivery("request1.json");
-		warehouse.sendDelivery("request2.json");
-		warehouse.sendDelivery("request3.json");
-		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-
 		warehouse.acceptDelivery("delivery3.json");
-		warehouse.sendDelivery("request1.json");
-		warehouse.sendDelivery("request2.json");
-		warehouse.sendDelivery("request3.json");
-		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+		warehouse.acceptDelivery("delivery2.json");
 	}
 }
+
 int main() {
+	std::this_thread::sleep_for(std::chrono::milliseconds(1000));	//wait for BoxGenerator to generate initial delivery
 	Warehouse warehouse("warehouse_data.json");
 	warehouse.acceptDelivery("delivery_initial.json");
 	initiateLoop(warehouse);
