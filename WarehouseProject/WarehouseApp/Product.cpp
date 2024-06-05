@@ -1,10 +1,9 @@
 #include "Product.h"
-Product::Product(std::string name, unsigned int priority, unsigned int size, unsigned int price, std::string type)
-	: name(name), priority(priority), size(size), price(price), type(type) {};
+Product::Product(std::string name, unsigned int size, unsigned int price, std::string type)
+	: name(name), size(size), price(price), type(type) {};
 Product::Product()
 {
 	name = "Undefined";
-	priority = 0;
 	size = 0;
 	price = 0;
 	type = "Undefined";
@@ -15,7 +14,6 @@ Product::Product(const nlohmann::json& info) {
 	kind = info["kind"];
 	name = info["product_name"];
 	manufacturer_name = info["manufacturer_name"];
-	priority = 0;
 	size = info["size"];
 	price = info["price"];
 
