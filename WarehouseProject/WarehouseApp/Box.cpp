@@ -12,6 +12,11 @@ void Box::put(std::unique_ptr<Product> product)
 	this->updateOccupiedSpace();
 	this->updateFullPrice();
 };
+
+std::unique_ptr<Product> Box::get(std::string& name) {
+	return nullptr;
+};
+
 bool Box::find(std::string& name) const 
 {
 	for (const auto& product : products) 
