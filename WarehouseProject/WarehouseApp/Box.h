@@ -13,7 +13,6 @@ public:
     virtual void put(std::unique_ptr<Product> product);
     bool find(std::string& name) const;
     unsigned int getProductAmount() const;
-    unsigned int getOccupiedSpace() const;
     void updateOccupiedSpace();
     unsigned int getFullPrice() const;
     void updateFullPrice();
