@@ -6,7 +6,6 @@
 class StorageSpace
 {
 public:
-	virtual Product take(Product& product);
 	unsigned int getEmptySpace() const;
 	unsigned int getOccupiedSpace() const;
 	unsigned int getFullSpace() const;

@@ -23,7 +23,6 @@ bool Box::find(std::string& name) const
 	return false;
 };
 unsigned int Box::getProductAmount() const { return products.size(); };
-unsigned int Box::getOccupiedSpace() const { return occupied_space_size; };
 void Box::updateOccupiedSpace() 
 {
 	unsigned int new_space = 0;
