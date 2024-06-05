@@ -6,12 +6,14 @@ InBox::InBox(const nlohmann::json& box) : product_name(box.at("product_name")) {
 	for (unsigned int i = 0; i < box["product_count"].get<unsigned int>(); ++i) {
 		products.push_back(std::make_unique<Product>(box));
 	};
+	priority = priority_map.at(box["priority"].get<std::string>()[0]); //This might be wrong, can you check if it complies with the json structure?
 	this->updateOccupiedSpace();
 	this->updateFullPrice();
 	type = products[0]->getType();
 	kind = products[0]->getKind();
 	PRINT_MSG("put ", box.at("product_name"), " box");
 };
+InBox::~InBox() {};
 void InBox::put(std::unique_ptr<Product> product) 
 {
 	if (product->getName() == products[0]->getName())
@@ -30,6 +32,7 @@ std::unique_ptr<Product> InBox::get()
 			products.pop_back();
 			this->updateOccupiedSpace();
 			this->updateFullPrice();
+			if (occupied_space_size == 0) { this->~InBox(); }
 			return ptr;
 	}
 };
