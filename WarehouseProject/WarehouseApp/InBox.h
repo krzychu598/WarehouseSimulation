@@ -11,7 +11,7 @@ class InBox :
 public:
     InBox(const nlohmann::json& box);
     void put(std::unique_ptr<Product> product);
-    std::unique_ptr<Product> get(std::string& name);
+    std::unique_ptr<Product> get();
     std::string getType() const;
     std::string getKind() const;
     std::string getProductName() const;

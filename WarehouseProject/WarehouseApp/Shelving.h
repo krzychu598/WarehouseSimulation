@@ -2,7 +2,7 @@
 #include <unordered_map>
 #include "nlohmann/json.hpp"
 #include "StorageSpace.h"
-#include "Box.h"
+#include "InBox.h"
 
 class Shelving :
     public StorageSpace

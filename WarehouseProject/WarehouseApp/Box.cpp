@@ -13,7 +13,7 @@ void Box::put(std::unique_ptr<Product> product)
 	this->updateFullPrice();
 };
 
-std::unique_ptr<Product> Box::get(std::string& name) {
+std::unique_ptr<Product> Box::get() {
 	return nullptr;
 };
 

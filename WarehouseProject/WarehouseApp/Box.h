@@ -11,7 +11,7 @@ class Box :
 public:
     Box();  //default constructor
     virtual void put(std::unique_ptr<Product> product);
-    virtual std::unique_ptr<Product> get(std::string& name);
+    virtual std::unique_ptr<Product> get();
 
     bool find(std::string& name) const;
     unsigned int getProductAmount() const;

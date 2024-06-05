@@ -22,18 +22,15 @@ void InBox::put(std::unique_ptr<Product> product)
 	}
 	else { PRINT_MSG("Couldn't put: ", product->getName(), ""); } //Don't know if this is needed, as warehouse also prints a message when failed put
 };
-std::unique_ptr<Product> InBox::get(std::string& name)
+std::unique_ptr<Product> InBox::get()
 {
 	for (auto& product : products)
 	{
-
-		if (product->getName() == name) {
 			auto ptr = std::move(products.back());
 			products.pop_back();
 			this->updateOccupiedSpace();
 			this->updateFullPrice();
 			return ptr;
-		};
 	}
 };
 std::string InBox::getType() const { return type; };

@@ -144,8 +144,8 @@ void Warehouse::startWorking(std::vector<std::string> orders) {
 		int now_month = 1 + time_struct.tm_mon;
 		int now_year = 1900 + time_struct.tm_year;
 		std::cout << '\n' << now_day << '.' << now_month << '.' << now_year <<'\n';
-		acceptDelivery("delivery1.json");
-		sendDelivery("request1.json");
+		acceptDelivery("delivery_test.json");
+		sendDelivery("request_test.json");
 
 
 

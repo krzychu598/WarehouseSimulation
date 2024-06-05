@@ -23,10 +23,7 @@ void Product::setName(std::string new_name)
 {
 	name = new_name;
 }
-void Product::setPriority(unsigned int new_priority)
-{
-	priority = new_priority;
-}
+
 void Product::setSize(unsigned int new_size)
 {
 	size = new_size;
@@ -38,10 +35,6 @@ std::string Product::getName() const
 unsigned int Product::getSize() const
 {
 	return size;
-}
-unsigned int Product::getPriority() const
-{
-	return priority;
 }
 unsigned int Product::getPrice() const { return price; };
 std::string Product::getType() const { return type; };
