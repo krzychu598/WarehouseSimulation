@@ -5,9 +5,7 @@
 #include <chrono>
 #include <cstdlib>
 #include <time.h> 
-//TODO tweak synching
-//TODO priorities!!
-//TODO delete box when empty
+
 int main() {
 	//initialize seed
 	srand(time(NULL));
@@ -20,6 +18,9 @@ int main() {
 	delivery.createRequest(2, "request1.json", "electronics" );
 	delivery.createRequest(4, "request2.json", "industrial" );
 	delivery.createRequest(3, "request3.json", "food_and_drinks");
+	delivery.createRequest(3, "request4.json", "electronics");
+	delivery.createRequest(3, "request5.json", "food_and_drinks");
+
 	int n;
 	while (true) {
 		n = 5;
@@ -33,7 +34,7 @@ int main() {
 			delivery.createRequest(4, "request2.json", "industrial");
 			delivery.createRequest(3, "request3.json", "food_and_drinks");
 
-			std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+			std::this_thread::sleep_for(std::chrono::seconds(2));
 		}
 
 	}

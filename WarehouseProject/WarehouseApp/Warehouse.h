@@ -1,17 +1,20 @@
 #pragma once
-#include "StorageSpace.h"
-#include "Area.h"
-#include "Box.h"
-#include "Product.h"
-#include "Employee.h"
 #include <iostream>
 #include <vector>
 #include <string>
 #include <stdexcept>
 #include <fstream>
 #include <unordered_map>
+#include <time.h>
+#include <chrono>
+#include <thread>
 #include "nlohmann/json.hpp"
 #include "DebugMacros.h"
+#include "StorageSpace.h"
+#include "Area.h"
+#include "Box.h"
+#include "Product.h"
+#include "Employee.h"
 
 class Warehouse :
     public StorageSpace
@@ -22,9 +25,10 @@ public:
     void put(const nlohmann::json& box);
     bool find(std::string name, int amount = 1, std::string type = "undefined") const;
     std::unique_ptr<Product> get(std::string& name, std::string type);
+    bool reviewDelivery(const std::string& file_path);
     void acceptDelivery(const std::string& file_path);
     void sendDelivery(const std::string& file_path);
-    void assignToJob();
+    void startWorking(std::vector<std::string> orders);
 private:
     nlohmann::json getJsonData(const std::string& file_path) {
         std::ifstream f(file_path);
@@ -43,8 +47,7 @@ private:
         f.close();
         return data;
     }
-    std::unordered_map<std::string, std::vector<std::unique_ptr<Employee>>> teams;
+    std::unordered_map<std::string, std::vector<Employee>> work_types;
     std::vector<std::unique_ptr<Area>> areas;
     std::string name;
-    nlohmann::json json_data;
 };

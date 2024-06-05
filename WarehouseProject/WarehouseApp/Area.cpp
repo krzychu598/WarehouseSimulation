@@ -15,7 +15,7 @@ std::string Area::getType() const {	return type; };
 
 void Area::put(const nlohmann::json& box) {
 	occupied_space_size++;
-	//TODO calculate priority
+	//shelvings filled in order they were initialized A->B->C
 	for (auto& shelving : shelvings) {
 		if (shelving->getEmptySpace()) {
 			shelving->put(box);
@@ -24,7 +24,6 @@ void Area::put(const nlohmann::json& box) {
 	}
 
 }
-//TODO najpierw sprawdza priority A -> B -> C
 bool Area::find(std::string name, int amount) const {
 	for (auto& shelving : shelvings) {
 		if(shelving->find(name, amount) == true){
@@ -41,16 +40,3 @@ std::unique_ptr<Product> Area::get(std::string& name) {
 		}
 	}
 };
-
-
-/*
-auto it = std::find(products.begin(), products.end(), name);
-if (it != products.end()) {
-	PRINT_MSG("object ", name, " found");
-	return true;
-}
-else {
-	PRINT_MSG("object ", name, " not found");
-	return false;
-}
-*/

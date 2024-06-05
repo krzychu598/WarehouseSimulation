@@ -74,50 +74,48 @@
   ],
   "teams": [
     {
-      "team_name": "A",
       "work_type": "storage_managment",
       "employees": [
         {
-          "name": "K",
-          "id": "00001",
+          "name": "theGoodS",
+          "id": 10001,
           "forklift": true,
-          "experience": "begginner"
+          "experience": 1
         },
         {
-          "name": "M",
-          "id": "00002",
+          "name": "theBadS",
+          "id": 10002,
           "forklift": false,
-          "experience": "intermediate"
+          "experience": 2
         },
         {
-          "name": "P",
-          "id": "00003",
+          "name": "theUglyS",
+          "id": 10003,
           "forklift": true,
-          "experience": "senior"
+          "experience": 4
         }
       ]
     },
     {
-      "team_name": "B",
       "work_type": "packaging",
       "employees": [
         {
-          "name": "K",
-          "id": "00001",
+          "name": "theGoodP",
+          "id": 10004,
           "forklift": false,
-          "experience": "begginner"
+          "experience": 2
         },
         {
-          "name": "M",
-          "id": "00002",
+          "name": "theBadP",
+          "id": 10005,
           "forklift": false,
-          "experience": "intermediate"
+          "experience": 1
         },
         {
-          "name": "P",
-          "id": "00003",
+          "name": "theUglyP",
+          "id": 10006,
           "forklift": false,
-          "experience": "begginner"
+          "experience": 3
         }
       ]
     }

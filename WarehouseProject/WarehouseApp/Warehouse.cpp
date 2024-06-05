@@ -1,15 +1,25 @@
 #include "Warehouse.h"
 
 Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
-	json_data = getJsonData(file_path);
+	nlohmann::json json_data = getJsonData(file_path);
 
 	name = json_data.at("name");
 	size = json_data.at("size").get<unsigned int>();
 
+	//initialize Areas
 	for (const auto& area_json : json_data["areas"]) {
 		areas.push_back(std::make_unique<Area>(
 			area_json
 		));
+	}
+
+	//Initialize Employees
+	for (const auto& team : json_data["teams"]) {
+		std::vector<Employee> new_employees;
+		for (const auto& employee : team["employees"]) {
+			new_employees.push_back(Employee(employee));
+		}
+		work_types[team["work_type"]] = new_employees;
 	}
 	PRINT_MSG("Warehouse ", name, " created");
 }
@@ -44,7 +54,7 @@ bool Warehouse::find(std::string name, int amount, std::string type) const {
 
 		if (area->getType() == type) {
 			bool result = area->find(name, amount);
-			PRINT_MSG_N("object ", name, result, " found");
+			//PRINT_MSG_N("object ", name, result, " found");
 			return result;
 		}
 	}
@@ -61,29 +71,37 @@ std::unique_ptr<Product> Warehouse::get(std::string& name, std::string type) {
 	}
 	PRINT_MSG("Couldn't get ", name, "");
 };
-
-
-void Warehouse::acceptDelivery(const std::string& file_name) {
-	PRINT_MSG("\nInitializing delivery ", file_name, "");
-	std::string file_path = "../SharedJsons/" + file_name;
+bool Warehouse::reviewDelivery(const std::string& file_path) {
+	PRINT_MSG("\nReviewing New Delivery ", file_path, "");
 	nlohmann::json delivery_json = getJsonData(file_path);
 	unsigned int delivery_size = delivery_json["size"]["size"].get<int>();
-	if ( delivery_size > size - occupied_space_size) {
+	if (delivery_size > size - occupied_space_size) {
 		std::cout << "Delivery doesn't fit in the Warehouse\n";
-		return;
+		return false;;
 	}
 	for (const auto& item : delivery_json["size"].items()) {
-		
+
 		for (const auto& area : areas) {
 
 			if ((area)->getType() == item.key()) {
 				if ((area)->getEmptySpace() < item.value()) {
 					std::cout << "Delivery doesn't fit in the Warehouse\n";
-					return;
+					return false;
 				}
 			};
 		};
 	};
+};
+
+void Warehouse::acceptDelivery(const std::string& file_name) {
+	PRINT_MSG("\nInitializing delivery ", file_name, "");
+	std::string file_path = "../SharedJsons/" + file_name;
+	if (!reviewDelivery(file_path)) {
+		return;
+	}
+
+	nlohmann::json delivery_json = getJsonData(file_path);
+	unsigned int delivery_size = delivery_json["size"]["size"].get<int>();
 	occupied_space_size += delivery_size;
 	for (const auto& box : delivery_json["boxes"]) {
 		this->put(box);
@@ -111,7 +129,35 @@ void Warehouse::sendDelivery(const std::string& file_name) {
 
 };
 
-void Warehouse::assignToJob() {
+void Warehouse::startWorking(std::vector<std::string> orders) {
+	//current date
+	time_t now = time(0);
+	struct tm time_struct;
+	errno_t err = localtime_s(&time_struct, &now);
+	if (err != NULL) throw std::runtime_error("time error");
 
+
+	//main work loop
+	while (true) {
+		//print out date
+		int now_day = time_struct.tm_mday;
+		int now_month = 1 + time_struct.tm_mon;
+		int now_year = 1900 + time_struct.tm_year;
+		std::cout << '\n' << now_day << '.' << now_month << '.' << now_year <<'\n';
+		acceptDelivery("delivery1.json");
+		sendDelivery("request1.json");
+
+
+
+
+
+		//update date
+		time_struct.tm_mday++;
+		now = mktime(&time_struct);
+		errno_t err = localtime_s(&time_struct, &now);
+		if (err != 0) throw std::runtime_error("time error");
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+
+	}
+	
 }
-//TODO log, employees, multithreading
