@@ -6,6 +6,11 @@
 #include <cstdlib>
 #include <ctime>
 #include "nlohmann/json.hpp"
+#ifdef _DEBUG
+#define PRINT(msg) std::cout << msg << "\n"
+#else
+#define PRINT(msg)
+#endif
 
 constexpr auto BOX_SIZE = 360;
 constexpr auto TREND_DIFF = 50;

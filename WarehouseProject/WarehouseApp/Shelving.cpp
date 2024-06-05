@@ -15,6 +15,11 @@ void Shelving::put(const nlohmann::json& box) {
 	occupied_space_size++;
 	
 };
+void Shelving::put(std::unique_ptr<InBox> box) {
+	boxes.push_back(std::move(box));
+	occupied_space_size++;
+};
+
 
 bool Shelving::find(std::string& name, unsigned int amount) const{
 	for (const auto& box : boxes) {
@@ -28,6 +33,20 @@ bool Shelving::find(std::string& name, unsigned int amount) const{
 
 	}
 	return false;
+}
+
+bool Shelving::isEmpty() const {
+	if (boxes.size() == 0) {
+		return true;
+	}
+	return false;
+};
+
+std::unique_ptr<InBox> Shelving::takeOutBox() {
+	std::unique_ptr<InBox> box = std::move(boxes.back());
+	boxes.pop_back();
+	occupied_space_size--;
+	return std::move(box);
 }
 
 std::unique_ptr<Product> Shelving::get(std::string& name) {
@@ -52,3 +71,5 @@ std::unique_ptr<Product> Shelving::get(std::string& name) {
 	}
 	return ptr;
 };
+
+unsigned int Shelving::getPriority() const { return static_cast<unsigned int>(priority); }

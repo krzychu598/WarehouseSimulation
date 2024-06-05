@@ -16,6 +16,7 @@ public:
     std::string getType() const;
     std::string getKind() const;
     std::string getProductName() const;
+    unsigned int getPriority() const;
 private:
     std::string product_name;
     std::string type;

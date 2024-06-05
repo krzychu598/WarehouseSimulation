@@ -22,15 +22,16 @@ class Warehouse :
 public:
     Warehouse(const std::string& file_path);
     ~Warehouse();
-    void put(const nlohmann::json& box);
-    bool find(std::string name, int amount = 1, std::string type = "undefined") const;
+    unsigned int getExtraWorkLoad(const std::string& name, const std::string& type) const;
     std::unique_ptr<Product> get(std::string&& name, std::string type); //r-value reference
+    bool find(std::string name, int amount = 1, std::string type = "undefined") const;
     bool reviewDelivery(const std::string& file_path);
     bool reviewRequest(const std::string& file_path);
+    void put(const nlohmann::json& box);
     void acceptDelivery(const std::string& file_path, bool initial = false);
     void sendDelivery(const std::string& file_path);
     void startWorking(const std::vector<std::string>& deliveries, const std::vector<std::string>& requests);
-    void updatePlacement(); //TODO
+    void updatePlacement();
     void employeeRest();
 private:
     nlohmann::json getJsonData(const std::string& file_path) {

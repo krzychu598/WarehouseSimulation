@@ -38,7 +38,8 @@ void Delivery::createDelivery(int size, const std::string& output_path, std::str
 	type1_data.insert(type1_data.end(), type3_data.begin(), type3_data.end());
 	data["boxes"] = type1_data;
 	dumpToFile(data, output_path);
-	//std::cout << data.dump(4) << '\n';
+	PRINT("created new delivery");
+
 
 };
 
@@ -54,6 +55,7 @@ void Delivery::createRequest(int size, const std::string& output_path, std::stri
 	}
 	data["products"] = products;
 	dumpToFile(data, output_path);
+	PRINT("created new request");
 	};
 
 void Delivery::updateDemand(Product& product) {
@@ -76,7 +78,8 @@ void Delivery::setTrend() {
 		if(random == 0){
 			random = rand() % type.second.size();
 			type.second[random].kind_demand += TREND_DIFF;
-			//std::cout << type.second[random].name << " is trending. Demand: " << type.second[random].kind_demand << "\n";
+			PRINT("Set new trend ");
+
 				break;
 		}
 		random--;

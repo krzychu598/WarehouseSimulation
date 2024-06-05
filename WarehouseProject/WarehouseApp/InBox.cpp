@@ -36,3 +36,4 @@ std::unique_ptr<Product> InBox::get()
 std::string InBox::getType() const { return type; };
 std::string InBox::getKind() const { return kind; };
 std::string InBox::getProductName() const { return product_name; };
+unsigned int InBox::getPriority() const { return priority; }

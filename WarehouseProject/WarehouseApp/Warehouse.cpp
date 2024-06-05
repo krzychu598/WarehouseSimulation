@@ -124,23 +124,38 @@ bool Warehouse::reviewRequest(const std::string& file_name) {
 	}
 
 	//are there enough items in the warehouse?
-	unsigned int all_items = 0;
+	unsigned int work_load = 0;
+	unsigned int extra_work_load = 0;
+
 	for (auto& product : delivery_json.at("products")) {
-		all_items += product.at("quantity");
+		work_load += product.at("quantity");
 		if (!this->find(product["product_name"], product["quantity"], delivery_json["type"])) {
 			PRINT_MSG("delivery cannot be sent. Not enough ", product["product_name"], "");
 			return false;
-		};
+		}
+		else {		//update work force needed if product is placed on shelf with low priority
+			extra_work_load += this->getExtraWorkLoad(product["product_name"], delivery_json["type"]);	// if A->+0, if B->+1, if C->+2
+		}
 	};
-
+	work_load += extra_work_load;
 	//is there enough work force to perform the job?
-	if (work_types["packaging"].current_work_capacity < all_items) {
-		PRINT("Not enough employees to take care of request");
+	if (work_types["packaging"].current_work_capacity < work_load) {
+		PRINT_MSG("Not enough employees to take care of request. Extra work load: ", extra_work_load, "");
 		return false;
 	}
-	PRINT("request accepted");
+	PRINT_MSG("request accepted. Extra work load: ", extra_work_load, "");
 	return true;
 };
+unsigned int Warehouse::getExtraWorkLoad(const std::string& name, const std::string& type) const {
+	unsigned int additional_work_load = 0;
+	for (const auto& area : areas) {
+		if (area->getType() == type) {
+			additional_work_load += area->getExtraWorkLoad(name);
+			break;
+		}
+	}
+	return additional_work_load;
+}
 
 void Warehouse::acceptDelivery(const std::string& file_name, bool initial) {
 	if ((!initial) && (!reviewDelivery(file_name))) {
@@ -203,7 +218,7 @@ void Warehouse::startWorking(const std::vector<std::string>& deliveries, const s
 		PRINT_MSG_L('\n', now_day, '.');
 		PRINT_MSG_L("", now_month, '.');
 		PRINT_MSG("", now_year, "");
-		std::this_thread::sleep_for(std::chrono::seconds(5));
+		std::this_thread::sleep_for(std::chrono::seconds(2));
 
 		/*	Test cases
 		acceptDelivery("delivery_test.json");
@@ -234,9 +249,14 @@ void Warehouse::startWorking(const std::vector<std::string>& deliveries, const s
 		now = mktime(&time_struct);
 		errno_t err = localtime_s(&time_struct, &now);
 		if (err != 0) throw std::runtime_error("time error");
+
+		//end of day
+		updatePlacement();
+		PRINT("Placement of boxes updated based on priority");
 		PRINT("The day has ended");
+
 		employeeRest();
-		std::this_thread::sleep_for(std::chrono::seconds(5));
+		std::this_thread::sleep_for(std::chrono::seconds(2));
 
 
 	}
@@ -244,7 +264,9 @@ void Warehouse::startWorking(const std::vector<std::string>& deliveries, const s
 }
 
 void Warehouse::updatePlacement() {
-
+	for (auto& area : areas) {
+		area->updatePlacement();
+	}
 }
 
 void Warehouse::employeeRest() {
@@ -252,38 +274,3 @@ void Warehouse::employeeRest() {
 		type.second.rest();
 	}
 }
-
-
-/*
-request_test.json
-test jsons:
-{
-  "products": [
-	{
-	  "kind": "Earphones",
-	  "product_name": "Bose Sport Earbuds",
-	  "quantity": 20
-	}
-  ],
-  "type": "electronics"
-}
-delivery_test.json
-{
-  "boxes": [
-	{
-	  "id": 178882,
-	  "kind": "Earphones",
-	  "manufacturer_name": "Bose",
-	  "price": 17260,
-	  "product_count": 50,
-	  "product_name": "Bose Sport Earbuds",
-	  "size": 8,
-	  "type": "electronics"
-	}
-  ],
-  "size": {
-	"electronics": 1,
-	"size": 1
-  }
-}
-*/
