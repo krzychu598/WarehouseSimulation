@@ -16,7 +16,7 @@
 
 
 int main() {
-	std::this_thread::sleep_for(std::chrono::seconds(1));																		//wait for BoxGenerator to generate initial delivery
+	std::this_thread::sleep_for(std::chrono::seconds(2));																		//wait for BoxGenerator to generate initial delivery
 	Warehouse warehouse("warehouse_data.json");																					//create Warehouse instance
 	warehouse.acceptDelivery("delivery_initial.json", true);																	//restore initial warehouse inventory
 	std::vector<std::string> deliveries{ "delivery1.json", "delivery2.json", "delivery3.json" };								//initialize set of possible deliveries
