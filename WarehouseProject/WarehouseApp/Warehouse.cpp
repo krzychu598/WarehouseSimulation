@@ -136,16 +136,22 @@ void Warehouse::startWorking(std::vector<std::string> orders) {
 	errno_t err = localtime_s(&time_struct, &now);
 	if (err != NULL) throw std::runtime_error("time error");
 
+	int n;
 
 	//main work loop
 	while (true) {
+		n = 10;
 		//print out date
 		int now_day = time_struct.tm_mday;
 		int now_month = 1 + time_struct.tm_mon;
 		int now_year = 1900 + time_struct.tm_year;
 		std::cout << '\n' << now_day << '.' << now_month << '.' << now_year <<'\n';
 		acceptDelivery("delivery_test.json");
-		sendDelivery("request_test.json");
+		while (n!=0) {
+			sendDelivery("request_test.json");
+			n--;
+
+		}
 
 
 
