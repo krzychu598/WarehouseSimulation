@@ -7,8 +7,9 @@ public:
 	//const std::string& work_type
 	Employee(unsigned int p_id, bool p_is_forklift_certified);
 	Employee(const nlohmann::json& employee_info);
-	unsigned int getId();
-	bool is_certified();
+	unsigned int getExperience() const;
+	unsigned int getId() const;
+	bool is_certified() const;
 	void setId(unsigned int new_id);
 	void setCertified(bool new_c);
 

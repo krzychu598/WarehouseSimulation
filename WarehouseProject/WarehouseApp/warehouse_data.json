@@ -1,6 +1,6 @@
 {
   "name": "Amaze_On",
-  "size": 1200,
+  "size": 1000,
   "areas": [
 
     {
@@ -51,22 +51,22 @@
 
     {
       "type": "industrial",
-      "size": 400,
+      "size": 200,
       "shelvings": [
         {
           "priority": "A",
-          "size": 80
+          "size": 40
 
         },
 
         {
           "priority": "B",
-          "size": 120
+          "size": 60
         },
 
         {
           "priority": "C",
-          "size": 200
+          "size": 100
         }
       ]
 
@@ -92,7 +92,7 @@
           "name": "theUglyS",
           "id": 10003,
           "forklift": true,
-          "experience": 4
+          "experience": 3
         }
       ]
     },
@@ -115,7 +115,7 @@
           "name": "theUglyP",
           "id": 10006,
           "forklift": false,
-          "experience": 3
+          "experience": 2
         }
       ]
     }

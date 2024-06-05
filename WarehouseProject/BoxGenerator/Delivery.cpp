@@ -76,7 +76,7 @@ void Delivery::setTrend() {
 		if(random == 0){
 			random = rand() % type.second.size();
 			type.second[random].kind_demand += TREND_DIFF;
-			std::cout << type.second[random].name << " is trending. Demand: " << type.second[random].kind_demand << "\n";
+			//std::cout << type.second[random].name << " is trending. Demand: " << type.second[random].kind_demand << "\n";
 				break;
 		}
 		random--;

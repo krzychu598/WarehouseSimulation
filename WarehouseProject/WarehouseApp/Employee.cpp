@@ -17,11 +17,15 @@ Employee::Employee(const nlohmann::json& info) {
 	experience = static_cast<Experience>(info["experience"]);
 };
 
-bool Employee::is_certified()
+bool Employee::is_certified() const
 {
 	return is_forklift_certified;
 }
-unsigned int Employee::getId()
+unsigned int Employee::getExperience() const{
+	return static_cast<unsigned int>(experience);
+};
+
+unsigned int Employee::getId() const
 {
 	return id;
 }

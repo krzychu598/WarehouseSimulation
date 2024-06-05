@@ -11,7 +11,7 @@ class Shelving :
 public:
     Shelving(const nlohmann::json& shelving);
     void put(const nlohmann::json& box);
-    bool find(std::string& name, int amount=1) const;
+    bool find(std::string& name, unsigned int amount=1) const;
     std::unique_ptr<Product> get(std::string& name);
 private:
     std::vector<std::unique_ptr<InBox>> boxes;

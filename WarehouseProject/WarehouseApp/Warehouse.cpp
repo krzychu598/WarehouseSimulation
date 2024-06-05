@@ -15,11 +15,12 @@ Warehouse::Warehouse(const std::string& file_path) : StorageSpace() {
 
 	//Initialize Employees
 	for (const auto& team : json_data["teams"]) {
-		std::vector<Employee> new_employees;
+		Team new_team;
 		for (const auto& employee : team["employees"]) {
-			new_employees.push_back(Employee(employee));
+			Employee new_employee(employee);
+			new_team.addEmployee(new_employee);
 		}
-		work_types[team["work_type"]] = new_employees;
+		work_types[team["work_type"]] = new_team;
 	}
 	PRINT_MSG("Warehouse ", name, " created");
 }
@@ -70,13 +71,24 @@ std::unique_ptr<Product> Warehouse::get(std::string&& name, std::string type) {
 		}
 	}
 	PRINT_MSG("Couldn't get ", name, "");
+	return nullptr;
 };
 bool Warehouse::reviewDelivery(const std::string& file_name) {
 	PRINT_MSG("\nReviewing New Delivery ", file_name, "");
 	nlohmann::json delivery_json = getJsonData(FOLDER + file_name);
-	if (delivery_json["size"]["size"].get<int>() > size - occupied_space_size) {
-		std::cout << "Delivery doesn't fit in the Warehouse\n";
-		return false;;
+
+	//is data correct?
+	try {
+		delivery_json.at("boxes");
+	}
+	catch (...) {
+		return false;
+	}
+
+	//does delivery fit in the warehouse?
+	if (delivery_json["size"]["size"].get<unsigned int>() > getEmptySpace()) {
+		PRINT("Delivery doesn't fit in the Warehouse");
+		return false;
 	}
 	for (const auto& item : delivery_json["size"].items()) {
 
@@ -84,34 +96,57 @@ bool Warehouse::reviewDelivery(const std::string& file_name) {
 
 			if ((area)->getType() == item.key()) {
 				if ((area)->getEmptySpace() < item.value()) {
-					std::cout << "Delivery doesn't fit in the Warehouse\n";
+					PRINT("Delivery doesn't fit in the Warehouse");
 					return false;
 				}
 			};
 		};
 	};
-	std::cout << "Delivery accepted\n";
+
+	//are there enough employees
+	if (work_types["storage_managment"].current_work_capacity < delivery_json["size"]["size"].get<unsigned int>()) {
+		PRINT("Not enough employees to take care of delivery");
+		return false;
+	}
+	PRINT("Delivery accepted");
 	return true;
 };
 bool Warehouse::reviewRequest(const std::string& file_name) {
 	PRINT_MSG("\nReviewing New Request ", file_name, "");
 	nlohmann::json delivery_json = getJsonData(FOLDER + file_name);
+
+	//is data correct?
+	try {
+		delivery_json.at("products");
+	}
+	catch (...) {
+		return false;
+	}
+
+	//are there enough items in the warehouse?
+	unsigned int all_items = 0;
 	for (auto& product : delivery_json.at("products")) {
+		all_items += product.at("quantity");
 		if (!this->find(product["product_name"], product["quantity"], delivery_json["type"])) {
-			std::cout << "delivery cannot be sent. Not enough " << product["product_name"] << '\n';
+			PRINT_MSG("delivery cannot be sent. Not enough ", product["product_name"], "");
 			return false;
 		};
 	};
-	std::cout << "request can be fulfilled\n";
+
+	//is there enough work force to perform the job?
+	if (work_types["packaging"].current_work_capacity < all_items) {
+		PRINT("Not enough employees to take care of request");
+		return false;
+	}
+	PRINT("request accepted");
 	return true;
 };
 
-void Warehouse::acceptDelivery(const std::string& file_name) {
-	if (!reviewDelivery(file_name)) {
+void Warehouse::acceptDelivery(const std::string& file_name, bool initial) {
+	if ((!initial) && (!reviewDelivery(file_name))) {
 		return;
 	}
 
-	//TODO check employee availability
 	PRINT_MSG("\Processing delivery ", file_name, "");
 
 	nlohmann::json delivery_json = getJsonData(FOLDER + file_name);
@@ -120,8 +155,8 @@ void Warehouse::acceptDelivery(const std::string& file_name) {
 	for (const auto& box : delivery_json["boxes"]) {
 		this->put(box);
 	};
-	PRINT_MSG("Successfully accepted ", file_name, " delivery");
-
+	PRINT_MSG("Successfully processed ", file_name, " delivery");
+	if(!initial) work_types["storage_managment"].current_work_capacity -= delivery_json["size"]["size"];
 };
 
 void Warehouse::sendDelivery(const std::string& file_name) {
@@ -129,13 +164,15 @@ void Warehouse::sendDelivery(const std::string& file_name) {
 		return;
 	}
 
-	PRINT_MSG("\nProcessing request ", file_name, "");
+	PRINT_MSG("Processing request ", file_name, "");
 
 	nlohmann::json delivery_data = getJsonData(FOLDER + file_name);
 	Box box;
 	int n;
+	unsigned int all_items = 0;
 	for (const auto& product : delivery_data.at("products")) {
 		n = product.at("quantity");
+		all_items += n;
 		while (n != 0) {
 			box.put(std::move(this->get((product.at("product_name").get<std::string>()), delivery_data["type"])));
 			PRINT_MSG("", product.at("product_name"), " put in a delivery box");
@@ -144,6 +181,7 @@ void Warehouse::sendDelivery(const std::string& file_name) {
 
 	}
 	PRINT_MSG("Successfully processed ", file_name, " request");
+	work_types["packaging"].current_work_capacity -= all_items;
 };
 
 void Warehouse::startWorking(const std::vector<std::string>& deliveries, const std::vector<std::string>& requests) {
@@ -153,43 +191,99 @@ void Warehouse::startWorking(const std::vector<std::string>& deliveries, const s
 	errno_t err = localtime_s(&time_struct, &now);
 	if (err != NULL) throw std::runtime_error("time error");
 
-	int n;
+	employeeRest();
+
 
 	//main work loop
 	while (true) {
-		n = 5;
 		//print out date
 		int now_day = time_struct.tm_mday;
 		int now_month = 1 + time_struct.tm_mon;
 		int now_year = 1900 + time_struct.tm_year;
-		std::cout << '\n' << now_day << '.' << now_month << '.' << now_year <<'\n';
+		PRINT_MSG_L('\n', now_day, '.');
+		PRINT_MSG_L("", now_month, '.');
+		PRINT_MSG("", now_year, "");
+		std::this_thread::sleep_for(std::chrono::seconds(5));
 
+		/*	Test cases
 		acceptDelivery("delivery_test.json");
 		sendDelivery("request_test.json");
 		sendDelivery("request_test.json");
+		sendDelivery("request_test.json");
+		*/
 
-		/*
+		
 		//process available deliveries and requests
 		for (auto& delivery : deliveries) {
 			acceptDelivery(delivery);
+			std::this_thread::sleep_for(std::chrono::seconds(5));
+
 		}
 		for (auto& request : requests) {
 			sendDelivery(request);
+			std::this_thread::sleep_for(std::chrono::seconds(5));
+
 		}
-		*/
+		
 
 
+
+		
 		//update date
 		time_struct.tm_mday++;
 		now = mktime(&time_struct);
 		errno_t err = localtime_s(&time_struct, &now);
 		if (err != 0) throw std::runtime_error("time error");
+		PRINT("The day has ended");
+		employeeRest();
 		std::this_thread::sleep_for(std::chrono::seconds(5));
+
 
 	}
 	
 }
 
-void Warehouse::assignToJob(const std::string& work_type, unsigned int work_load) {
-	
-};
+void Warehouse::updatePlacement() {
+
+}
+
+void Warehouse::employeeRest() {
+	for (auto& type : work_types) {
+		type.second.rest();
+	}
+}
+
+
+/*
+request_test.json
+test jsons:
+{
+  "products": [
+	{
+	  "kind": "Earphones",
+	  "product_name": "Bose Sport Earbuds",
+	  "quantity": 20
+	}
+  ],
+  "type": "electronics"
+}
+delivery_test.json
+{
+  "boxes": [
+	{
+	  "id": 178882,
+	  "kind": "Earphones",
+	  "manufacturer_name": "Bose",
+	  "price": 17260,
+	  "product_count": 50,
+	  "product_name": "Bose Sport Earbuds",
+	  "size": 8,
+	  "type": "electronics"
+	}
+  ],
+  "size": {
+	"electronics": 1,
+	"size": 1
+  }
+}
+*/

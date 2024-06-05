@@ -133,6 +133,11 @@ private:
         throw std::runtime_error("Product choice error");
 
     }
+
+    Product& choiceRandomProduct(Kind& kind) {
+        int random = rand() % kind.products.size();
+        return kind.products[random];
+    }
     
     int choosePrice(Product& product) {
         //Also manages demand and supply

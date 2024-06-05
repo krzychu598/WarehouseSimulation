@@ -27,10 +27,11 @@ public:
     std::unique_ptr<Product> get(std::string&& name, std::string type); //r-value reference
     bool reviewDelivery(const std::string& file_path);
     bool reviewRequest(const std::string& file_path);
-    void acceptDelivery(const std::string& file_path);
+    void acceptDelivery(const std::string& file_path, bool initial = false);
     void sendDelivery(const std::string& file_path);
     void startWorking(const std::vector<std::string>& deliveries, const std::vector<std::string>& requests);
-    void assignToJob(const std::string& work_type, unsigned int work_load);
+    void updatePlacement(); //TODO
+    void employeeRest();
 private:
     nlohmann::json getJsonData(const std::string& file_path) {
         std::ifstream f(file_path);
@@ -43,13 +44,26 @@ private:
             f >> data;
         }
         catch (...) {
-            throw std::runtime_error("cannot transfer stream to json member");
+            std::cout << "Invalid file";
+            return data;
         }
 
         f.close();
         return data;
     }
-    std::unordered_map<std::string, std::vector<Employee>> work_types;  //employees segregated based on work type
+    struct Team {
+        std::vector<Employee> employees;
+        unsigned int full_work_capacity = 0;
+        unsigned int current_work_capacity = 0;
+        void addEmployee(Employee& employee) {
+            employees.push_back(employee);
+            full_work_capacity += 5 * employee.getExperience();
+        }
+        void rest() {
+            current_work_capacity = full_work_capacity;
+        }
+    };
+    std::unordered_map<std::string, Team> work_types;  //employees segregated based on work type
     std::vector<std::unique_ptr<Area>> areas;
     std::string name;
 };

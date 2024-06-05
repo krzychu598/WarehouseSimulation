@@ -16,7 +16,7 @@ void Shelving::put(const nlohmann::json& box) {
 	
 };
 
-bool Shelving::find(std::string& name, int amount) const{
+bool Shelving::find(std::string& name, unsigned int amount) const{
 	for (const auto& box : boxes) {
 		unsigned int curr_amount = 0;
 		if (box->find(name) == true) {
