@@ -31,9 +31,23 @@ bool Shelving::find(std::string& name, int amount) const{
 }
 
 std::unique_ptr<Product> Shelving::get(std::string& name) {
+	std::unique_ptr<Product> ptr;
+	bool to_delete = false;
 	for (auto& box : boxes) {
-		if (box->find(name) == true) {
-			return std::move(box->get());
+		if (box->getProductName() == name) {
+			ptr = std::move(box->get());
+			if (box->getOccupiedSpace() == 0) { to_delete = true; }
+			break;
+			
 		}
 	}
+	if (to_delete) {
+		for (auto it = begin(boxes); it != end(boxes); ++it) {
+			if ((*it)->getOccupiedSpace() == 0) {
+				boxes.erase(it);
+				occupied_space_size--;
+			}
+		}
+	}
+	return ptr;
 };

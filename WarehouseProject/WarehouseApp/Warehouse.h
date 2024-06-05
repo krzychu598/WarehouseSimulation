@@ -15,7 +15,7 @@
 #include "Box.h"
 #include "Product.h"
 #include "Employee.h"
-
+constexpr auto FOLDER = "../SharedJsons/";
 class Warehouse :
     public StorageSpace
 {
@@ -24,11 +24,13 @@ public:
     ~Warehouse();
     void put(const nlohmann::json& box);
     bool find(std::string name, int amount = 1, std::string type = "undefined") const;
-    std::unique_ptr<Product> get(std::string& name, std::string type);
+    std::unique_ptr<Product> get(std::string&& name, std::string type); //r-value reference
     bool reviewDelivery(const std::string& file_path);
+    bool reviewRequest(const std::string& file_path);
     void acceptDelivery(const std::string& file_path);
     void sendDelivery(const std::string& file_path);
-    void startWorking(std::vector<std::string> orders);
+    void startWorking(const std::vector<std::string>& deliveries, const std::vector<std::string>& requests);
+    void assignToJob(const std::string& work_type, unsigned int work_load);
 private:
     nlohmann::json getJsonData(const std::string& file_path) {
         std::ifstream f(file_path);
@@ -47,7 +49,7 @@ private:
         f.close();
         return data;
     }
-    std::unordered_map<std::string, std::vector<Employee>> work_types;
+    std::unordered_map<std::string, std::vector<Employee>> work_types;  //employees segregated based on work type
     std::vector<std::unique_ptr<Area>> areas;
     std::string name;
 };

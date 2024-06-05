@@ -1,9 +1,10 @@
 #pragma once
 #include <unordered_map>
+#include <vector>
 #include "nlohmann/json.hpp"
 #include "StorageSpace.h"
 #include "InBox.h"
-
+//TODO consider changing boxes to list (for now erasing boxes is inefficient)
 class Shelving :
     public StorageSpace
 {

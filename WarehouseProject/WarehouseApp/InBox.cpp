@@ -6,17 +6,17 @@ InBox::InBox(const nlohmann::json& box) : product_name(box.at("product_name")) {
 	for (unsigned int i = 0; i < box["product_count"].get<unsigned int>(); ++i) {
 		products.push_back(std::make_unique<Product>(box));
 	};
-	priority = priority_map.at(box["priority"].get<std::string>()[0]); //This might be wrong, can you check if it complies with the json structure?
+	priority = 0;
 	this->updateOccupiedSpace();
 	this->updateFullPrice();
-	type = products[0]->getType();
-	kind = products[0]->getKind();
+	type = box.at("type");
+	kind = box.at("kind");
 	PRINT_MSG("put ", box.at("product_name"), " box");
 };
 InBox::~InBox() {};
 void InBox::put(std::unique_ptr<Product> product) 
 {
-	if (product->getName() == products[0]->getName())
+	if (product->getName() == product_name)
 	{
 		products.push_back(std::move(product));
 		this->updateOccupiedSpace();
@@ -26,15 +26,12 @@ void InBox::put(std::unique_ptr<Product> product)
 };
 std::unique_ptr<Product> InBox::get()
 {
-	for (auto& product : products)
-	{
 			auto ptr = std::move(products.back());
 			products.pop_back();
 			this->updateOccupiedSpace();
 			this->updateFullPrice();
 			if (occupied_space_size == 0) { this->~InBox(); }
 			return ptr;
-	}
 };
 std::string InBox::getType() const { return type; };
 std::string InBox::getKind() const { return kind; };

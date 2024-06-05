@@ -62,7 +62,7 @@ bool Warehouse::find(std::string name, int amount, std::string type) const {
 	return false;
 }
 
-std::unique_ptr<Product> Warehouse::get(std::string& name, std::string type) {
+std::unique_ptr<Product> Warehouse::get(std::string&& name, std::string type) {
 	for (auto& area : areas) {
 
 		if (area->getType() == type) {
@@ -71,11 +71,10 @@ std::unique_ptr<Product> Warehouse::get(std::string& name, std::string type) {
 	}
 	PRINT_MSG("Couldn't get ", name, "");
 };
-bool Warehouse::reviewDelivery(const std::string& file_path) {
-	PRINT_MSG("\nReviewing New Delivery ", file_path, "");
-	nlohmann::json delivery_json = getJsonData(file_path);
-	unsigned int delivery_size = delivery_json["size"]["size"].get<int>();
-	if (delivery_size > size - occupied_space_size) {
+bool Warehouse::reviewDelivery(const std::string& file_name) {
+	PRINT_MSG("\nReviewing New Delivery ", file_name, "");
+	nlohmann::json delivery_json = getJsonData(FOLDER + file_name);
+	if (delivery_json["size"]["size"].get<int>() > size - occupied_space_size) {
 		std::cout << "Delivery doesn't fit in the Warehouse\n";
 		return false;;
 	}
@@ -91,45 +90,63 @@ bool Warehouse::reviewDelivery(const std::string& file_path) {
 			};
 		};
 	};
+	std::cout << "Delivery accepted\n";
+	return true;
+};
+bool Warehouse::reviewRequest(const std::string& file_name) {
+	PRINT_MSG("\nReviewing New Request ", file_name, "");
+	nlohmann::json delivery_json = getJsonData(FOLDER + file_name);
+	for (auto& product : delivery_json.at("products")) {
+		if (!this->find(product["product_name"], product["quantity"], delivery_json["type"])) {
+			std::cout << "delivery cannot be sent. Not enough " << product["product_name"] << '\n';
+			return false;
+		};
+	};
+	std::cout << "request can be fulfilled\n";
+	return true;
 };
 
 void Warehouse::acceptDelivery(const std::string& file_name) {
-	PRINT_MSG("\nInitializing delivery ", file_name, "");
-	std::string file_path = "../SharedJsons/" + file_name;
-	if (!reviewDelivery(file_path)) {
+	if (!reviewDelivery(file_name)) {
 		return;
 	}
 
-	nlohmann::json delivery_json = getJsonData(file_path);
+	//TODO check employee availability
+	PRINT_MSG("\Processing delivery ", file_name, "");
+
+	nlohmann::json delivery_json = getJsonData(FOLDER + file_name);
 	unsigned int delivery_size = delivery_json["size"]["size"].get<int>();
 	occupied_space_size += delivery_size;
 	for (const auto& box : delivery_json["boxes"]) {
 		this->put(box);
 	};
+	PRINT_MSG("Successfully accepted ", file_name, " delivery");
+
 };
 
 void Warehouse::sendDelivery(const std::string& file_name) {
-	PRINT_MSG("\nInitializing outgoing delivery ", file_name, "");
-	std::string file_path = "../SharedJsons/" + file_name;
-	nlohmann::json delivery_data = getJsonData(file_path);
-	nlohmann::json products = delivery_data["products"];
-	for (auto& product : products) {
-		if (!this->find(product["product_name"], product["quantity"], delivery_data["type"])) {
-			std::cout << "delivery cannot be sent. Not enough " << product["product_name"] << '\n';
-			return;
-			};
-	};
-	Box box;
-	for (const auto& product : products) {
-		std::string product_name = product["product_name"];
-		box.put(std::move(this->get(product_name, delivery_data["type"])));
-		PRINT_MSG("", product_name, " put in a delivery box");
+	if (!reviewRequest(file_name)) {
+		return;
 	}
-	PRINT_MSG("Successfully sent ", file_name, " delivery");
 
+	PRINT_MSG("\nProcessing request ", file_name, "");
+
+	nlohmann::json delivery_data = getJsonData(FOLDER + file_name);
+	Box box;
+	int n;
+	for (const auto& product : delivery_data.at("products")) {
+		n = product.at("quantity");
+		while (n != 0) {
+			box.put(std::move(this->get((product.at("product_name").get<std::string>()), delivery_data["type"])));
+			PRINT_MSG("", product.at("product_name"), " put in a delivery box");
+			n--;
+		}
+
+	}
+	PRINT_MSG("Successfully processed ", file_name, " request");
 };
 
-void Warehouse::startWorking(std::vector<std::string> orders) {
+void Warehouse::startWorking(const std::vector<std::string>& deliveries, const std::vector<std::string>& requests) {
 	//current date
 	time_t now = time(0);
 	struct tm time_struct;
@@ -140,21 +157,26 @@ void Warehouse::startWorking(std::vector<std::string> orders) {
 
 	//main work loop
 	while (true) {
-		n = 10;
+		n = 5;
 		//print out date
 		int now_day = time_struct.tm_mday;
 		int now_month = 1 + time_struct.tm_mon;
 		int now_year = 1900 + time_struct.tm_year;
 		std::cout << '\n' << now_day << '.' << now_month << '.' << now_year <<'\n';
+
 		acceptDelivery("delivery_test.json");
-		while (n!=0) {
-			sendDelivery("request_test.json");
-			n--;
+		sendDelivery("request_test.json");
+		sendDelivery("request_test.json");
 
+		/*
+		//process available deliveries and requests
+		for (auto& delivery : deliveries) {
+			acceptDelivery(delivery);
 		}
-
-
-
+		for (auto& request : requests) {
+			sendDelivery(request);
+		}
+		*/
 
 
 		//update date
@@ -167,3 +189,7 @@ void Warehouse::startWorking(std::vector<std::string> orders) {
 	}
 	
 }
+
+void Warehouse::assignToJob(const std::string& work_type, unsigned int work_load) {
+	
+};

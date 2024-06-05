@@ -19,12 +19,12 @@
 //TODO delete box when empty
 
 int main() {
-	std::this_thread::sleep_for(std::chrono::seconds(1));	//wait for BoxGenerator to generate initial delivery
-	Warehouse warehouse("warehouse_data.json");				//create Warehouse instance
-	warehouse.acceptDelivery("delivery_initial.json");		//restore initial warehouse inventory
-	std::vector<std::string> orders
-	{ "delivery1.json", "delivery2.json", "delivery3.json", "request1.json", "request2.json", "request3.json", "request.4json", "request5.json", };	//initialize set of possible orders
-	warehouse.startWorking(orders);								//initiate program loop
+	std::this_thread::sleep_for(std::chrono::seconds(1));																		//wait for BoxGenerator to generate initial delivery
+	Warehouse warehouse("warehouse_data.json");																					//create Warehouse instance
+	//warehouse.acceptDelivery("delivery_initial.json");																		//restore initial warehouse inventory
+	std::vector<std::string> deliveries{ "delivery1.json", "delivery2.json", "delivery3.json" };								//initialize set of possible deliveries
+	std::vector<std::string> requests {"request1.json", "request2.json", "request3.json", "request4.json", "request5.json", };	//initialize set of possible requests
+	warehouse.startWorking(deliveries, requests);																				//start program loop
 	return 0;
 
 }

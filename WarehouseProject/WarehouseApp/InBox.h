@@ -20,11 +20,5 @@ private:
     std::string product_name;
     std::string type;
     std::string kind;
-    enum class Priority { A, B, C };
-    std::unordered_map<char, Priority> priority_map = {
-        {'A', Priority::A},
-        {'B', Priority::B},
-        {'C', Priority::C}
-    };
-    Priority priority;
+    unsigned int priority;
 };

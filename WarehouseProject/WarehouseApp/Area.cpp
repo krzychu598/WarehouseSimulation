@@ -5,7 +5,6 @@ Area::Area(const nlohmann::json& area) : type(area["type"]) {
 	for (const auto& shelving : area["shelvings"]) {
 		shelvings.push_back(std::make_unique<Shelving>(shelving));
 	}
-	PRINT_MSG("Area ", type, " created");
 };
 
 Area::~Area() { PRINT_MSG("Area ", type, " destroyed"); };
