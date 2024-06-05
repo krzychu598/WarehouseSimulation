@@ -47,3 +47,4 @@ unsigned int Product::getPriority() const
 }
 unsigned int Product::getPrice() const { return price; };
 std::string Product::getType() const { return type; };
+std::string Product::getKind() const { return kind; };
