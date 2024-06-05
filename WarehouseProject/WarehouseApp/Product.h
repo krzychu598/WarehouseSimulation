@@ -15,6 +15,7 @@ public:
 	unsigned int getPriority() const;
 	unsigned int getPrice() const;
 	std::string getType() const;
+	std::string getKind() const;
 private:
 	std::string type;
 	std::string kind;
