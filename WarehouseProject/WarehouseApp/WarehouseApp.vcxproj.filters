@@ -87,4 +87,7 @@
       <Filter>Warehouse Json</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="track_folder.txt" />
+  </ItemGroup>
 </Project>
