@@ -62,7 +62,7 @@ void Delivery::updateDemand(Product& product) {
 	
 	//supply < demand
 	if (product.supply <= product.demand) {
-		product.demand++;
+		product.demand+=RATIO;
 	}
 	//price is low
 	if (product.avg_price <= ((product.max_price - product.min_price) / 2 + product.min_price)) {
@@ -74,11 +74,12 @@ void Delivery::updateDemand(Product& product) {
 void Delivery::setTrend() {
 	//a kind of product will be more likely to be chosen
 	int random = rand() % types.size();
+	int add = rand() % 10;
 	for (auto& type : types) {
 		if(random == 0){
 			random = rand() % type.second.size();
-			type.second[random].kind_demand += TREND_DIFF;
-			PRINT("Set new trend ");
+			type.second[random].kind_demand += add * TREND_DIFF;
+			PRINT_V("Set new trend ", type.second[random].name);
 
 				break;
 		}
@@ -86,10 +87,32 @@ void Delivery::setTrend() {
 
 	}
 }
+void Delivery::showSupplyDemand() {
+	for (auto& type : types) {
+		for (auto& kind : type.second) {
+			for (auto& product : kind.products) {
+				PRINT_S(product.name, product.supply, product.demand);
+
+			}
+		}
+	}
+};
 
 Delivery::Product::Product(const std::string& name, const std::string& man_name, int min_price, int max_price) :
 	name(name), manufacturer_name(man_name), min_price(min_price), max_price(max_price) {
 		supply = 0;
-		demand = 100;
+		int demand_type = rand() % 3;
+		int add;
+		switch (demand_type) {
+		case 0:
+			add = 0;
+			break;
+		case 1:
+			add = 30;
+			break;
+		case 2:
+			add = 60;
+		}
+		demand = rand() % 100 +add;
 		avg_price = min_price;
 	}

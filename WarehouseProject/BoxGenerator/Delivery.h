@@ -8,8 +8,12 @@
 #include "nlohmann/json.hpp"
 #ifdef _DEBUG
 #define PRINT(msg) std::cout << msg << "\n"
+#define PRINT_V(msg, var) std::cout << msg << var << "\n"
+#define PRINT_S(var0, var, var2) std::cout <<"Product: " << var0 <<" Supply: "<< var<< " Demand: " << var2<<"\n"
 #else
 #define PRINT(msg)
+#define PRINT_MSG(msg, var, var)
+#define PRINT_V(msg, var)
 #endif
 
 constexpr auto BOX_SIZE = 360;
@@ -35,7 +39,7 @@ public:
         int max_price;
     };
     void updateDemand(Product& product);
-
+    void showSupplyDemand();
 private:
     inline static int box_id;
 

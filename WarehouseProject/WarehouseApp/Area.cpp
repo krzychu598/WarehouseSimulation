@@ -40,9 +40,11 @@ void Area::put(const nlohmann::json& box) {
 	for (auto& shelving : shelvings) {
 		if (shelving->getEmptySpace()) {
 			shelving->put(box);
-			break;
+			return;
 		}
 	}
+	PRINT_MSG("Couldn't put  ", box.at("product_name"), "");
+
 
 }
 bool Area::find(std::string name, int amount) const {

@@ -9,13 +9,13 @@
       "shelvings": [
         {
           "priority": "A",
-          "size": 80
+          "size": 60
 
         },
 
         {
           "priority": "B",
-          "size": 120
+          "size": 140
         },
 
         {
@@ -32,13 +32,13 @@
       "shelvings": [
         {
           "priority": "A",
-          "size": 80
+          "size": 60
 
         },
 
         {
           "priority": "B",
-          "size": 120
+          "size": 140
         },
 
         {
