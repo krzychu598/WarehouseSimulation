@@ -1,3 +1,4 @@
+﻿//Paweł Marton
 #pragma once
 #include "nlohmann/json.hpp"
 class Employee

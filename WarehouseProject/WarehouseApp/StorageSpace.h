@@ -1,3 +1,4 @@
+﻿//Krzysztof Wnorowski, Maksymilian Zieliński, Paweł Marton
 #pragma once
 #include <iostream>
 #include <vector>

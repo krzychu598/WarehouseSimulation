@@ -1,3 +1,4 @@
+//Krzysztof Wnorowski
 #pragma once
 #include <iostream>
 #include <vector>
