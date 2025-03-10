@@ -1,7 +1,7 @@
 # Warehouse Simulation
 
 Team 209.5-magazyn
-Krzysztof Wnorowski, Maksymilian Zieliński, Paweł Marton
+Krzysztof Wnorowski, Maksymilian Zieliński, Paweł Marton <br/>
 This project is a simulation of a working warehouse inside simple economy. Products are both imported and exported to the warehouse based on deliveries that can be denied if no products are found (outgoing delivery) or there is no more space in the warehouse (inncoming delivery). Additionally employees must be free to perform actions as storing products or sending deliveries. 
 
 ## WarehouseApp :
