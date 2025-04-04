@@ -2,7 +2,7 @@
 
 Team 209.5-magazyn
 Krzysztof Wnorowski, Maksymilian Zieliński, Paweł Marton <br/>
-This project is a simulation of a working warehouse inside simple economy. Products are both imported and exported to the warehouse based on deliveries that can be denied if no products are found (outgoing delivery) or there is no more space in the warehouse (inncoming delivery). Additionally employees must be free to perform actions as storing products or sending deliveries. 
+This project is a simulation of a working warehouse inside simple economy. Products are both imported and exported to the warehouse based on deliveries that can be denied if no products are found (outgoing delivery) or there is no more space in the warehouse (incoming delivery). Additionally employees must be free to perform actions as storing products or sending deliveries. 
 
 ## WarehouseApp :
 The Warehouse App project consists of several classes representing real-life warehouse-related objects. Below is an overview of the main classes and their functionalities:
@@ -14,7 +14,7 @@ The StorageSpace class is a base class for storage-related functionalities. It h
 The Warehouse class is a subclass of StorageSpace and represents the core concept of the warehouse in the project. It contains instances of the Area class and is responsible for initializing the state of warehouse based on a json file, accepting and sending out deliveries.
 
 ### Area
-inherits from StorageSpace and represents an area within the warehouse. Contains instances of 'Shelving'. It handles operations related to storing and retrieving items from boxes on shelves. Shelvings have different priorities representing how easy it is to access them.
+Inherits from StorageSpace and represents an area within the warehouse. Contains instances of 'Shelving'. It handles operations related to storing and retrieving items from boxes on shelves. Shelvings have different priorities representing how easy it is to access them.
 
 ### Shelving
 The Shelving class represents a shelf within an area. It inherits from StorageSpace and contains instances of InBox. It handles operations related to storing and retrieving items from boxes on shelves. Shelvings have different priorities representing how easy it is to access it.
